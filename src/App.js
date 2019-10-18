@@ -3,7 +3,7 @@ import Header from "./components/Header";
 import Card from "./components/Card";
 import AboutProduct from "./components/AboutProduct";
 import "./App.css";
-import "bootstrap/dist/css/bootstrap.min.css";
+import "./bootstrap.min.css";
 
 function App() {
   return (
