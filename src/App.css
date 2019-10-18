@@ -2,13 +2,14 @@
   text-align: center;
 }
 
+.Body {
+  background-color: white;
+}
 .App-logo {
   height: 40vmin;
 }
 
 .App-header {
-  background-color: #282c34;
-  min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
