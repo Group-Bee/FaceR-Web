@@ -21,7 +21,7 @@ function App() {
       >
         <iframe
           width="100%"
-          height="781"
+          height="780"
           src="https://www.youtube.com/embed/1XZZpf6yReg?autoplay=1"
           frameborder="0"
           allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
