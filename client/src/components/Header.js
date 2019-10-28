@@ -5,7 +5,7 @@ export class Header extends Component {
     return (
       <div style={{ position: "fixed", top: "0", width: "100%" }}>
         <nav className="navbar navbar-expand-lg navbar-dark bg-primary">
-          <a className="navbar-brand" href="#">
+          <a className="navbar-brand" href="www.google.com">
             Navbar
           </a>
           <button
@@ -23,22 +23,22 @@ export class Header extends Component {
           <div className="collapse navbar-collapse" id="navbarColor01">
             <ul className="navbar-nav mr-auto">
               <li className="nav-item active">
-                <a className="nav-link" href="#">
+                <a className="nav-link" href="www.google.com">
                   Home <span className="sr-only">(current)</span>
                 </a>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="#">
+                <a className="nav-link" href="www.google.com">
                   Features
                 </a>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="#">
+                <a className="nav-link" href="www.google.com">
                   Product
                 </a>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="#">
+                <a className="nav-link" href="www.google.com">
                   About
                 </a>
               </li>

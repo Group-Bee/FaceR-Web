@@ -21,6 +21,7 @@ function landingPage() {
         }}
       >
         <iframe
+          title="productVid"
           width="100%"
           height="780"
           src="https://www.youtube.com/embed/1XZZpf6yReg?autoplay=1"

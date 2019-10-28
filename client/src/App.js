@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter, Switch, Route, Link } from "react-router-dom";
+import { BrowserRouter, Switch, Route } from "react-router-dom";
 import LandingPage from "./views/landingPage";
 import NotFoundPage from "./views/notFoundPage";
 function App() {

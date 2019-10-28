@@ -16,7 +16,11 @@ export default class AboutProduct extends Component {
             content out within the larger container.
           </p>
           <p className="lead">
-            <a className="btn btn-primary btn-lg" href="#" role="button">
+            <a
+              className="btn btn-primary btn-lg"
+              href="www.google.com"
+              role="button"
+            >
               Learn more
             </a>
           </p>
