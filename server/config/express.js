@@ -35,10 +35,10 @@ module.exports.init = () => {
 
   // body parsing middleware
   app.use(bodyParser.json());
-
-  // POST route from contact form
   app.use(express.urlencoded({ extended: false }));
   app.use(express.static(path.join(__dirname, "public")));
+
+  // POST route from contact form
   app.post("/contact", (req, res) => {
     var transporter = nodemailer.createTransport({
       service: "gmail",
@@ -52,14 +52,20 @@ module.exports.init = () => {
       to: "curdledazombie@gmail.com", // list of receivers
       subject: req.body.name + " - " + req.body.email, // Subject line
       html:
-        req.body.message + "\n Reach " + req.body.name + " at " + req.body.email // plain text body
+        req.body.message +
+        "<li> Reach " +
+        req.body.name +
+        " at " +
+        req.body.email +
+        "</li>" // plain text body
     };
     transporter.sendMail(mailOptions, function(err, info) {
       if (err) console.log(err);
       else console.log(info);
     });
-    res.end();
+    res.redirect("/");
   });
+
   // enable request logging for development debugging
   app.use(morgan("dev"));
 
