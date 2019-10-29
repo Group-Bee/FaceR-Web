@@ -1,58 +1,39 @@
 import React, { Component } from "react";
 import "../bootstrap.min.css";
+import Header from "../components/Header";
+import ContactForm from "../components/ContactForm";
 
 export default class Contact extends Component {
   render() {
     return (
       <div>
-        <form
-          className="form-group"
-          action="/contact"
-          id="contact-form"
-          method="post"
-          role="form"
-          onSubmitCapture={() => alert("Message submitted!")}
+        <Header />
+        <div
+          style={{
+            paddingTop: "100px",
+            backgroundColor: "grey"
+          }}
         >
-          <fieldset>
-            <div className="form-group">
-              <label htmlFor="name">Name</label>
-              <input
-                id="name"
-                name="name"
-                class="form-control"
-                type="text"
-                placeholder="Your name"
-                required
-              />
+          <div
+            style={{
+              backgroundColor: "grey",
+              alignContent: "center",
+              marginLeft: "auto",
+              marginRight: "auto",
+              width: "50em"
+            }}
+          >
+            <div
+              className="card text-white bg-primary mb-3"
+              style={{ maxWidth: "200rem" }}
+            >
+              <div className="card-body">
+                <h4 className="card-title">Contact us!</h4>
+                <ContactForm />
+              </div>
             </div>
-            <div className="form-group">
-              <label htmlFor="email">Email</label>
-              <input
-                id="email"
-                name="email"
-                class="form-control"
-                type="text"
-                placeholder="Your email"
-                required
-              />
-            </div>
-            <div className="form-group">
-              <label htmlFor="message">Message</label>
-              <textarea
-                id="message"
-                name="message"
-                placeholder="Enter your message here"
-                class="form-control"
-                rows="3"
-                required
-              ></textarea>
-            </div>
-
-            <button type="submit" className="btn btn-primary">
-              Submit
-            </button>
-          </fieldset>
-        </form>
+          </div>
+        </div>
       </div>
     );
   }
