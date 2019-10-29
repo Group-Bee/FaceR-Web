@@ -3,7 +3,12 @@ const path = require("path"),
   mongoose = require("mongoose"),
   morgan = require("morgan"),
   bodyParser = require("body-parser"),
-  exampleRouter = require("../routes/examples.server.routes");
+  exampleRouter = require("../routes/examples.server.routes"),
+  nodemailer = require("nodemailer");
+const config = require("./config");
+
+const GMAIL_USER = config.gmail.GMAIL_USER;
+const GMAIL_PASS = config.gmail.GMAIL_PASS;
 
 module.exports.init = () => {
   /* 
@@ -28,11 +33,35 @@ module.exports.init = () => {
   // initialize app
   const app = express();
 
-  // enable request logging for development debugging
-  app.use(morgan("dev"));
-
   // body parsing middleware
   app.use(bodyParser.json());
+
+  // POST route from contact form
+  app.use(express.urlencoded({ extended: false }));
+  app.use(express.static(path.join(__dirname, "public")));
+  app.post("/contact", (req, res) => {
+    var transporter = nodemailer.createTransport({
+      service: "gmail",
+      auth: {
+        user: config.gmail.GMAIL_USER,
+        pass: config.gmail.GMAIL_PASS
+      }
+    });
+    const mailOptions = {
+      from: req.body.email, // sender address
+      to: "curdledazombie@gmail.com", // list of receivers
+      subject: req.body.name + " - " + req.body.email, // Subject line
+      html:
+        req.body.message + "\n Reach " + req.body.name + " at " + req.body.email // plain text body
+    };
+    transporter.sendMail(mailOptions, function(err, info) {
+      if (err) console.log(err);
+      else console.log(info);
+    });
+    res.end();
+  });
+  // enable request logging for development debugging
+  app.use(morgan("dev"));
 
   // add a router
   app.use("/api/example", exampleRouter);
