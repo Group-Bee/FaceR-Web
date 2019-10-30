@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 changed jhanavas readme
+=======
+changed readme
+>>>>>>> f0ede5e51c80a998b7439f4178c0150a7340e575
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 This project contains an example project board meant to showcase how one can be used. The issues posted to it are not real issues.
 
