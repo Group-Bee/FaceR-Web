@@ -23,10 +23,7 @@ export default class Contact extends Component {
               width: "50em"
             }}
           >
-            <div
-              className="card text-white bg-primary mb-3"
-              style={{ maxWidth: "200rem" }}
-            >
+            <div className="card text-white bg-primary mb-3">
               <div className="card-body">
                 <h4 className="card-title">Contact us!</h4>
                 <ContactForm />

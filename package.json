@@ -29,6 +29,7 @@
     "morgan": "^1.9.1",
     "nodemailer": "^6.3.1",
     "nodemon": "^1.19.4",
+    "react-share": "^3.0.1",
     "should": "^13.2.3",
     "supertest": "^4.0.2"
   },

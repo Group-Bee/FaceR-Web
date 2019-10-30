@@ -39,7 +39,7 @@ module.exports.init = () => {
   app.use(express.static(path.join(__dirname, "public")));
 
   // POST route from contact form
-  app.post("/contact", (req, res) => {
+  app.post("/", (req, res) => {
     var transporter = nodemailer.createTransport({
       service: "gmail",
       auth: {

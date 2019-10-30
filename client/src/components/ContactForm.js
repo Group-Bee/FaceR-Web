@@ -6,13 +6,19 @@ export default class ContactForm extends Component {
       <div>
         <form
           className="form-group"
-          action="/contact"
+          action="/"
           id="contact-form"
           method="post"
           role="form"
           onSubmitCapture={() => alert("Message submitted!")}
         >
-          <fieldset>
+          <fieldset
+            style={{
+              margin: "auto",
+              width: "50%",
+              padding: "10px"
+            }}
+          >
             <div className="form-group">
               <label htmlFor="name">Name</label>
               <input
