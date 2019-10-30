@@ -7,7 +7,7 @@ git push origin <your branch>
 Merge your branch to another from remote repository
 git checkout <your branch>
 git pull origin <branch to merge into yours>
-	* should place commit message here
+	* vi text editor asking for commit message should show up here
 git push origin <your branch>
 
 Ex. ~ merge gregBranch into tikibranch on local machine
