@@ -24,3 +24,7 @@ yarn-error.log*
 
 #db password
 /server/config/config.js
+
+#node modules after npm install
+/node_modules/
+/client/node_modules/
