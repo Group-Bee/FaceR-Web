@@ -29,6 +29,18 @@ export default class Footer extends Component {
                 <h1 style={{ color: "white" }}>FaceR</h1>
               </td>
               <td>
+                <button
+                  style={{
+                    width: "100%",
+                    textAlign: "center"
+                  }}
+                  type="button"
+                  class="btn btn-success"
+                >
+                  <h2 style={{ color: "white" }}>support us on kickstarter</h2>
+                </button>
+              </td>
+              <td style={{ paddingLeft: "10%" }}>
                 <FacebookIcon size={32} round={true} />
                 <TwitterIcon size={32} round={true} />
               </td>
