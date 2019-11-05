@@ -31,7 +31,8 @@
     "nodemon": "^1.19.4",
     "react-share": "^3.0.1",
     "should": "^13.2.3",
-    "supertest": "^4.0.2"
+    "supertest": "^4.0.2",
+    "vertical-timeline-component-for-react": "^1.0.6"
   },
   "homepage": "https://github.com/UFWebApps/React_Template_Repo#readme"
 }

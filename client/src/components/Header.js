@@ -23,22 +23,22 @@ export class Header extends Component {
           <div className="collapse navbar-collapse" id="navbarColor01">
             <ul className="navbar-nav mr-auto">
               <li className="nav-item active">
-                <a className="nav-link" href="http://localhost:3000/">
+                <a className="nav-link" href="/">
                   Home <span className="sr-only">(current)</span>
                 </a>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="http://localhost:3000/Features">
+                <a className="nav-link" href="Features">
                   Features
                 </a>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="http://localhost:3000/Product">
+                <a className="nav-link" href="Product">
                   Product
                 </a>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="http://localhost:3000/About">
+                <a className="nav-link" href="About">
                   About
                 </a>
               </li>
