@@ -5,7 +5,7 @@ const path = require("path"),
   bodyParser = require("body-parser"),
   exampleRouter = require("../routes/examples.server.routes"),
   nodemailer = require("nodemailer");
-const config = require("./config");
+const config = require("./config.example");
 
 const GMAIL_USER = config.gmail.GMAIL_USER;
 const GMAIL_PASS = config.gmail.GMAIL_PASS;

@@ -9,6 +9,7 @@
 package-lock.json
 *.log
 *.gz
+yarn.lock
 
 # testing
 /coverage
