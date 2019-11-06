@@ -1,7 +1,6 @@
 import React from "react";
 import Header from "../components/Header";
 import Card from "../components/Card";
-import AboutProduct from "../components/AboutProduct";
 import Timeline from "../components/Timeline"
 import TimelineItem from "../components/TimelineItem"
 import "../App.css";
@@ -22,7 +21,6 @@ function aboutPage() {
           paddingBottom: "100px"
         }}
       >
-        {/* <AboutProduct />  */}
         <div className="jumbotron">
           <Timeline>
             <TimelineItem
@@ -37,15 +35,7 @@ function aboutPage() {
                 reprehenderit laborum fugiat dolore in elit. Adipisicing do qui duis Lorem
                 est.
               </p>
-              <p>
-                Est incididunt sint eu minim dolore mollit velit velit commodo ex nulla
-                exercitation. Veniam velit adipisicing anim excepteur nostrud magna
-                nostrud aliqua dolor. Sunt aute est duis ut nulla officia irure
-                reprehenderit laborum fugiat dolore in elit. Adipisicing do qui duis Lorem
-                est.
-              </p>
-              <p>
-                Est incididunt sint eu minim dolore mollit velit velit commodo ex nulla
+              <p>Est incididunt sint eu minim dolore mollit velit velit commodo ex nulla
                 exercitation. Veniam velit adipisicing anim excepteur nostrud magna
                 nostrud aliqua dolor. Sunt aute est duis ut nulla officia irure
                 reprehenderit laborum fugiat dolore in elit. Adipisicing do qui duis Lorem
@@ -65,20 +55,6 @@ function aboutPage() {
               <h3>Title, Company</h3>
               <h4>Subtitle</h4>
               <p>Est incididunt sint eu minim dolore mollit velit velit commodo ex nulla
-                exercitation. Veniam velit adipisicing anim excepteur nostrud magna
-                nostrud aliqua dolor. Sunt aute est duis ut nulla officia irure
-                reprehenderit laborum fugiat dolore in elit. Adipisicing do qui duis Lorem
-                est.
-              </p>
-              <p>
-                Est incididunt sint eu minim dolore mollit velit velit commodo ex nulla
-                exercitation. Veniam velit adipisicing anim excepteur nostrud magna
-                nostrud aliqua dolor. Sunt aute est duis ut nulla officia irure
-                reprehenderit laborum fugiat dolore in elit. Adipisicing do qui duis Lorem
-                est.
-              </p>
-              <p>
-                Est incididunt sint eu minim dolore mollit velit velit commodo ex nulla
                 exercitation. Veniam velit adipisicing anim excepteur nostrud magna
                 nostrud aliqua dolor. Sunt aute est duis ut nulla officia irure
                 reprehenderit laborum fugiat dolore in elit. Adipisicing do qui duis Lorem
@@ -110,20 +86,6 @@ function aboutPage() {
                 reprehenderit laborum fugiat dolore in elit. Adipisicing do qui duis Lorem
                 est.
               </p>
-              <p>
-                Est incididunt sint eu minim dolore mollit velit velit commodo ex nulla
-                exercitation. Veniam velit adipisicing anim excepteur nostrud magna
-                nostrud aliqua dolor. Sunt aute est duis ut nulla officia irure
-                reprehenderit laborum fugiat dolore in elit. Adipisicing do qui duis Lorem
-                est.
-              </p>
-              <p>
-                Est incididunt sint eu minim dolore mollit velit velit commodo ex nulla
-                exercitation. Veniam velit adipisicing anim excepteur nostrud magna
-                nostrud aliqua dolor. Sunt aute est duis ut nulla officia irure
-                reprehenderit laborum fugiat dolore in elit. Adipisicing do qui duis Lorem
-                est.
-              </p>
             </TimelineItem>
             <TimelineItem
               key="004"
@@ -132,13 +94,6 @@ function aboutPage() {
             >
               <h3>Title, Company</h3>
               <h4>Subtitle</h4>
-              <p>
-                Est incididunt sint eu minim dolore mollit velit velit commodo ex nulla
-                exercitation. Veniam velit adipisicing anim excepteur nostrud magna
-                nostrud aliqua dolor. Sunt aute est duis ut nulla officia irure
-                reprehenderit laborum fugiat dolore in elit. Adipisicing do qui duis Lorem
-                est.
-              </p>
               <p>
                 Est incididunt sint eu minim dolore mollit velit velit commodo ex nulla
                 exercitation. Veniam velit adipisicing anim excepteur nostrud magna
