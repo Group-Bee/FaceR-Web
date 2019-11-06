@@ -2,6 +2,7 @@ import React from "react";
 import Header from "../components/Header";
 import Card from "../components/Card";
 import AboutProduct from "../components/AboutProduct";
+import TestimonialsCarousel from "../components/TestimonialsCarousel";
 import "../App.css";
 import "../bootstrap.min.css";
 
@@ -21,6 +22,7 @@ function aboutPage() {
         }}
       >
         <AboutProduct />
+        <TestimonialsCarousel />
         <table className="table table-hover">
           <thead>
             <tr>
