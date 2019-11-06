@@ -9,7 +9,8 @@
 package-lock.json
 *.log
 *.gz
-
+yarn.lock
+/client/src/node_modules
 # testing
 /coverage
 

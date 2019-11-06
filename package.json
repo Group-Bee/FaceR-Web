@@ -31,6 +31,7 @@
     "nodemailer": "^6.3.1",
     "nodemon": "^1.19.4",
     "react-bootstrap": "^1.0.0-beta.14",
+    "react-payment": "^0.1.8",
     "react-share": "^3.0.1",
     "should": "^13.2.3",
     "supertest": "^4.0.2"
