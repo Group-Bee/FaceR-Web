@@ -2,9 +2,15 @@
 
 # dependencies
 /node_modules
+/client/node_modules
+/client/package-lock.json
 /.pnp
 .pnp.js
-
+package-lock.json
+*.log
+*.gz
+yarn.lock
+/client/src/node_modules
 # testing
 /coverage
 
