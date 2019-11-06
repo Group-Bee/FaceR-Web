@@ -13,7 +13,7 @@ import "../bootstrap.min.css";
 function aboutPage() {
   return (
     <div className="App">
-      <header className="App-header">
+      <header className="App-header" id="nav">
         <Header />
       </header>
       <div
