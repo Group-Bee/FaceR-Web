@@ -3,6 +3,7 @@ import Header from "../components/Header";
 import Card from "../components/Card";
 import AboutProduct from "../components/AboutProduct";
 import TestimonialsCarousel from "../components/TestimonialsCarousel";
+import Footer from "../components/Footer";
 import "../App.css";
 import "../bootstrap.min.css";
 
@@ -42,6 +43,7 @@ function aboutPage() {
           </thead>
         </table>
       </div>
+      <Footer />
     </div>
   );
 }
