@@ -6,6 +6,7 @@ import TestimonialsCarousel from "../components/TestimonialsCarousel";
 import Footer from "../components/Footer";
 import Timeline from "../components/Timeline"
 import TimelineItem from "../components/TimelineItem"
+import FutureLocks from "../components/FutureLocks";
 import "../App.css";
 import "../bootstrap.min.css";
 
@@ -108,6 +109,8 @@ function aboutPage() {
               </p>
             </TimelineItem>
           </Timeline>
+
+          <FutureLocks />
         </div >
         <table className="table table-hover">
           <thead>
