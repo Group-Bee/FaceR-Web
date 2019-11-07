@@ -18,22 +18,12 @@
   color: white;
 }
 
+#nav {
+  position: fixed;
+  width: 100%;
+  z-index: 9999;
+}
+
 .App-link {
   color: #09d3ac;
-}
-
-.Timeline-item {
-  display: flex;
-  justify-content: flex-end;
-  padding-right: 30px;
-  position: relative;
-  margin: 10px 0;
-  width: 50%;
-}
-
-.Timeline-item:nth-child(odd) {
-  align-self: flex-end;
-    justify-content: flex-start;
-    padding-left: 30px;
-    padding-right: 0;
 }
