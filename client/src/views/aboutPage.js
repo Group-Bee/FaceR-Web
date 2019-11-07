@@ -7,6 +7,7 @@ import Footer from "../components/Footer";
 import Timeline from "../components/Timeline"
 import TimelineItem from "../components/TimelineItem"
 import FutureLocks from "../components/FutureLocks";
+import LearnMore from "../components/LearnMore";
 import "../App.css";
 import "../bootstrap.min.css";
 
@@ -111,6 +112,8 @@ function aboutPage() {
           </Timeline>
 
           <FutureLocks />
+          
+          <LearnMore />
         </div >
         <table className="table table-hover">
           <thead>
