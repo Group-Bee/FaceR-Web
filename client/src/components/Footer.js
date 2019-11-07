@@ -37,7 +37,7 @@ export default class Footer extends Component {
                   type="button"
                   class="btn btn-success"
                 >
-                  <h2 style={{ color: "white" }}>support us on kickstarter</h2>
+                  <h2 style={{ color: "white" }} onclick="window.location.href='https://www.kickstarter.com';return false;">support us on kickstarter</h2>
                 </button>
               </td>
               <td style={{ paddingLeft: "10%" }}>

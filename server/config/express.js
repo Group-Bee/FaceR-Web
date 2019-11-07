@@ -7,67 +7,67 @@ const path = require("path"),
   nodemailer = require("nodemailer");
 const config = require("./config.example");
 
-const GMAIL_USER = config.gmail.GMAIL_USER;
-const GMAIL_PASS = config.gmail.GMAIL_PASS;
+// const GMAIL_USER = config.gmail.GMAIL_USER;
+// const GMAIL_PASS = config.gmail.GMAIL_PASS;
 
-module.exports.init = () => {
-  /* 
-        connect to database
-        - reference README for db uri
-    */
-  mongoose
-    .connect(process.env.DB_URI || require("./config").db.uri, {
-      useNewUrlParser: true,
-      useUnifiedTopology: true
-    })
-    .then(() => {
-      console.log("connection to db established");
-    })
-    .catch(err => {
-      console.log("db error ${err.message}");
-      process.exit(-1);
-    });
-  mongoose.set("useCreateIndex", true);
-  mongoose.set("useFindAndModify", false);
+ module.exports.init = () => {
+//   /* 
+//         connect to database
+//         - reference README for db uri
+//     */
+//   mongoose
+//     .connect(process.env.DB_URI || require("./config.example").db.uri, {
+//       useNewUrlParser: true,
+//       useUnifiedTopology: true
+//     })
+//     .then(() => {
+//       console.log("connection to db established");
+//     })
+//     .catch(err => {
+//       console.log("db error ${err.message}");
+//       process.exit(-1);
+//     });
+//   mongoose.set("useCreateIndex", true);
+//   mongoose.set("useFindAndModify", false);
 
-  // initialize app
-  const app = express();
+//   // initialize app
+//   const app = express();
 
-  // body parsing middleware
-  app.use(bodyParser.json());
-  app.use(express.urlencoded({ extended: false }));
-  app.use(express.static(path.join(__dirname, "public")));
+//   // body parsing middleware
+//   app.use(bodyParser.json());
+//   app.use(express.urlencoded({ extended: false }));
+//   app.use(express.static(path.join(__dirname, "public")));
 
-  // POST route from contact form
-  app.post("/", (req, res) => {
-    var transporter = nodemailer.createTransport({
-      service: "gmail",
-      auth: {
-        user: config.gmail.GMAIL_USER,
-        pass: config.gmail.GMAIL_PASS
-      }
-    });
-    const mailOptions = {
-      from: req.body.email, // sender address
-      to: "curdledazombie@gmail.com", // list of receivers
-      subject: req.body.name + " - " + req.body.email, // Subject line
-      html:
-        req.body.message +
-        "<li> Reach " +
-        req.body.name +
-        " at " +
-        req.body.email +
-        "</li>" // plain text body
-    };
-    transporter.sendMail(mailOptions, function(err, info) {
-      if (err) console.log(err);
-      else console.log(info);
-    });
-    res.redirect("/");
-  });
+//   // POST route from contact form
+//   app.post("/", (req, res) => {
+//     var transporter = nodemailer.createTransport({
+//       service: "gmail",
+//       auth: {
+//         user: config.gmail.GMAIL_USER,
+//         pass: config.gmail.GMAIL_PASS
+//       }
+//     });
+//     const mailOptions = {
+//       from: req.body.email, // sender address
+//       to: "curdledazombie@gmail.com", // list of receivers
+//       subject: req.body.name + " - " + req.body.email, // Subject line
+//       html:
+//         req.body.message +
+//         "<li> Reach " +
+//         req.body.name +
+//         " at " +
+//         req.body.email +
+//         "</li>" // plain text body
+//     };
+//     transporter.sendMail(mailOptions, function(err, info) {
+//       if (err) console.log(err);
+//       else console.log(info);
+//     });
+//     res.redirect("/");
+//   });
 
-  // enable request logging for development debugging
-  app.use(morgan("dev"));
+//   // enable request logging for development debugging
+//   app.use(morgan("dev"));
 
   // add a router
   app.use("/api/example", exampleRouter);
