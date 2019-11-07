@@ -27,7 +27,7 @@ export class LearnMore extends Component {
                   type="button"
                   class="btn btn-success"
                 >
-                  <h2 style={{ color: "white" }}>Sign up for our Mailing List!</h2>
+                  <h2 style={{ color: "white" }}><a href="mailto: testemail@gmail.com">Sign up for our Mailing List!</a></h2>
                 </button>
               </td>
 
@@ -40,7 +40,7 @@ export class LearnMore extends Component {
                   type="button"
                   class="btn btn-success"
                 >
-                  <h2 style={{ color: "white" }}>Support us on kickstarter!</h2>
+                  <h2 style={{ color: "white" }}><a href="kickstarter.com">Support us on kickstarter!</a></h2>
                 </button>
               </td>
 
