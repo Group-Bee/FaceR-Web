@@ -1,9 +1,31 @@
 import React, { Component } from "react";
+import Cart from './Cart'
 
 export class Header extends Component {
+  constructor(){
+    super()
+    this.state = {
+      showCart: false
+    }
+  }
+  
+  showCart = () =>{
+    this.setState({
+      showCart: true
+    })
+    document.addEventListener('click', this.hideCart)
+  }
+
+  hideCart = () =>{
+    this.setState({
+      showCart: false
+    })
+    document.removeEventListener('click', this.hideCart)
+  }
+
   render() {
     return (
-      <div style={{ position: "fixed", top: "0", width: "100%" }}>
+      <div style={{ position: "fixed", top: "0", width: "100%", zIndex: '0' }}>
         <nav className="navbar navbar-expand-lg navbar-dark bg-primary">
           <a className="navbar-brand">
             FaceR
@@ -47,6 +69,11 @@ export class Header extends Component {
                   Pay
                 </a>
               </li>
+              </ul>
+              <ul className = "navbar-nav ml-auto">
+              <div className = "cont">
+              <Cart/>
+              </div>
             </ul>
           </div>
         </nav>

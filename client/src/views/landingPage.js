@@ -11,7 +11,7 @@ function landingPage() {
   return (
     <div className="App">
       <header className="App-header" id="nav">
-        <Header />
+        <Header/>
       </header>
       <div
         className="Body"
