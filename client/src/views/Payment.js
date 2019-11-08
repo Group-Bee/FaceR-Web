@@ -2,8 +2,6 @@ import React, { Component } from 'react'
 import Header from "../components/Header"
 import Footer from "../components/Footer"
 import PayEntry from "../components/PayEntry"
-import Stripe from 'react-stripe-checkout'
-//import { CardForm } from 'react-payment';
 
 let loadedStripe = false;
 
@@ -22,7 +20,7 @@ class Payment extends Component {
         let render_elements = elements.map(elem => {
             console.log('render element', elements.length)
             return (
-                <div>
+                <div className="test">
                     <PayEntry/>
                     <button type="button" className="btn btn-primary" style={{float: 'right', transform: 'translateY(-500%)'}}>
                         Add to Cart
@@ -47,7 +45,9 @@ class Payment extends Component {
                 <br></br>
                 <br></br>
                 <br></br>
+                <div>
                 {render_elements}
+                </div>
                 <Footer />
             </div>
         )

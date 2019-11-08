@@ -56,3 +56,7 @@ button:focus{
   margin-left: -40px;
   /*visibility-sensor-props: { partialVisibility: true, offset: { bottom: 50 } }
 */}
+
+.test{
+  border-bottom: thin white;
+}
