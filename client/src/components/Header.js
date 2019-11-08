@@ -6,7 +6,7 @@ export class Header extends Component {
       <div style={{ position: "fixed", top: "0", width: "100%" }}>
         <nav className="navbar navbar-expand-lg navbar-dark bg-primary">
           <a className="navbar-brand">
-            Navbar
+            FaceR
           </a>
           <button
             className="navbar-toggler"
