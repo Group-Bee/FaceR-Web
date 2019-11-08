@@ -1,9 +1,31 @@
 import React, { Component } from "react";
+import Dropdown from 'react-dropdown'
 
 export class Header extends Component {
+  constructor(){
+    super()
+    this.state = {
+      showCart: false
+    }
+  }
+  
+  showCart = () =>{
+    this.setState({
+      showCart: true
+    })
+    document.addEventListener('click', this.hideCart)
+  }
+
+  hideCart = () =>{
+    this.setState({
+      showCart: false
+    })
+    document.removeEventListener('click', this.hideCart)
+  }
+
   render() {
     return (
-      <div style={{ position: "fixed", top: "0", width: "100%" }}>
+      <div style={{ position: "fixed", top: "0", width: "100%", zIndex: '0' }}>
         <nav className="navbar navbar-expand-lg navbar-dark bg-primary">
           <a className="navbar-brand">
             Navbar
@@ -47,6 +69,31 @@ export class Header extends Component {
                   Pay
                 </a>
               </li>
+              </ul>
+              <ul className = "navbar-nav ml-auto">
+              <div className = "container">
+              <li className="nav-right" style={{zIndex: '2'}}>
+                <div style={{backgroundColor: '#1a1a1a'}}>
+                <button 
+                style={{backgroundColor: '#1a1a1a', color: 'white'}}
+                onClick={this.showCart.bind(this)}
+                >
+                  <i className="fa fa-shopping-basket fa-2x" aria-hidden="true"></i>
+                  &nbsp;&nbsp;&nbsp;<i className="fa fa-caret-down"></i></button>
+                  </div>
+              </li>
+              {this.state.showCart ?
+              (<div className="mydrop" style={{backgroundColor: 'white', color: 'black', position: 'absolute', zIndex: '100'}}>
+                <br></br>
+                <ul style={{listStyle: 'none'}}>
+                  <li className="item">Cart item 1 ...... price</li>
+                  <li className="item">Cart item 2 ...... price</li>
+                  <li className="item">Cart item 3 ...... price</li>
+                </ul>
+              </div>)
+            :  (null)
+            }
+              </div>
             </ul>
           </div>
         </nav>
