@@ -48,15 +48,6 @@ class Payment extends Component {
                 <br></br>
                 <br></br>
                 {render_elements}
-                <Stripe
-                    stripeKey="pk_test_ANdQ4Fctiutj9s6qvco8YrQT00oZrW6PbQ"
-                    token={handleToken}
-                    billingAddress
-                    shippingAddress
-                    amount={100}
-                    style={{backgroundcolor: "grey", zIndex: '-2' }}
-                    className="stripe"
-                />   
                 <Footer />
             </div>
         )

@@ -18,7 +18,7 @@ code {
 }
 
 .stripe{
-  float: left;
+  width: 100%;
 }
 
 button{
@@ -39,13 +39,20 @@ button:focus{
 
 .mydrop{
   transform: translateX(-30%);
-  display:inline-block;
+  display:flex;
   white-space: nowrap;
-  margin-left: auto;
-  text-align: left;
-
+  margin-left: -155px;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
 }
 
-.test{
+.cont{
+  display: flex;
+  text-align: center;
+  border-radius: 3px;
+}
+.item{
+  text-align: left;
+  margin-left: -40px;
   /*visibility-sensor-props: { partialVisibility: true, offset: { bottom: 50 } }
 */}
