@@ -1,16 +1,17 @@
 import React from "react";
-import Header from "./components/Header";
-import Card from "./components/Card";
-import AboutProduct from "./components/AboutProduct";
-import "./App.css";
-import "./bootstrap.min.css";
+import Header from "../components/Header";
+import Card from "../components/Card";
+import AboutProduct from "../components/AboutProduct";
+import Footer from "../components/Footer";
+import "../App.css";
+import "../bootstrap.min.css";
 
 //changed
-function App() {
+function landingPage() {
   return (
     <div className="App">
-      <header className="App-header">
-        <Header />
+      <header className="App-header" id="nav">
+        <Header/>
       </header>
       <div
         className="Body"
@@ -21,6 +22,7 @@ function App() {
         }}
       >
         <iframe
+          title="productVid"
           width="100%"
           height="780"
           src="https://www.youtube.com/embed/1XZZpf6yReg?autoplay=1"
@@ -49,8 +51,9 @@ function App() {
           </thead>
         </table>
       </div>
+      <Footer />
     </div>
   );
 }
 
-export default App;
+export default landingPage;
