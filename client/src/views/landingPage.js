@@ -11,7 +11,7 @@ function landingPage() {
   return (
     <div className="App">
       <header className="App-header" id="nav">
-        <Header/>
+        <Header />
       </header>
       <div
         className="Body"
@@ -25,7 +25,7 @@ function landingPage() {
           title="productVid"
           width="100%"
           height="780"
-          src="https://www.youtube.com/embed/1XZZpf6yReg?autoplay=1"
+          src="https://www.youtube.com/embed/1XZZpf6yReg?&rel=0&loop=1&controls=0&autoplay=1"
           frameborder="0"
           allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
           allowfullscreen
