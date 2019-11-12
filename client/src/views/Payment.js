@@ -20,9 +20,9 @@ class Payment extends Component {
         let render_elements = elements.map(elem => {
             console.log('render element', elements.length)
             return (
-                <div className="test" style={{paddingRight: '10%', paddingLeft: '10%'}}>
+                <div className='test' style={{paddingRight: '10%', paddingLeft: '10%'}}>
                     <PayEntry/>
-                    <button type="button" className="btn btn-primary" style={{float: 'right', transform: 'translateY(-500%)'}}>
+                    <button type='button' className='btn btn-primary' style={{float: 'right', transform: 'translateY(-500%)'}}>
                         Add to Cart
                     </button>
                 </div>)

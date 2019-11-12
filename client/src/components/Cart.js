@@ -29,14 +29,14 @@ class Cart extends Component {
     }
     return (
       <div>
-        <li className="nav-right" style={{ zIndex: "2" }}>
-          <div style={{ backgroundColor: "#1a1a1a" }}>
+        <li className='nav-right' style={{ zIndex: '2' }}>
+          <div style={{ backgroundColor: '#1a1a1a' }}>
             <button
-              style={{ backgroundColor: "#1a1a1a", color: "white" }}
+              style={{ backgroundColor: '#1a1a1a', color: 'white' }}
               onClick={this.showCart.bind(this)}
             >
-              <i className="fa fa-shopping-cart fa-2x" aria-hidden="true"></i>
-              &nbsp;&nbsp;&nbsp;<i className="fa fa-caret-down"></i>
+              <i className='fa fa-shopping-cart fa-2x' aria-hidden='true'></i>
+              &nbsp;&nbsp;&nbsp;<i className='fa fa-caret-down'></i>
             </button>
           </div>
         </li>
