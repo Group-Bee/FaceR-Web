@@ -5,7 +5,14 @@ import NotFoundPage from "./views/notFoundPage";
 import AboutPage from "./views/aboutPage";
 import Payment from "./views/Payment"
 
-function App() {
+class App extends React.Component {
+  constructor(props){
+    super(props)
+    this.state = {
+      incart: []
+    }
+  }
+  render(){
   return (
     <BrowserRouter>
       <Switch>
@@ -16,6 +23,7 @@ function App() {
       </Switch>
     </BrowserRouter>
   );
+}
 }
 
 export default App;

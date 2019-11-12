@@ -5,7 +5,7 @@ export class Header extends Component {
   constructor(){
     super()
     this.state = {
-      showCart: false
+      showCart: false,
     }
   }
   
@@ -72,7 +72,7 @@ export class Header extends Component {
               </ul>
               <ul className = "navbar-nav ml-auto">
               <div className = "cont">
-              <Cart/>
+              <Cart />
               </div>
             </ul>
           </div>

@@ -13,22 +13,6 @@ class Payment extends Component {
             console.log({ token, addresses })
         }
 
-        let elements = []
-        for (let i = 0; i < 6; i++) {
-            elements.push(i)
-        }
-        let render_elements = elements.map(elem => {
-            console.log('render element', elements.length)
-            return (
-                <div className="test">
-                    <PayEntry/>
-                    <button type="button" className="btn btn-primary" style={{float: 'right', transform: 'translateY(-500%)'}}>
-                        Add to Cart
-                    </button>
-                </div>)
-        }
-        )
-
         return (
             <div className="App bg-dark">
                 <header className="App-header">
@@ -46,7 +30,7 @@ class Payment extends Component {
                 <br></br>
                 <br></br>
                 <div>
-                {render_elements}
+                <PayEntry></PayEntry>
                 </div>
                 <Footer />
             </div>
