@@ -14,19 +14,15 @@ class App extends React.Component {
   }
 
   addtoCart(element) {
-    console.log('add element, app.js', element, this.state.incart)
     this.setState({
       incart: this.state.incart.concat(element)
     })
-    console.log('incart, app.js', this.state.incart)
   }
 
   removefromCart(element){
-    console.log('remove element, app.js', element, element.id, this.state.incart)
     this.setState({
       incart: this.state.incart.filter(elem=>{ return (elem.id != element.id)})
     })
-    console.log('incart, app.js', this.state.incart)
   }
 
   render() {
