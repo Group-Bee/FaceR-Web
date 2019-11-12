@@ -7,7 +7,8 @@ import "../App.css";
 import "../bootstrap.min.css";
 
 //changed
-function landingPage() {
+class landingPage extends React.Component {
+  render(){
   return (
     <div className="App">
       <header className="App-header" id="nav">
@@ -56,6 +57,7 @@ function landingPage() {
       <Footer />
     </div>
   );
+}
 }
 
 export default landingPage;
