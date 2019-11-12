@@ -31,7 +31,7 @@ const config = require("./config.example");
 //   mongoose.set("useFindAndModify", false);
 
 //   // initialize app
-//   const app = express();
+   const app = express();
 
 //   // body parsing middleware
 //   app.use(bodyParser.json());

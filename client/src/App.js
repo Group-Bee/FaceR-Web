@@ -5,17 +5,39 @@ import NotFoundPage from "./views/notFoundPage";
 import AboutPage from "./views/aboutPage";
 import Payment from "./views/Payment"
 
-function App() {
-  return (
-    <BrowserRouter>
-      <Switch>
-        <Route path="/" exact component={LandingPage} />
-        <Route path="/About" exact component={AboutPage} />
-        <Route path="/Pay" exact component={Payment}/>
-        <Route component={NotFoundPage} />
-      </Switch>
-    </BrowserRouter>
-  );
+class App extends React.Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      incart: []
+    }
+  }
+
+  addtoCart(element) {
+    this.setState({
+      incart: this.state.incart.concat(element)
+    })
+  }
+
+  removefromCart(element){
+    this.setState({
+      incart: this.state.incart.filter(elem=>{ return (elem.id != element.id)})
+    })
+  }
+
+  render() {
+    console.log('re-rendering')
+    return (
+      <BrowserRouter>
+        <Switch>
+          <Route exact path="/" render={(props) => <LandingPage incart={this.state.incart} add={this.addtoCart.bind(this)} remove={this.removefromCart.bind(this)}/>} />
+          <Route exact path="/About" render={(props) => <AboutPage incart={this.state.incart} add={this.addtoCart.bind(this)} remove={this.removefromCart.bind(this)}/>} />
+          <Route exact path="/Pay" render={(props) => <Payment incart={this.state.incart} add={this.addtoCart.bind(this)} remove={this.removefromCart.bind(this)}/>} />
+          <Route exact component={NotFoundPage} />
+        </Switch>
+      </BrowserRouter>
+    );
+  }
 }
 
 export default App;

@@ -3,57 +3,59 @@ import Stripe from "react-stripe-checkout";
 
 class Cart extends Component {
   constructor() {
-    super();
+    super()
     this.state = {
       showCart: false
-    };
+    }
   }
 
   showCart = () => {
     this.setState({
       showCart: true
-    });
-    document.addEventListener("click", this.hideCart);
-  };
+    })
+    document.addEventListener('click', this.hideCart)
+  }
 
   hideCart = () => {
     this.setState({
       showCart: false
-    });
-    document.removeEventListener("click", this.hideCart);
-  };
+    })
+    document.removeEventListener('click', this.hideCart)
+  }
 
   render() {
     function handleToken(token, addresses) {
-      console.log({ token, addresses });
+      console.log({ token, addresses })
     }
+    console.log('incart cart.js', this.props.incart.length)
+
+    let dropdown = this.props.incart.map(element =>{
+      return(
+              <li className="item" onClick={this.props.remove.bind(this, element)}>
+                <p style={{textAlign:'center'}} className="p-item">
+                  <span style={{float: 'left'}}>{element.name}</span>
+                  &emsp;......&emsp;
+                  <span style={{float: 'right'}}>{element.price}</span>
+                  </p>
+            </li>
+      )
+    })
     return (
       <div>
-        <li className='nav-right' style={{ zIndex: '2' }}>
+        <li className="nav-right" style={{ zIndex: '2' }}>
           <div style={{ backgroundColor: '#1a1a1a' }}>
             <button
               style={{ backgroundColor: '#1a1a1a', color: 'white' }}
               onClick={this.showCart.bind(this)}
             >
-              <i className='fa fa-shopping-cart fa-2x' aria-hidden='true'></i>
-              &nbsp;&nbsp;&nbsp;<i className='fa fa-caret-down'></i>
-            </button>
+              <i className='fa fa-shopping-cart fa-2x aria-hidden="true"></i>
+              &nbsp;&nbsp;&nbsp;<i className="fa fa-caret-down"></i></button>
           </div>
         </li>
-        {this.state.showCart ? (
-          <div
-            className="mydrop"
-            style={{
-              backgroundColor: "white",
-              color: "black",
-              position: "absolute",
-              zIndex: "100"
-            }}
-          >
-            <ul className="myul" style={{ listStyle: "none" }}>
-              <li className="item">Cart item 1fbhfrhhrrhrhrh ...... price</li>
-              <li className="item">Cart item 2 ...... price</li>
-              <li className="item">Cart item 3 ...... price</li>
+        {(this.state.showCart && this.props.incart.length != 0) ?
+          (<div className="mydrop" style={{ backgroundColor: 'white', color: 'black', position: 'absolute', zIndex: '100' }}>
+            <ul className="myul" style={{ listStyle: 'none' }}>
+              {dropdown}
               <li className="item">
                 <Stripe
                   stripeKey="pk_test_ANdQ4Fctiutj9s6qvco8YrQT00oZrW6PbQ"
@@ -61,15 +63,15 @@ class Cart extends Component {
                   billingAddress
                   shippingAddress
                   amount={100}
-                  style={{ backgroundcolor: "grey", zIndex: "-2" }}
+                  style={{ backgroundcolor: "grey", zIndex: '-2' }}
                   className="stripe"
                 />
               </li>
             </ul>
-          </div>
-        ) : null}
-      </div>
-    );
+          </div>)
+          : (null)
+        }</div>
+    )
   }
 }
 

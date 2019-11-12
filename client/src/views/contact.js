@@ -7,7 +7,7 @@ export default class Contact extends Component {
   render() {
     return (
       <div>
-        <Header />
+        <Header  incart={this.props.incart} add={this.props.add.bind(this)}  remove={this.props.remove.bind(this)}/>
         <div
           style={{
             paddingTop: "100px",

@@ -9,30 +9,16 @@ class Payment extends Component {
 
 
     render = function () {
+        const incart = this.props
+
         function handleToken(token, addresses) {
             console.log({ token, addresses })
         }
 
-        let elements = []
-        for (let i = 0; i < 6; i++) {
-            elements.push(i)
-        }
-        let render_elements = elements.map(elem => {
-            console.log('render element', elements.length)
-            return (
-                <div className='test' style={{paddingRight: '10%', paddingLeft: '10%'}}>
-                    <PayEntry/>
-                    <button type='button' className='btn btn-primary' style={{float: 'right', transform: 'translateY(-500%)'}}>
-                        Add to Cart
-                    </button>
-                </div>)
-        }
-        )
-
         return (
             <div className="App bg-dark">
                 <header className="App-header">
-                    <Header />
+                    <Header  incart={this.props.incart} add={this.props.add.bind(this)} remove={this.props.remove.bind(this)}/>
                 </header>
                 <div style={{ height: "90px", backgroundColor: '#1a1a1a' }}>
                     Heaare
@@ -46,7 +32,7 @@ class Payment extends Component {
                 <br></br>
                 <br></br>
                 <div>
-                {render_elements}
+                    <PayEntry incart={this.props.incart} add={this.props.add.bind(this)}></PayEntry>
                 </div>
                 <Footer />
             </div>
