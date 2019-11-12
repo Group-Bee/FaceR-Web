@@ -23,7 +23,7 @@ class Payment extends Component {
                 <div style={{ height: "90px", backgroundColor: '#1a1a1a' }}>
                     Heaare
                 </div>
-                <div className="bg-dartrk" style={{ float: 'left', width: '100%' }}>
+                <div className="bg-dartrk" style={{paddingTop: '2%', paddingLeft: '10%', float: 'left', width: '100%' }}>
                     <h1 style={{ float: 'left', color: 'white' }}>Locks</h1>
                 </div>
                 <div className="bg-dark" style={{ height: '50px' }}>
