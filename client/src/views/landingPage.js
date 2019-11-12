@@ -16,20 +16,22 @@ function landingPage() {
       <div
         className="Body"
         style={{
-          paddingTop: "100px",
+          paddingTop: "0px",
           backgroundColor: "black",
           paddingBottom: "100px"
         }}
-      >
-        <iframe
-          title="productVid"
-          width="100%"
-          height="780"
-          src="https://www.youtube.com/embed/1XZZpf6yReg?&rel=0&loop=1&controls=0&autoplay=1"
-          frameborder="0"
-          allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-          allowfullscreen
-        ></iframe>
+        >
+          <p className="lead" style={{width: "100%", height: '900px', position: "relative", top: "0", zIndex: '0', marginBottom: "-100px"}}>
+            <iframe
+            title="productVid"
+            width= '100%'
+            height= '100%'
+            src="https://www.youtube.com/embed/1XZZpf6yReg?&rel=0&loop=1&controls=0&autoplay=1"
+            frameborder="0"
+            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+            ></iframe>
+          </p>
 
         <AboutProduct />
         <table className="table table-hover">
