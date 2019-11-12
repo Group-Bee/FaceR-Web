@@ -7,7 +7,7 @@ export default class Footer extends Component {
   render() {
     return (
       <div>
-        <div className="jumbotron" style={{ backgroundColor: "#1a1a1a" }}>
+        <div className="jumbotron" style={{ backgroundColor: '#1a1a1a', marginBottom:'-100px'}}> 
           <h1 style={{ color: "white" }}>Contact us!</h1>
           <br></br>
           <ContactForm />

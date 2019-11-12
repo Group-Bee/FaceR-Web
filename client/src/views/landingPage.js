@@ -16,12 +16,12 @@ function landingPage() {
       <div
         className="Body"
         style={{
-          paddingTop: "0px",
-          backgroundColor: "black",
-          paddingBottom: "100px"
+          paddingTop: '0px',
+          backgroundColor: 'black',
+          paddingBottom: '20px'
         }}
         >
-          <p className="lead" style={{width: "100%", height: '900px', position: "relative", top: "0", zIndex: '0', marginBottom: "-100px"}}>
+          <p className="lead" style={{width: '100%', height: '900px', position: 'relative', zIndex: '0', marginBottom: '-100px'}}>
             <iframe
             title="productVid"
             width= '100%'
