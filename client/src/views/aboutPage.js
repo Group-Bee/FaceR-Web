@@ -12,11 +12,12 @@ import "../App.css";
 import "../bootstrap.min.css";
 
 //changed
-function aboutPage() {
+class aboutPage extends React.Component {
+  render(){
   return (
     <div className="App">
       <header className="App-header" id="nav">
-        <Header incart={this.props.incart} add={this.props.add.bind(this)}/>
+        <Header incart={this.props.incart} add={this.props.add.bind(this)} remove={this.props.remove.bind(this)}/>
       </header>
       <div
         className="Body"
@@ -137,6 +138,7 @@ function aboutPage() {
       <Footer />
     </div>
   );
+}
 }
 
 export default aboutPage;

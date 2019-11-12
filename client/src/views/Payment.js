@@ -18,7 +18,7 @@ class Payment extends Component {
         return (
             <div className="App bg-dark">
                 <header className="App-header">
-                    <Header  incart={this.props.incart} add={this.props.add.bind(this)}/>
+                    <Header  incart={this.props.incart} add={this.props.add.bind(this)} remove={this.props.remove.bind(this)}/>
                 </header>
                 <div style={{ height: "90px", backgroundColor: '#1a1a1a' }}>
                     Heaare

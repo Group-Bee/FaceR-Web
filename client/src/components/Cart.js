@@ -24,16 +24,20 @@ class Cart extends Component {
   }
 
   render() {
-    console.log('render cart')
     function handleToken(token, addresses) {
       console.log({ token, addresses })
     }
     console.log('incart cart.js', this.props.incart.length)
 
     let dropdown = this.props.incart.map(element =>{
-      console.log('element inside cart.js', element)
       return(
-              <li className="item"><p style={{textAlign:'center'}} className="p-item"><span style={{float: 'left'}}>{element.name}</span>...... <span style={{float: 'right'}}>{element.price}</span></p></li>
+              <li className="item" onClick={this.props.remove.bind(this, element)}>
+                <p style={{textAlign:'center'}} className="p-item">
+                  <span style={{float: 'left'}}>{element.name}</span>
+                  &emsp;......&emsp;
+                  <span style={{float: 'right'}}>{element.price}</span>
+                  </p>
+            </li>
       )
     })
     return (

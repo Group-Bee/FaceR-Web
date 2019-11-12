@@ -52,7 +52,7 @@ export class Header extends Component {
               </ul>
               <ul className = "navbar-nav ml-auto">
               <div className = "cont">
-              <Cart  incart={this.props.incart} add={this.props.add.bind(this)}/>
+              <Cart  incart={this.props.incart} add={this.props.add.bind(this)} remove={this.props.remove.bind(this)}/>
               </div>
             </ul>
           </div>

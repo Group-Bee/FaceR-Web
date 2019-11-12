@@ -40,7 +40,7 @@ button:focus{
 
 .mydrop{
 
-  transform: translateX(70%);
+  transform: translateX(35%);
   display:flex;
   white-space: nowrap;
   margin-left: -155px;
