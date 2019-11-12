@@ -35,24 +35,6 @@ class landingPage extends React.Component {
           </p>
 
         <AboutProduct />
-        <table className="table table-hover">
-          <thead>
-            <tr>
-              <th scope="col">
-                <Card />
-              </th>
-              <th scope="col">
-                <Card />
-              </th>
-              <th scope="col">
-                <Card />
-              </th>
-              <th scope="col">
-                <Card />
-              </th>
-            </tr>
-          </thead>
-        </table>
       </div>
       <Footer />
     </div>

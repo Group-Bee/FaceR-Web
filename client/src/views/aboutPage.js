@@ -116,24 +116,6 @@ class aboutPage extends React.Component {
           
           <LearnMore />
         </div >
-        <table className="table table-hover">
-          <thead>
-            <tr>
-              <th scope="col">
-                <Card />
-              </th>
-              <th scope="col">
-                <Card />
-              </th>
-              <th scope="col">
-                <Card />
-              </th>
-              <th scope="col">
-                <Card />
-              </th>
-            </tr>
-          </thead>
-        </table>
       </div>
       <Footer />
     </div>
