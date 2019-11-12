@@ -4,7 +4,7 @@ export default class AboutProduct extends Component {
   render() {
     return (
       <div>
-        <div className="jumbotron" style={{position: "relative", zIndex: '1'}}>
+        <div className="jumbotron" style={{position: 'relative', zIndex: '1'}}>
           <h1 className="display-3">FaceR</h1>
           <p className="lead">
             This is a simple hero unit, a simple jumbotron-style component for
