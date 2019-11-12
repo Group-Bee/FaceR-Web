@@ -48,7 +48,7 @@ class Cart extends Component {
               style={{ backgroundColor: '#1a1a1a', color: 'white' }}
               onClick={this.showCart.bind(this)}
             >
-              <i className='fa fa-shopping-cart fa-2x aria-hidden="true"></i>
+              <i className="fa fa-shopping-basket fa-2x" aria-hidden="true"></i>
               &nbsp;&nbsp;&nbsp;<i className="fa fa-caret-down"></i></button>
           </div>
         </li>
