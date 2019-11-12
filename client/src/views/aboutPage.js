@@ -16,7 +16,7 @@ function aboutPage() {
   return (
     <div className="App">
       <header className="App-header" id="nav">
-        <Header />
+        <Header incart={this.props.incart} add={this.props.add.bind(this)}/>
       </header>
       <div
         className="Body"

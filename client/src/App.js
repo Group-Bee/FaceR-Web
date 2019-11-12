@@ -6,24 +6,34 @@ import AboutPage from "./views/aboutPage";
 import Payment from "./views/Payment"
 
 class App extends React.Component {
-  constructor(props){
+  constructor(props) {
     super(props)
     this.state = {
       incart: []
     }
   }
-  render(){
-  return (
-    <BrowserRouter>
-      <Switch>
-        <Route path="/" exact component={LandingPage} />
-        <Route path="/About" exact component={AboutPage} />
-        <Route path="/Pay" exact component={Payment}/>
-        <Route component={NotFoundPage} />
-      </Switch>
-    </BrowserRouter>
-  );
-}
+
+  addtoCart(element) {
+    console.log('add element, app.js', element)
+    this.setState({
+      incart: this.state.incart.concat(element)
+    })
+    console.log('incart, app.js', this.state.incart)
+  }
+
+  render() {
+    console.log('re-rendering')
+    return (
+      <BrowserRouter>
+        <Switch>
+          <Route exact path="/" render={(props) => <LandingPage incart={this.state.incart} add={this.addtoCart.bind(this)}/>} />
+          <Route exact path="/About" render={(props) => <AboutPage incart={this.state.incart} add={this.addtoCart.bind(this)}/>} />
+          <Route exact path="/Pay" render={(props) => <Payment incart={this.state.incart} add={this.addtoCart.bind(this)}/>} />
+          <Route exact component={NotFoundPage} />
+        </Switch>
+      </BrowserRouter>
+    );
+  }
 }
 
 export default App;

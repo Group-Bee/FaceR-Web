@@ -2,26 +2,6 @@ import React, { Component } from "react";
 import Cart from './Cart'
 
 export class Header extends Component {
-  constructor(){
-    super()
-    this.state = {
-      showCart: false,
-    }
-  }
-  
-  showCart = () =>{
-    this.setState({
-      showCart: true
-    })
-    document.addEventListener('click', this.hideCart)
-  }
-
-  hideCart = () =>{
-    this.setState({
-      showCart: false
-    })
-    document.removeEventListener('click', this.hideCart)
-  }
 
   render() {
     return (
@@ -72,7 +52,7 @@ export class Header extends Component {
               </ul>
               <ul className = "navbar-nav ml-auto">
               <div className = "cont">
-              <Cart />
+              <Cart  incart={this.props.incart} add={this.props.add.bind(this)}/>
               </div>
             </ul>
           </div>

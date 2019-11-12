@@ -9,6 +9,8 @@ class Payment extends Component {
 
 
     render = function () {
+        const incart = this.props
+
         function handleToken(token, addresses) {
             console.log({ token, addresses })
         }
@@ -16,7 +18,7 @@ class Payment extends Component {
         return (
             <div className="App bg-dark">
                 <header className="App-header">
-                    <Header />
+                    <Header  incart={this.props.incart} add={this.props.add.bind(this)}/>
                 </header>
                 <div style={{ height: "90px", backgroundColor: '#1a1a1a' }}>
                     Heaare
@@ -30,7 +32,7 @@ class Payment extends Component {
                 <br></br>
                 <br></br>
                 <div>
-                <PayEntry></PayEntry>
+                    <PayEntry incart={this.props.incart} add={this.props.add.bind(this)}></PayEntry>
                 </div>
                 <Footer />
             </div>
