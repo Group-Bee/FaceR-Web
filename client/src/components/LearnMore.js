@@ -6,11 +6,13 @@ export class LearnMore extends Component {
     return (
       <div class="card">
         <div class="card-body">
+          
+          <br></br>
           <br></br>
 
           <h1>Interested in Learning More?</h1>
 
-          <br></br>
+          
 
           <center>
             <td>
@@ -24,7 +26,8 @@ export class LearnMore extends Component {
 
 
                 </Form.Group>
-                <Button variant="primary" type="submit">
+                <Button variant="primary" type="submit" style={{borderRadius: 10,
+                  borderWidth: 1}}>
                 Submit
                 </Button>
 
@@ -38,8 +41,11 @@ export class LearnMore extends Component {
             <td>
               <button
                 style={{
-                  width: "75%",
-                  textAlign: "center"
+                  width: "60%",
+                  textAlign: "center",
+                  borderRadius: 10,
+                  borderWidth: 1,
+                  marginTop: 70
                 }}
                 type="button"
                 class="btn btn-success"
