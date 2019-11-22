@@ -17,7 +17,11 @@ class aboutPage extends React.Component {
   return (
     <div className="App">
       <header className="App-header" id="nav">
-        <Header incart={this.props.incart} add={this.props.add.bind(this)} remove={this.props.remove.bind(this)}/>
+        <Header 
+        
+        
+        incart={this.props.incart} add={this.props.add.bind(this)} remove={this.props.remove.bind(this)}
+        />
       </header>
       <div
         className="Body"
