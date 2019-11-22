@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Form, Button } from "react-bootstrap";
 
 export class LearnMore extends Component {
   render() {
@@ -13,20 +14,25 @@ export class LearnMore extends Component {
 
           <center>
             <td>
-              <button
-                style={{
-                  width: "75%",
-                  textAlign: "center"
-                }}
-                type="button"
-                class="btn btn-success"
-              >
-                <h2 style={{ color: "white" }}>
-                  <a href="mailto: testemail@gmail.com">
-                    Sign up for our Mailing List!
-                  </a>
-                </h2>
-              </button>
+              <Form>
+                <Form.Group controlId="formBasicEmail">
+                <Form.Label>Enter your Email address!</Form.Label>
+                <Form.Control type="email" placeholder="Enter email" />
+                <Form.Text className="text-muted">
+                  If you would like to be signed up for our mailing list.
+                </Form.Text>
+
+
+                </Form.Group>
+                <Button variant="primary" type="submit">
+                Submit
+                </Button>
+
+
+              </Form>
+              
+              
+            
             </td>
 
             <td>

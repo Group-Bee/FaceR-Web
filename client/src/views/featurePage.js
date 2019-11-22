@@ -17,7 +17,7 @@ class featurePage extends React.Component {
       <div
         className="Body"
         style={{
-          paddingTop: '0px',
+          paddingTop: '60px',
           backgroundColor: 'black',
           paddingBottom: '20px'
         }}
