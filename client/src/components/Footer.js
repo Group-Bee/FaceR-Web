@@ -7,7 +7,10 @@ export default class Footer extends Component {
   render() {
     return (
       <div>
-        <div className="jumbotron" style={{ backgroundColor: '#1a1a1a', marginBottom:'-100px'}}> 
+        <div
+          className="jumbotron"
+          style={{ backgroundColor: "#1a1a1a", marginBottom: "-100px" }}
+        >
           <h1 style={{ color: "white" }}>Contact us!</h1>
           <br></br>
           <ContactForm />
@@ -29,24 +32,52 @@ export default class Footer extends Component {
                 <h1 style={{ color: "white" }}>FaceR</h1>
               </td>
               <td>
-                <a href="https://www.kickstarter.com">
-                  <button
-                    style={{
-                      width: "100%",
-                      textAlign: "center"
-                    }}
-                    type="button"
-                    class="btn btn-success"
+                <a className="nav-link" href="/">
+                  <h5
+                    style={{ color: "white", textDecorationLine: "underline" }}
                   >
-                    <h2 style={{ color: "white" }}>
-                      support us on kickstarter
-                    </h2>
-                  </button>
+                    HOME
+                  </h5>
+                </a>
+                <a className="nav-link" href="/features">
+                  <h5
+                    style={{ color: "white", textDecorationLine: "underline" }}
+                  >
+                    FEATURES
+                  </h5>
+                </a>
+                <a className="nav-link" href="/product">
+                  <h5
+                    style={{ color: "white", textDecorationLine: "underline" }}
+                  >
+                    PRODUCT
+                  </h5>
+                </a>
+                <a className="nav-link" href="/about">
+                  <h5
+                    style={{ color: "white", textDecorationLine: "underline" }}
+                  >
+                    ABOUT
+                  </h5>
+                </a>
+                <a className="nav-link" href="/pay">
+                  <h5
+                    style={{ color: "white", textDecorationLine: "underline" }}
+                  >
+                    PAY
+                  </h5>
                 </a>
               </td>
+
               <td style={{ paddingLeft: "10%" }}>
                 <a href="https://www.facebook.com">
                   <FacebookIcon size={32} round={true} />
+                </a>
+                <a href="https://www.kickstarter.com">
+                  <img
+                    src={require("../assets/iconfinder_kickstarter_3069717.png")}
+                    style={{ float: "left" }}
+                  />
                 </a>
                 <a href="https://www.twitter.com">
                   <TwitterIcon size={32} round={true} />
