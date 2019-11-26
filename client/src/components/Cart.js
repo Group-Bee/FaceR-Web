@@ -56,16 +56,10 @@ class Cart extends Component {
           (<div className="mydrop" style={{ backgroundColor: 'white', color: 'black', position: 'absolute', zIndex: '100' }}>
             <ul className="myul" style={{ listStyle: 'none' }}>
               {dropdown}
-              <li className="item">
-                <Stripe
-                  stripeKey="pk_test_ANdQ4Fctiutj9s6qvco8YrQT00oZrW6PbQ"
-                  token={handleToken}
-                  billingAddress
-                  shippingAddress
-                  amount={100}
-                  style={{ backgroundcolor: "grey", zIndex: '-2' }}
-                  className="stripe"
-                />
+              <li className="item" style={{textAlign: 'center', backgroundColor: 'grey', fontFamily: 'Times New Roman'}}>
+              <a className="nav-link" href="ConfirmPayment" style={{color: "white"}}>
+                Confirm Payment
+                </a>
               </li>
             </ul>
           </div>)

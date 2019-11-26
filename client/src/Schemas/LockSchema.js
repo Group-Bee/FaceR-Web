@@ -11,7 +11,8 @@ var lockSchema = new Schema({
         type: String
     } 
     image: {
-        
+        type: String,
+        required: false
     },
     name: {
         type: String,

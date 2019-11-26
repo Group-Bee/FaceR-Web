@@ -46,7 +46,7 @@ export class Header extends Component {
               </li>
               <li className="nav-item">
                 <a className="nav-link" href="Pay">
-                  Pay
+                  Buy
                 </a>
               </li>
               </ul>
