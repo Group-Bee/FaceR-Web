@@ -7,7 +7,7 @@ import "../App.css";
 import "../bootstrap.min.css";
 
 //changed
-class landingPage extends React.Component {
+class featurePage extends React.Component {
   render(){
   return (
     <div className="App">
@@ -17,22 +17,11 @@ class landingPage extends React.Component {
       <div
         className="Body"
         style={{
-          paddingTop: '0px',
+          paddingTop: '60px',
           backgroundColor: 'black',
           paddingBottom: '20px'
         }}
         >
-          <p className="lead" style={{width: '100%', height: '900px', position: 'relative', zIndex: '0', marginBottom: '-100px'}}>
-            <iframe
-            title="productVid"
-            width= '100%'
-            height= '100%'
-            src="https://www.youtube.com/embed/1XZZpf6yReg?&rel=0&loop=1&controls=0&autoplay=1"
-            frameborder="0"
-            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-            allowfullscreen
-            ></iframe>
-          </p>
 
         <AboutProduct />
       </div>
@@ -42,4 +31,4 @@ class landingPage extends React.Component {
 }
 }
 
-export default landingPage;
+export default featurePage;
