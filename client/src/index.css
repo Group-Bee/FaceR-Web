@@ -41,7 +41,7 @@ button:focus{
 
 .mydrop{
 
-  transform: translateX(-10%);
+  transform: translateX(-5%);
   display:flex;
   white-space: nowrap;
   margin-left: -155px;
@@ -68,6 +68,8 @@ button:focus{
   margin: 0 0 -3px;
   padding-bottom: 5px;
   padding-top: 5px;
+  padding-right: 3px;
+  cursor: auto;
 }
 
 .test{
@@ -77,4 +79,8 @@ button:focus{
 .myul{
   text-align: right;
   float: right;
+}
+
+.confbut{
+  border-radius: 4px;
 }

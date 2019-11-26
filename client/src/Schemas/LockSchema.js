@@ -9,7 +9,7 @@ var lockSchema = new Schema({
     },
     description:{
         type: String
-    } 
+    }, 
     image: {
         type: String,
         required: false
@@ -25,15 +25,14 @@ var lockSchema = new Schema({
 });
 
 lockSchema.pre('save', function(next) {
-/* your code here */
-    var current = new Date();
-    this.updated_at = current;
-    if (!this.created_at) {
-        this.created_at = current;
-    }
-    next();
-});
-
+    /* your code here */
+        var current = new Date();
+        this.updated_at = current;
+        if (!this.created_at) {
+            this.created_at = current;
+        }
+        next();
+    });
 var Locks = mongoose.model('Locks', listingSchema);
 
 module.exports = Locks;

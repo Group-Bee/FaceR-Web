@@ -31,7 +31,7 @@ class Cart extends Component {
 
     let dropdown = this.props.incart.map(element => {
       return (
-        <li className="item"  style={{whiteSpace: 'nowrap'}}>
+        <li className="item" style={{whiteSpace: 'nowrap'}}>
           <p style={{ textAlign: 'center', whiteSpace: 'nowrap', overflow: 'hidden'}} className="p-item">
             <span style={{ float: 'left' }}>&emsp;&emsp;{element.name}</span>
             &emsp;
