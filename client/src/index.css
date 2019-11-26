@@ -34,13 +34,14 @@ button:focus{
 }
 
 .item:hover{
-  background-color: grey;
+  border-radius: 6px;;
+  /* background-color: grey; */
   cursor: pointer;
 }
 
 .mydrop{
 
-  transform: translateX(35%);
+  transform: translateX(-10%);
   display:flex;
   white-space: nowrap;
   margin-left: -155px;
@@ -59,7 +60,7 @@ button:focus{
   }
 
 .p-item:hover{
-  background-color: grey;
+  /* background-color: grey; */
   cursor: pointer;
 }
 
