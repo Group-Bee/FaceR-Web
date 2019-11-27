@@ -27,14 +27,19 @@ class aboutPage extends React.Component {
           paddingBottom: "100px"
         }}
       >
-        <AboutProduct />
-        <TestimonialsCarousel />
+        {/* <AboutProduct /> */}
         <div className="jumbotron">
           <Timeline>
             <TimelineItem
               key="001"
               dateText="11/6/2019"
-              style={{ color: '#e86971' }} >
+              style={{ color: '#e86971' }}
+              bodyContainerStyle={{
+                background: '#ddd',
+                padding: '20px',
+                borderRadius: '8px',
+                boxShadow: '0.5rem 0.5rem 2rem 0 rgba(0, 0, 0, 0.2)',
+              }} >
               <h3>Title, Company</h3>
               <h4>Subtitle</h4>
               <p>Est incididunt sint eu minim dolore mollit velit velit commodo ex nulla
@@ -71,20 +76,26 @@ class aboutPage extends React.Component {
             </TimelineItem>
             <TimelineItem
               key="003"
-              dateComponent={(
-                <div
-                  style={{
-                    display: 'block',
-                    float: 'left',
-                    padding: '10px',
-                    background: 'rgb(150, 150, 150)',
-                    color: '#fff',
-                  }}
-                >
-                  11/2008 – 04/2009
-                </div>
-              )}
-            >
+              dateText="11/6/19"
+              // dateComponent={(
+              //   <div
+              //     style={{
+              //       display: 'block',
+              //       float: 'left',
+              //       padding: '10px',
+              //       background: 'rgb(150, 150, 150)',
+              //       color: '#fff',
+              //     }}
+              //   >
+              //     11/2008 – 04/2009
+              //   </div>
+              // )}
+              bodyContainerStyle={{
+                background: '#ddd',
+                padding: '20px',
+                borderRadius: '8px',
+                boxShadow: '0.5rem 0.5rem 2rem 0 rgba(0, 0, 0, 0.2)',
+              }} >
               <h3>Title, Company</h3>
               <h4>Subtitle</h4>
               <p>
@@ -99,7 +110,12 @@ class aboutPage extends React.Component {
               key="004"
               dateText="08/2008 – 11/2008"
               dateInnerStyle={{ background: '#76bb7f' }}
-            >
+              bodyContainerStyle={{
+                background: '#ddd',
+                padding: '20px',
+                borderRadius: '8px',
+                boxShadow: '0.5rem 0.5rem 2rem 0 rgba(0, 0, 0, 0.2)',
+              }} >
               <h3>Title, Company</h3>
               <h4>Subtitle</h4>
               <p>
@@ -114,8 +130,11 @@ class aboutPage extends React.Component {
 
           <FutureLocks />
           
-          <LearnMore />
         </div >
+        <TestimonialsCarousel />
+
+        <LearnMore />
+        
       </div>
       <Footer />
     </div>
