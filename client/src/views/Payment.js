@@ -20,9 +20,6 @@ class Payment extends Component {
                 <header className="App-header">
                     <Header  incart={this.props.incart} add={this.props.add.bind(this)} remove={this.props.remove.bind(this)}/>
                 </header>
-                <div style={{ height: "90px", backgroundColor: '#1a1a1a' }}>
-                    Heaare
-                </div>
                 <div className="bg-dartrk" style={{paddingTop: '2%', paddingLeft: '10%', float: 'left', width: '100%' }}>
                     <h1 style={{ float: 'left', color: 'white' }}>Locks</h1>
                 </div>

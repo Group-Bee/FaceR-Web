@@ -34,13 +34,14 @@ button:focus{
 }
 
 .item:hover{
-  background-color: grey;
+  border-radius: 6px;;
+  /* background-color: grey; */
   cursor: pointer;
 }
 
 .mydrop{
 
-  transform: translateX(35%);
+  transform: translateX(-5%);
   display:flex;
   white-space: nowrap;
   margin-left: -155px;
@@ -59,7 +60,7 @@ button:focus{
   }
 
 .p-item:hover{
-  background-color: grey;
+  /* background-color: grey; */
   cursor: pointer;
 }
 
@@ -67,6 +68,8 @@ button:focus{
   margin: 0 0 -3px;
   padding-bottom: 5px;
   padding-top: 5px;
+  padding-right: 3px;
+  cursor: auto;
 }
 
 .test{
@@ -76,4 +79,8 @@ button:focus{
 .myul{
   text-align: right;
   float: right;
+}
+
+.confbut{
+  border-radius: 4px;
 }
