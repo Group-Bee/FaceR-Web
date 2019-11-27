@@ -62,7 +62,7 @@ class aboutPage extends React.Component {
             <TimelineItem
               key="002"
               dateText="11/6/19"
-              dateInnerStyle={{ background: '#61b8ff', color: '#000' }}
+              style={{ color: '#e86971' }}
               bodyContainerStyle={{
                 background: '#ddd',
                 padding: '20px',
@@ -81,6 +81,7 @@ class aboutPage extends React.Component {
             <TimelineItem
               key="003"
               dateText="11/6/19"
+              style={{ color: '#e86971' }}
               // dateComponent={(
               //   <div
               //     style={{
@@ -113,7 +114,8 @@ class aboutPage extends React.Component {
             <TimelineItem
               key="004"
               dateText="08/2008 – 11/2008"
-              dateInnerStyle={{ background: '#76bb7f' }}
+              style={{ color: '#e86971' }}
+              // dateInnerStyle={{ background: '#76bb7f' }}
               bodyContainerStyle={{
                 background: '#ddd',
                 padding: '20px',
