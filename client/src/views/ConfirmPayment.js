@@ -5,6 +5,7 @@ import AboutProduct from "../components/AboutProduct";
 import Footer from "../components/Footer";
 import "../App.css";
 import "../bootstrap.min.css";
+import UserInfo from "../components/UserInfo"
 import { FacebookIcon, TwitterIcon } from "react-share";
 
 
@@ -17,6 +18,7 @@ export default class ConfirmPayment extends Component {
                 <br></br>
                 <br></br>
                 <br></br>
+                <UserInfo/>
                 <div style={{ position: 'relative'}}>
                     <div
                         className="jumbotron"

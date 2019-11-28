@@ -1,8 +1,10 @@
 import React, { Component } from 'react'
 import data from '../data/data'
 
+
 class PayEntry extends React.Component {
     render() {
+
         const entries = data.map(element => {
             return (
                 <div className="test" style={{ textAlign: 'left', height: '400px' }} key={element.id}>
