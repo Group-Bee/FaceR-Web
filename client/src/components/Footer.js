@@ -39,32 +39,32 @@ export default class Footer extends Component {
                     HOME
                   </h5>
                 </a>
-                <a className="nav-link" href="/features">
+                <a className="nav-link" href="/Features">
                   <h5
                     style={{ color: "white", textDecorationLine: "underline" }}
                   >
                     FEATURES
                   </h5>
                 </a>
-                <a className="nav-link" href="/product">
+                <a className="nav-link" href="/Product">
                   <h5
                     style={{ color: "white", textDecorationLine: "underline" }}
                   >
                     PRODUCT
                   </h5>
                 </a>
-                <a className="nav-link" href="/about">
+                <a className="nav-link" href="/About">
                   <h5
                     style={{ color: "white", textDecorationLine: "underline" }}
                   >
                     ABOUT
                   </h5>
                 </a>
-                <a className="nav-link" href="/pay">
+                <a className="nav-link" href="/Pay">
                   <h5
                     style={{ color: "white", textDecorationLine: "underline" }}
                   >
-                    PAY
+                    BUY
                   </h5>
                 </a>
               </td>
