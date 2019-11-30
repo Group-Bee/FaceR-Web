@@ -14,6 +14,8 @@ import "../bootstrap.min.css";
 //changed
 class aboutPage extends React.Component {
   render(){
+    const incart = this.props
+    console.log("about incart", incart)
   return (
     <div className="App">
       <header className="App-header" id="nav">

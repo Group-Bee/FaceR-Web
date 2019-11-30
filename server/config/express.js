@@ -18,19 +18,31 @@ module.exports.init = () => {
           connect to database
           - reference README for db uri
       */
-  console.log('connecting, ', config_locks.db.uri)
-  mongoose
-    .connect(config_locks.db.uri, {
-      useNewUrlParser: true,
-      useUnifiedTopology: true
-    })
-    .then(() => {
-      console.log("connection to db established");
-    })
-    .catch(err => {
-      console.log("db error ${err.message}");
-      process.exit(-1);
-    });
+    //  console.log('connecting, ', config_locks.db.uri)
+    //  mongoose
+    //    .connect(config_locks.db.uri, {
+    //      useNewUrlParser: true,
+    //      useUnifiedTopology: true
+    //    })
+    //    .then(() => {
+    //      console.log("connection to db established");
+    //    })
+    //    .catch(err => {
+    //      console.log("db error ${err.message}");
+    //      process.exit(-1);
+    //    });
+   
+    //  fs.readFile(path.join(__dirname, '../../client/src/data/data.json'), 'utf8', function (err, data) {
+    //    if (err)
+    //      throw err;
+    //    var store = JSON.parse(data);
+    //    store.entries.forEach(function (element) {
+    //      var model = new lockSchema({ id: element.id, description: element.description, image: element.image, name: element.name, price: element.price }).save(function (err) {
+    //        if (err)
+    //          return handleError(err);
+    //      })
+    //    })
+    //  })
 
     //store data.js in database
 

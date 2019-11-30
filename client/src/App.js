@@ -7,9 +7,12 @@ import FeaturePage from "./views/featurePage"
 import Payment from "./views/Payment"
 import ConfirmPayment from "./views/ConfirmPayment"
 
+
 class App extends React.Component {
   constructor(props) {
+    console.log('constructing')
     super(props)
+    console.log(props)
     this.state = {
       incart: []
     }
@@ -19,12 +22,14 @@ class App extends React.Component {
     this.setState({
       incart: this.state.incart.concat(element)
     })
+    console.log("cart's state is ", this.state.incart)
   }
 
   removefromCart(element){
     this.setState({
       incart: this.state.incart.filter(elem=>{ return (elem.id != element.id)})
     })
+    console.log('removed from cart')
   }
 
   render() {
