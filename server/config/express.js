@@ -4,39 +4,47 @@ const path = require("path"),
   morgan = require("morgan"),
   bodyParser = require("body-parser"),
   exampleRouter = require("../routes/examples.server.routes"),
+  testimonialsRouter = require("../routes/testimonials.server.routes"),
   nodemailer = require("nodemailer");
-const config = require("./config.example");
+const config = require("./config");
 
 // const GMAIL_USER = config.gmail.GMAIL_USER;
 // const GMAIL_PASS = config.gmail.GMAIL_PASS;
 
  module.exports.init = () => {
-//   /* 
-//         connect to database
-//         - reference README for db uri
-//     */
-//   mongoose
-//     .connect(process.env.DB_URI || require("./config.example").db.uri, {
-//       useNewUrlParser: true,
-//       useUnifiedTopology: true
-//     })
-//     .then(() => {
-//       console.log("connection to db established");
-//     })
-//     .catch(err => {
-//       console.log("db error ${err.message}");
-//       process.exit(-1);
-//     });
-//   mongoose.set("useCreateIndex", true);
-//   mongoose.set("useFindAndModify", false);
+   /*
+//connect to testimonials database
+  mongoose.connect(config.testimonialsDB.uri, { useNewUrlParser: true });
+  mongoose.set('useCreateIndex', true);
+  mongoose.set('useFindAndModify', false);
+  */
 
-//   // initialize app
+   /* 
+         connect to database
+         - reference README for db uri
+     */
+   mongoose
+     .connect(process.env.DB_URI || require("./config").db.uri, {
+       useNewUrlParser: true,
+       useUnifiedTopology: true
+     })
+     .then(() => {
+       console.log("connection to db established");
+     })
+     .catch(err => {
+       console.log("db error ${err.message}");
+       process.exit(-1);
+     });
+   mongoose.set("useCreateIndex", true);
+   mongoose.set("useFindAndModify", false);
+
+// initialize app
    const app = express();
 
-//   // body parsing middleware
-//   app.use(bodyParser.json());
-//   app.use(express.urlencoded({ extended: false }));
-//   app.use(express.static(path.join(__dirname, "public")));
+// body parsing middleware
+   app.use(bodyParser.json());
+   app.use(express.urlencoded({ extended: false }));
+   app.use(express.static(path.join(__dirname, "public")));
 
 //   // POST route from contact form
 //   app.post("/", (req, res) => {
@@ -66,8 +74,11 @@ const config = require("./config.example");
 //     res.redirect("/");
 //   });
 
-//   // enable request logging for development debugging
-//   app.use(morgan("dev"));
+// enable request logging for development debugging
+   app.use(morgan("dev"));
+
+//Router to display testimonials when on About page
+app.use("/About", testimonialsRouter);
 
   // add a router
   app.use("/api/example", exampleRouter);
