@@ -76,7 +76,29 @@ class landingPage extends React.Component {
             ></iframe>
           </p>
 
-          <AboutProduct />
+          <div>
+            <div
+              className="jumbotron"
+              style={{ position: "relative", zIndex: "1" }}
+            >
+              <h1 className="display-3">FaceR - Unlock Your Future</h1>
+              <p className="lead">
+                Explore the secure and exciting world of facial recognition
+                locks
+              </p>
+              <hr className="my-4" />
+              <p></p>
+              <p className="lead">
+                <a
+                  className="btn btn-primary btn-lg"
+                  href="https://august.com/products/august-smart-lock-pro-connect"
+                  role="button"
+                >
+                  Learn more
+                </a>
+              </p>
+            </div>
+          </div>
         </div>
         <Footer />
       </div>
