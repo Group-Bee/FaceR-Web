@@ -7,8 +7,8 @@ var testimonials = require('../controllers/testimonials.server.controller.js'),
   These method calls are responsible for routing requests to the correct request handler.
   Take note that it is possible for different controller functions to handle requests to the same route.
  */
-//The only route we need to handle is getting the testimonials data form the database
-router.route('/')
+//The only route we need to handle is getting the testimonials data from the database
+router.route('/Testimonials')
   .get(testimonials.list)
 
 router.param('testimonialId', testimonials.testimonialByID);

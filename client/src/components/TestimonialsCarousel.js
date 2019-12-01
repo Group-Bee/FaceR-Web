@@ -43,7 +43,7 @@ Data for testimonials is stored at mongoDB Atlas database (Cluster0, DB = FaceR,
 */
 ///*
 // Make a request for testimonial data
-axios.get('/About')
+axios.get('/About/Testimonials')
   .then(function (response) {
     // handle success
     console.log(response);
