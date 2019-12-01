@@ -1,6 +1,5 @@
 import React from "react";
 import Header from "../components/Header";
-import Card from "../components/Card";
 import AboutProduct from "../components/AboutProduct";
 import Footer from "../components/Footer";
 import "../App.css";
@@ -34,9 +33,8 @@ class landingPage extends React.Component {
           style={
             this.state.atTop
               ? {
-                  opacity: "1",
-                  transition: "opacity 1s",
-                  opacity: "0"
+                  opacity: "0",
+                  transition: "opacity 1s"
                 }
               : { transition: "opacity 1s", opacity: "1" }
           }

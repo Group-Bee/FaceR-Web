@@ -23,7 +23,7 @@ class App extends React.Component {
 
   removefromCart(element){
     this.setState({
-      incart: this.state.incart.filter(elem=>{ return (elem.id != element.id)})
+      incart: this.state.incart.filter(elem=>{ return (elem.id !== element.id)})
     })
   }
 

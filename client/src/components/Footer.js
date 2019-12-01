@@ -70,6 +70,7 @@ export default class Footer extends Component {
                   <img
                     src={require("../assets/iconfinder_kickstarter_3069717.png")}
                     style={{ float: "left" }}
+                    alt="KickstarterLogo"
                   />
                 </a>
                 <a href="https://www.twitter.com">

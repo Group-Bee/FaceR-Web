@@ -13,9 +13,11 @@ export class LearnMore extends Component {
             <td class="col-md-6">
               {/*Beginning of Zoho Campaigns sign-up form iFrame code  */}
               {/*Note that height has been changed to 175% from default Zoho settings*/}
+              {/*Also note that a 'title' attribute has been added, which does not come with Zoho's code */}
               {/*If you want to use a different form, create it in Zoho Campaigns and then change the src code of the 'iFrame Code' */}
               <script type="text/javascript" src="https://campaigns.zoho.com/js/zc.iframe.js"></script>
-              <iframe frameborder="0" 
+              <iframe title="ZohoMailingListSignUpForm"
+                      frameborder="0" 
                       id="iframewin" 
                       width="100%" 
                       height="175%" 

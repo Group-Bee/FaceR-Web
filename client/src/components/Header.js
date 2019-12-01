@@ -24,7 +24,7 @@ export class Header extends Component {
             <ul className="navbar-nav mr-auto">
               <li
                 className={
-                  currentLocation == "/" ? "nav-item active" : "nav-item"
+                  currentLocation === "/" ? "nav-item active" : "nav-item"
                 }
               >
                 <a className="nav-link" href="/">
@@ -33,7 +33,7 @@ export class Header extends Component {
               </li>
               <li
                 className={
-                  currentLocation == "/Features"
+                  currentLocation === "/Features"
                     ? "nav-item active"
                     : "nav-item"
                 }
@@ -44,7 +44,7 @@ export class Header extends Component {
               </li>
               <li
                 className={
-                  currentLocation == "/About" ? "nav-item active" : "nav-item"
+                  currentLocation === "/About" ? "nav-item active" : "nav-item"
                 }
               >
                 <a className="nav-link" href="About">
@@ -53,7 +53,7 @@ export class Header extends Component {
               </li>
               <li
                 className={
-                  currentLocation == "/Pay" ? "nav-item active" : "nav-item"
+                  currentLocation === "/Pay" ? "nav-item active" : "nav-item"
                 }
               >
                 <a className="nav-link" href="Pay">
