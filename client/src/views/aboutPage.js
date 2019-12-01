@@ -8,7 +8,6 @@ import Timeline from "../components/Timeline"
 import TimelineItem from "../components/TimelineItem"
 import FutureLocks from "../components/FutureLocks";
 import LearnMore from "../components/LearnMore";
-import MailingListForm from "../components/MailingListForm"
 import "../App.css";
 import "../bootstrap.min.css";
 
