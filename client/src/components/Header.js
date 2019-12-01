@@ -44,15 +44,6 @@ export class Header extends Component {
               </li>
               <li
                 className={
-                  currentLocation == "/Product" ? "nav-item active" : "nav-item"
-                }
-              >
-                <a className="nav-link" href="/">
-                  Product
-                </a>
-              </li>
-              <li
-                className={
                   currentLocation == "/About" ? "nav-item active" : "nav-item"
                 }
               >

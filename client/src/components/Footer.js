@@ -46,13 +46,6 @@ export default class Footer extends Component {
                     FEATURES
                   </h5>
                 </a>
-                <a className="nav-link" href="/Product">
-                  <h5
-                    style={{ color: "white", textDecorationLine: "underline" }}
-                  >
-                    PRODUCT
-                  </h5>
-                </a>
                 <a className="nav-link" href="/About">
                   <h5
                     style={{ color: "white", textDecorationLine: "underline" }}
