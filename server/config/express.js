@@ -3,7 +3,6 @@ const path = require("path"),
   mongoose = require("mongoose"),
   morgan = require("morgan"),
   bodyParser = require("body-parser"),
-  exampleRouter = require("../routes/examples.server.routes"),
   testimonialsRouter = require("../routes/testimonials.server.routes"),
   nodemailer = require("nodemailer");
 
@@ -73,8 +72,6 @@ module.exports.init = () => {
   //Router to display testimonials when on About page
   app.use("/About", testimonialsRouter);
 
-  // add a router
-  app.use("/api/example", exampleRouter);
   if (process.env.NODE_ENV === "production") {
     // Serve any static files
     app.use(express.static(path.join(__dirname, "../../client/build")));
