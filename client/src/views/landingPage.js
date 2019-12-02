@@ -62,7 +62,8 @@ class landingPage extends React.Component {
               height: "900px",
               position: "relative",
               zIndex: "0",
-              marginBottom: "-100px"
+              marginTop: "-60px",
+              marginBottom: "-60px"
             }}
           >
             <iframe

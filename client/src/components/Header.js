@@ -9,9 +9,12 @@ export class Header extends Component {
         <nav className="navbar navbar-expand-lg navbar-dark bg-primary">
         <a href="/"><img src="logo.png"
             className="d-block"
-            width="15%"
-            height="15%"
+            width="150"
             src="images/logo.png"
+            /></a>
+          <a><img 
+            className="d-block"
+            width="50"
             /></a>
           <button
             className="navbar-toggler"
