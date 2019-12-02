@@ -7,12 +7,12 @@ export class Header extends Component {
     return (
       <div style={{ position: "fixed", top: "0", width: "100%", zIndex: "0" }}>
         <nav className="navbar navbar-expand-lg navbar-dark bg-primary">
-          <img
+        <a href="/"><img src="logo.png"
             className="d-block"
             width="15%"
             height="15%"
             src="images/logo.png"
-          />
+            /></a>
           <button
             className="navbar-toggler"
             type="button"
