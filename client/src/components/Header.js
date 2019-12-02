@@ -1,15 +1,21 @@
 import React, { Component } from "react";
-import Cart from './Cart'
+import Cart from "./Cart";
 
 export class Header extends Component {
-
   render() {
+    var currentLocation = window.location.pathname;
     return (
-      <div style={{ position: "fixed", top: "0", width: "100%", zIndex: '0' }}>
+      <div style={{ position: "fixed", top: "0", width: "100%", zIndex: "0" }}>
         <nav className="navbar navbar-expand-lg navbar-dark bg-primary">
-          <a className="navbar-brand">
-            FaceR
-          </a>
+        <a href="/"><img src="logo.png"
+            className="d-block"
+            width="150"
+            src="images/logo.png"
+            /></a>
+          <a><img 
+            className="d-block"
+            width="50"
+            /></a>
           <button
             className="navbar-toggler"
             type="button"
@@ -24,35 +30,52 @@ export class Header extends Component {
 
           <div className="collapse navbar-collapse" id="navbarColor01">
             <ul className="navbar-nav mr-auto">
-              <li className="nav-item active">
+              <li
+                className={
+                  currentLocation === "/" ? "nav-item active" : "nav-item"
+                }
+              >
                 <a className="nav-link" href="/">
                   Home <span className="sr-only">(current)</span>
                 </a>
               </li>
-              <li className="nav-item">
+              <li
+                className={
+                  currentLocation === "/Features"
+                    ? "nav-item active"
+                    : "nav-item"
+                }
+              >
                 <a className="nav-link" href="Features">
                   Features
                 </a>
               </li>
-              <li className="nav-item">
-                <a className="nav-link" href="/">
-                  Product
-                </a>
-              </li>
-              <li className="nav-item">
+              <li
+                className={
+                  currentLocation === "/About" ? "nav-item active" : "nav-item"
+                }
+              >
                 <a className="nav-link" href="About">
                   About
                 </a>
               </li>
-              <li className="nav-item">
+              <li
+                className={
+                  currentLocation === "/Pay" ? "nav-item active" : "nav-item"
+                }
+              >
                 <a className="nav-link" href="Pay">
                   Buy
                 </a>
               </li>
-              </ul>
-              <ul className = "navbar-nav ml-auto">
-              <div className = "cont">
-              <Cart  incart={this.props.incart} add={this.props.add.bind(this)} remove={this.props.remove.bind(this)}/>
+            </ul>
+            <ul className="navbar-nav ml-auto">
+              <div className="cont">
+                <Cart
+                  incart={this.props.incart}
+                  add={this.props.add.bind(this)}
+                  remove={this.props.remove.bind(this)}
+                />
               </div>
             </ul>
           </div>

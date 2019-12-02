@@ -39,32 +39,25 @@ export default class Footer extends Component {
                     HOME
                   </h5>
                 </a>
-                <a className="nav-link" href="/features">
+                <a className="nav-link" href="/Features">
                   <h5
                     style={{ color: "white", textDecorationLine: "underline" }}
                   >
                     FEATURES
                   </h5>
                 </a>
-                <a className="nav-link" href="/product">
-                  <h5
-                    style={{ color: "white", textDecorationLine: "underline" }}
-                  >
-                    PRODUCT
-                  </h5>
-                </a>
-                <a className="nav-link" href="/about">
+                <a className="nav-link" href="/About">
                   <h5
                     style={{ color: "white", textDecorationLine: "underline" }}
                   >
                     ABOUT
                   </h5>
                 </a>
-                <a className="nav-link" href="/pay">
+                <a className="nav-link" href="/Pay">
                   <h5
                     style={{ color: "white", textDecorationLine: "underline" }}
                   >
-                    PAY
+                    BUY
                   </h5>
                 </a>
               </td>
@@ -77,6 +70,7 @@ export default class Footer extends Component {
                   <img
                     src={require("../assets/iconfinder_kickstarter_3069717.png")}
                     style={{ float: "left" }}
+                    alt="KickstarterLogo"
                   />
                 </a>
                 <a href="https://www.twitter.com">

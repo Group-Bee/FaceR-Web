@@ -1,6 +1,5 @@
 import React from "react";
 import Header from "../components/Header";
-import Card from "../components/Card";
 import AboutProduct from "../components/AboutProduct";
 import TestimonialsCarousel from "../components/TestimonialsCarousel";
 import Footer from "../components/Footer";
@@ -31,7 +30,11 @@ class aboutPage extends React.Component {
           paddingBottom: "100px"
         }}
       >
+<<<<<<< HEAD
         {/* <AboutProduct /> */}
+=======
+        <AboutProduct />
+>>>>>>> origin
         <div className="jumbotron">
           <Timeline>
             <TimelineItem
@@ -133,6 +136,8 @@ class aboutPage extends React.Component {
               </p>
             </TimelineItem>
           </Timeline>
+
+          <TestimonialsCarousel />
 
           <FutureLocks />
           
