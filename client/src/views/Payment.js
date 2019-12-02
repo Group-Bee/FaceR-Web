@@ -20,6 +20,7 @@ class Payment extends Component {
                 <header className="App-header">
                     <Header  incart={this.props.incart} add={this.props.add.bind(this)} remove={this.props.remove.bind(this)}/>
                 </header>
+                <div className="App bg-dark" style={{paddingLeft: "10%",paddingRight: "10%"}}>
                 <div className="bg-dartrk" style={{paddingTop: '2%', paddingLeft: '10%', float: 'left', width: '100%' }}>
                     <h1 style={{ float: 'left', color: 'white' }}>Locks</h1>
                 </div>
@@ -31,7 +32,9 @@ class Payment extends Component {
                 <div>
                     <PayEntry incart={this.props.incart} add={this.props.add.bind(this)}></PayEntry>
                 </div>
-                <Footer />
+                
+            </div>
+            <Footer />
             </div>
         )
     }
