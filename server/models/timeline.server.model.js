@@ -32,6 +32,7 @@ timelineSchema.pre('save', function(next) {
         }
         next();
     });
-var TimelineData = mongoose.model('TimelineData', listingSchema);
+    
+var TimelineData = mongoose.model('TimelineData', timelineSchema);
 
 module.exports = TimelineData;

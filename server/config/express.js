@@ -5,6 +5,7 @@ const path = require("path"),
   bodyParser = require("body-parser"),
   exampleRouter = require("../routes/examples.server.routes"),
   testimonialsRouter = require("../routes/testimonials.server.routes"),
+  timelineRouter = require("../routes/timeline.server.routes"),
   nodemailer = require("nodemailer");
 
 const GMAIL_USER = (process.env.GMAIL_USER || require("./config").gmail.GMAIL_USER);
@@ -72,6 +73,9 @@ module.exports.init = () => {
 
   //Router to display testimonials when on About page
   app.use("/About", testimonialsRouter);
+
+  //Router to display timeline when on About Page
+  app.use("/About", timelineRouter);
 
   // add a router
   app.use("/api/example", exampleRouter);
