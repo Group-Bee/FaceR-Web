@@ -7,16 +7,10 @@ const path = require("path"),
   testimonialsRouter = require("../routes/testimonials.server.routes"),
   nodemailer = require("nodemailer");
 
-// const GMAIL_USER = config.gmail.GMAIL_USER;
-// const GMAIL_PASS = config.gmail.GMAIL_PASS;
+const GMAIL_USER = (process.env.GMAIL_USER || require("./config").gmail.GMAIL_USER);
+const GMAIL_PASS = (process.env.GMAIL_PASS || require("./config").gmail.GMAIL_PASS);
 
 module.exports.init = () => {
-  /*
-//connect to testimonials database
-  mongoose.connect(config.testimonialsDB.uri, { useNewUrlParser: true });
-  mongoose.set('useCreateIndex', true);
-  mongoose.set('useFindAndModify', false);
-  */
 
   /* 
          connect to database
@@ -50,8 +44,8 @@ module.exports.init = () => {
     var transporter = nodemailer.createTransport({
       service: "gmail",
       auth: {
-        user: "testUserForMail123456",
-        pass: "Qwart5432"
+        user: GMAIL_USER,
+        pass: GMAIL_PASS
       }
     });
     const mailOptions = {
