@@ -34,11 +34,14 @@ button:focus{
 }
 
 .item:hover{
-  background-color: grey;
+  border-radius: 6px;;
+  /* background-color: grey; */
+  cursor: pointer;
 }
 
 .mydrop{
-  transform: translateX(-30%);
+
+  transform: translateX(-5%);
   display:flex;
   white-space: nowrap;
   margin-left: -155px;
@@ -54,5 +57,30 @@ button:focus{
 .item{
   text-align: left;
   margin-left: -40px;
-  /*visibility-sensor-props: { partialVisibility: true, offset: { bottom: 50 } }
-*/}
+  }
+
+.p-item:hover{
+  /* background-color: grey; */
+  cursor: pointer;
+}
+
+.p-item{
+  margin: 0 0 -3px;
+  padding-bottom: 5px;
+  padding-top: 5px;
+  padding-right: 3px;
+  cursor: auto;
+}
+
+.test{
+  border-bottom: thin white;
+}
+
+.myul{
+  text-align: right;
+  float: right;
+}
+
+.confbut{
+  border-radius: 4px;
+}

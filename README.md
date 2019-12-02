@@ -1,8 +1,3 @@
-<<<<<<< HEAD
-changed jhanavas readme
-=======
-changed readme
->>>>>>> f0ede5e51c80a998b7439f4178c0150a7340e575
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 This project contains an example project board meant to showcase how one can be used. The issues posted to it are not real issues.
 
@@ -82,3 +77,12 @@ To learn React, check out the [React documentation](https://reactjs.org/).
 ### `npm run build` fails to minify
 
 This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+
+## Commit Messages
+In general, commit messages should adhere to the following format:
+
+(“Page: <Components/Features> : <change type(s): “styling”, “functionality”, “addition”, “deletion”>:your general description of commit“)
+
+E.g.
+ About Page: Testimonial Carousel: Styling: Slimmed down background image of each carousel item
+

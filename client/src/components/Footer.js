@@ -7,7 +7,10 @@ export default class Footer extends Component {
   render() {
     return (
       <div>
-        <div className="jumbotron" style={{ backgroundColor: "#1a1a1a" }}>
+        <div
+          className="jumbotron"
+          style={{ backgroundColor: "#1a1a1a", marginBottom: "-100px" }}
+        >
           <h1 style={{ color: "white" }}>Contact us!</h1>
           <br></br>
           <ContactForm />
@@ -29,20 +32,50 @@ export default class Footer extends Component {
                 <h1 style={{ color: "white" }}>FaceR</h1>
               </td>
               <td>
-                <button
-                  style={{
-                    width: "100%",
-                    textAlign: "center"
-                  }}
-                  type="button"
-                  class="btn btn-success"
-                >
-                  <h2 style={{ color: "white" }}><a href="kickstarter.com">support us on kickstarter</a></h2>
-                </button>
+                <a className="nav-link" href="/">
+                  <h5
+                    style={{ color: "white", textDecorationLine: "underline" }}
+                  >
+                    HOME
+                  </h5>
+                </a>
+                <a className="nav-link" href="/Features">
+                  <h5
+                    style={{ color: "white", textDecorationLine: "underline" }}
+                  >
+                    FEATURES
+                  </h5>
+                </a>
+                <a className="nav-link" href="/About">
+                  <h5
+                    style={{ color: "white", textDecorationLine: "underline" }}
+                  >
+                    ABOUT
+                  </h5>
+                </a>
+                <a className="nav-link" href="/Pay">
+                  <h5
+                    style={{ color: "white", textDecorationLine: "underline" }}
+                  >
+                    BUY
+                  </h5>
+                </a>
               </td>
+
               <td style={{ paddingLeft: "10%" }}>
-                <FacebookIcon size={32} round={true} />
-                <TwitterIcon size={32} round={true} />
+                <a href="https://www.facebook.com">
+                  <FacebookIcon size={32} round={true} />
+                </a>
+                <a href="https://www.kickstarter.com">
+                  <img
+                    src={require("../assets/iconfinder_kickstarter_3069717.png")}
+                    style={{ float: "left" }}
+                    alt="KickstarterLogo"
+                  />
+                </a>
+                <a href="https://www.twitter.com">
+                  <TwitterIcon size={32} round={true} />
+                </a>
               </td>
             </tr>
           </table>

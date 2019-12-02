@@ -1,6 +1,5 @@
 import React from "react";
 import Header from "../components/Header";
-import Card from "../components/Card";
 import AboutProduct from "../components/AboutProduct";
 import TestimonialsCarousel from "../components/TestimonialsCarousel";
 import Footer from "../components/Footer";
@@ -12,11 +11,16 @@ import "../App.css";
 import "../bootstrap.min.css";
 
 //changed
-function aboutPage() {
+class aboutPage extends React.Component {
+  render(){
   return (
     <div className="App">
       <header className="App-header" id="nav">
-        <Header />
+        <Header 
+        
+        
+        incart={this.props.incart} add={this.props.add.bind(this)} remove={this.props.remove.bind(this)}
+        />
       </header>
       <div
         className="Body"
@@ -27,7 +31,6 @@ function aboutPage() {
         }}
       >
         <AboutProduct />
-        <TestimonialsCarousel />
         <div className="jumbotron">
           <Timeline>
             <TimelineItem
@@ -111,32 +114,17 @@ function aboutPage() {
             </TimelineItem>
           </Timeline>
 
+          <TestimonialsCarousel />
+
           <FutureLocks />
           
           <LearnMore />
         </div >
-        <table className="table table-hover">
-          <thead>
-            <tr>
-              <th scope="col">
-                <Card />
-              </th>
-              <th scope="col">
-                <Card />
-              </th>
-              <th scope="col">
-                <Card />
-              </th>
-              <th scope="col">
-                <Card />
-              </th>
-            </tr>
-          </thead>
-        </table>
       </div>
       <Footer />
     </div>
   );
+}
 }
 
 export default aboutPage;
