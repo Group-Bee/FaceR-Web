@@ -1,8 +1,12 @@
 import React, { Component } from 'react'
-import data from '../data/data'
+import data from '../data/locks.data'
 
 class PayEntry extends React.Component {
     render() {
+      console.log('pay entry', data[0].id)
+      data[0].id = 3
+      console.log('pay entry', data[0].id)
+
         const entries = data.map(element => {
             return (
                 <div className="test" style={{ textAlign: 'left', height: '400px' }} key={element.id}>

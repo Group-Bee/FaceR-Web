@@ -1,6 +1,8 @@
 //get all locks from the database
-Locks = require('../LockSchema')
+let mongoose = require('mongoose')
+Locks = require('../models/locks.server.model.js')
 
+//only need function that will list all locks in the database
 exports.list = function (req, res) {
   Locks.find(function (err, all) {
     if (err)

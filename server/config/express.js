@@ -1,34 +1,54 @@
 const path = require("path"),
-  express = require("express"),
-  mongoose = require("mongoose"),
-  morgan = require("morgan"),
-  bodyParser = require("body-parser"),
-  testimonialsRouter = require("../routes/testimonials.server.routes"),
-  nodemailer = require("nodemailer");
+express = require("express"),
+mongoose = require("mongoose"),
+morgan = require("morgan"),
+bodyParser = require("body-parser"),
+testimonialsRouter = require("../routes/testimonials.server.routes"),
+nodemailer = require("nodemailer");
+lockSchema = require('../models/locks.server.model')
+let fs = require('fs')
 
-const GMAIL_USER = (process.env.GMAIL_USER || require("./config").gmail.GMAIL_USER);
-const GMAIL_PASS = (process.env.GMAIL_PASS || require("./config").gmail.GMAIL_PASS);
+// const GMAIL_USER = (process.env.GMAIL_USER || require("./config").gmail.GMAIL_USER);
+// const GMAIL_PASS = (process.env.GMAIL_PASS || require("./config").gmail.GMAIL_PASS);
 
 module.exports.init = () => {
 
-  /* 
-         connect to database
-         - reference README for db uri
-     */
+  /*
+  connect to database
+  - reference README for db uri
+  */
+  console.log("connecting to database", require("./config").db.uri)
   mongoose
-    .connect(process.env.DB_URI || require("./config").db.uri, {
-      useNewUrlParser: true,
-      useUnifiedTopology: true
-    })
-    .then(() => {
-      console.log("connection to db established");
-    })
-    .catch(err => {
-      console.log("db error ${err.message}");
-      process.exit(-1);
+  .connect(process.env.DB_URI || require("./config").db.uri, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true
+  })
+  .then(() => {
+    console.log("connection to db established");
+    //store local lock file to database (after connection is established)
+    fs.readFile(path.join(__dirname, '../../client/src/data/locks.data.json'), 'utf8', function (err, data) {
+      if (err)
+      throw err;
+      var store = JSON.parse(data);
+      console.log(store)
+      store.entries.forEach(function (element) {
+        console.log('element is ', element)
+        let model = new lockSchema({description: element.description, image: element.image, name: element.name, price: element.price}).save(function (err) {
+          if(err){
+            console.log('error storing local locks json in mongodb')
+          }
+        })
+      });
     });
+  })
+  .catch(err => {
+    console.log("db error ${err.message}");
+    process.exit(-1);
+  });
   mongoose.set("useCreateIndex", true);
   mongoose.set("useFindAndModify", false);
+
+
 
   // initialize app
   const app = express();
@@ -52,12 +72,12 @@ module.exports.init = () => {
       to: "curdledazombie@gmail.com", // list of receivers
       subject: req.body.name + " - " + req.body.email, // Subject line
       html:
-        req.body.message +
-        "<li> Reach " +
-        req.body.name +
-        " at " +
-        req.body.email +
-        "</li>" // plain text body
+      req.body.message +
+      "<li> Reach " +
+      req.body.name +
+      " at " +
+      req.body.email +
+      "</li>" // plain text body
     };
     transporter.sendMail(mailOptions, function(err, info) {
       if (err) console.log(err);

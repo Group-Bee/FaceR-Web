@@ -1,8 +1,8 @@
 /* Dependencies */
-var testimonials = require('../controllers/testimonials.server.controller.js'), 
+var testimonials = require('../controllers/testimonials.server.controller.js'),
     express = require('express'), //refers to Express the middleware helper for Node.js
     router = express.Router(); //refers to the Router() function in Express the middleware helper for Node.js
-
+let locks= require('../controllers/locks.server.controller.js')
 
 //These routes handle is getting the testimonials data from the database, as well as creating new testimonials in the database
 router.route('/Testimonials')
@@ -16,5 +16,9 @@ router.route('/Testimonials/:testimonialId')
   .delete(testimonials.delete)
 
 router.param('testimonialId', testimonials.testimonialByID);
+
+//get lock information whenever a get request is sent to /About/Locks
+router.route('/Locks')
+  .get(locks.list)
 
 module.exports = router;

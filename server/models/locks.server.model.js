@@ -1,15 +1,11 @@
-var mongoose = require('mongoose'), 
+var mongoose = require('mongoose'),
     Schema = mongoose.Schema;
 
 
 var lockSchema = new Schema({
-    id: {
-        type: Number,
-        required: true
-    },
     description:{
         type: String
-    }, 
+    },
     image: {
         type: String,
         required: false
@@ -33,6 +29,6 @@ lockSchema.pre('save', function(next) {
         }
         next();
     });
-var Locks = mongoose.model('Locks', listingSchema);
+var Locks = mongoose.model('Locks', lockSchema);
 
 module.exports = Locks;
