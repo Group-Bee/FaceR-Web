@@ -32,10 +32,6 @@ class aboutPage extends React.Component {
           paddingBottom: "80px"
         }}
       >
-<<<<<<< HEAD
-=======
-        {/* <AboutProduct /> */}
->>>>>>> TimelineBackend
         <div className="jumbotron">
           <Timeline>
             <TimelineItem
@@ -106,33 +102,10 @@ class aboutPage extends React.Component {
                 {data[3].description}
               </p>
             </TimelineItem>
-            <TimelineItem
-              key="005"
-              dateText={data[4].date}
-              style={{ color: '#e86971' }}
-              // dateInnerStyle={{ background: '#76bb7f' }}
-              bodyContainerStyle={{
-                background: '#ddd',
-                padding: '20px',
-                borderRadius: '8px',
-                boxShadow: '0.5rem 0.5rem 2rem 0 rgba(0, 0, 0, 0.2)',
-              }} >
-              <h3>{data[4].title}</h3>
-              <h4>{data[4].subtitle}</h4>
-              <p>
-                {data[4].description}
-              </p>
-            </TimelineItem>
           </Timeline>
 
           <FutureLocks />
-          
-<<<<<<< HEAD
-          <TestimonialsCarousel />
 
-          <LearnMore />
-=======
->>>>>>> TimelineBackend
         </div >
         <TestimonialsCarousel />
 

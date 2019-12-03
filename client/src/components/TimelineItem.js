@@ -2,7 +2,6 @@ import React, { Component, Fragment } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import VisibilitySensor from 'react-visibility-sensor';
-import TimelineModal from './TimelineModal';
 
 import './componentCSS/TimelineItem.css';
 
@@ -11,18 +10,6 @@ class TimelineItem extends Component {
     super(props);
     this.onVisibilitySensorChange = this.onVisibilitySensorChange.bind(this);
     this.state = { visible: false };
-  }
-
-  state = {
-    modalOpen: false
-  }
-
-  handleModalOpen = () => {
-    this.setState((prevState) => {
-      return{
-        modalOpen: !prevState.modalOpen
-      }
-    })
   }
 
   onVisibilitySensorChange(isVisible) {
@@ -87,25 +74,6 @@ class TimelineItem extends Component {
             </div>
           </Fragment>
         </VisibilitySensor>
-        <div class = "row">
-          <div class = "col-md-0">
-            <button
-              style = {{
-                width: "1%",
-                borderRadius: 0,
-                borderWidth: 0,
-                marginTop: 0,
-                backgroundColor: "black"
-              }}
-              onClick = {this.handleModalOpen}
-              >
-            </button>
-          </div>
-        </div>
-        <TimelineModal
-          modalOpen = {this.state.modalOpen}
-          handleModalOpen = {this.handleModalOpen}
-        />
       </div>
     );
   }
