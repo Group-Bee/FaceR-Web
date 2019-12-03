@@ -16,7 +16,7 @@ exports.list = function(req, res) {
 };
 
 /* 
-  Middleware: find a testimonial by its ID, then pass it to the next request handler. 
+  Middleware: find timeline data by its ID, then pass it to the next request handler. 
  */
 exports.timelineByID = function(req, res, next, id) {
     timeline.findById(id).exec(function(err, timeline) {

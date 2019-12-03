@@ -8,7 +8,8 @@ var timelineSchema = new Schema({
         required: true
     },
     dateText:{
-        type: String
+        type: String,
+        required: true
     }, 
     title: {
         type: String,
@@ -32,7 +33,6 @@ timelineSchema.pre('save', function(next) {
         }
         next();
     });
-    
 var TimelineData = mongoose.model('TimelineData', timelineSchema);
 
 module.exports = TimelineData;
