@@ -12,10 +12,7 @@ export class Features extends Component {
 
         <Jumbotron fluid>
         <Container>
-            <h1>FaceR Lock Pro</h1>
-            <p>
-            The future of security, convenience, and locks. 
-            </p>
+            
 
             <img
                     src="images/August-Smart-Lock-Pro-Profile.jpg"
@@ -27,9 +24,9 @@ export class Features extends Component {
 
                   <br></br>
                   <br></br>
-            <h1>Convience</h1>
+            <h1>FaceR Lock Pro</h1>
             <p>
-            Getting in and out of your home has never been more convenient, more secure, and smart. 
+            The future of security, convenience, and locks. 
             </p>
 
             <br></br>
@@ -37,7 +34,7 @@ export class Features extends Component {
             <Row>
             <Col sm="4">
                 <Card body>
-                <CardTitle>Special Title Treatment</CardTitle>
+                <CardTitle>Security</CardTitle>
                 <CardText>With supporting text below as a natural lead-in to additional content.</CardText>
                 <br></br>
                 <br></br>
@@ -46,7 +43,7 @@ export class Features extends Component {
             </Col>
             <Col sm="4">
                 <Card body>
-                <CardTitle>Special Title Treatment</CardTitle>
+                <CardTitle>Ease of Use</CardTitle>
                 <CardText>With supporting text below as a natural lead-in to additional content.</CardText>
                 <br></br>
                 <br></br>
@@ -55,7 +52,7 @@ export class Features extends Component {
             </Col>
             <Col sm="4">
                 <Card body>
-                <CardTitle>Special Title Treatment</CardTitle>
+                <CardTitle>Data Privacy</CardTitle>
                 <CardText>With supporting text below as a natural lead-in to additional content.</CardText>
                 <br></br>
                 <br></br>
@@ -69,7 +66,10 @@ export class Features extends Component {
             <br></br>
             <LearnMore />
 
-           
+            <h1>FaceR Lock Pro</h1>
+            <p>
+            The future of security, convenience, and locks. 
+            </p>
 
         </Container>
 
