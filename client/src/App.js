@@ -7,10 +7,10 @@ import FeaturePage from "./views/featurePage"
 import Payment from "./views/Payment"
 import ConfirmPayment from "./views/ConfirmPayment"
 
+const axios = require('axios')
 
 class App extends React.Component {
   constructor(props) {
-
     console.log('App.js constructor')
     super(props)
     console.log(props)
@@ -18,19 +18,77 @@ class App extends React.Component {
       incart: []
     }
   }
+  
+  componentDidMount(){
+    console.log('app.js did mount')
+    var self = this
+    let cartelements = []
+    let cartelementsfiltered = []
+    axios.get('/About/Locks').then(function(response){
+      cartelements = response.data.map(el => {if (el.incart == true){ return el}})
+      cartelementsfiltered = cartelements.filter(function(el){
+        return el != null
+      })
+    })
+    .then(() =>{
+      console.log('cartelements are (app.js did mount)', cartelementsfiltered)
+      this.setState({
+        incart: cartelementsfiltered
+      })
+    })
+    .catch(function (error) {
+      console.log("error occurred when getting from /About/Locks")
+      console.log(error);
+    });
+  }
+
 
   addtoCart(element) {
-    this.setState({
-      incart: this.state.incart.concat(element)
+    console.log('adding element')
+    let lockpath = '/About/Locks/'+element._id
+    console.log('path to put is ', lockpath)
+    //update lock in database to be incart (true) or not in cart (false)
+    axios.put(lockpath, {id: element.id, description: element.description, image: element.image, name: element.name, price: element.price, incart: true, bought: element.bought}).then(function(response){
+      console.log("response (axios, app.js)", response)
+    }).catch(function (error) {
+      console.log("error occurred when putting to  ", lockpath)
+      console.log(error);
+    });
+    let cartelements = []
+    let cartelementsfiltered = []
+    axios.get('About/Locks')
+    .then(function(response){
+      cartelements = response.data.map(el => {if (el.incart == true){ return el}})
+      cartelementsfiltered = cartelements.filter(function(el){
+        return el != null
+      })
+    })
+    .then(() =>{
+      console.log('cartelements are ', cartelementsfiltered)
+      this.setState({
+        incart: cartelementsfiltered
+      })
+    })
+    .catch(error => {
+      console.log('error in getting About/Locks in app.js')
+      console.log(error)
     })
     console.log('added to cart', this.state.incart)
   }
 
   removefromCart(element){
-    console.log('removing, element id is ', element.id)
-    console.log('ids of cart elements are ', this.state.incart.filter(elem => {return elem.id}))
+    console.log('removing element')
+    let lockpath = '/About/Locks/'+element._id
+    console.log('path to put is ', lockpath)
+    //update lock in database to be incart (true) or not in cart (false)
+    axios.put(lockpath, {id: element.id, description: element.description, image: element.image, name: element.name, price: element.price, incart: false, bought: element.bought}).then(function(response){
+      console.log("response (axios, app.js)", response)
+    }).catch(function (error) {
+      console.log("error occurred when putting to  ", lockpath)
+      console.log(error);
+    });
     this.setState({
-      incart: this.state.incart.filter(elem=>{ return (elem.id !== element.id)})
+      incart: this.state.incart.filter(elem=>{ return (elem._id !== element._id)})
     })
     console.log('removed from cart', this.state.incart)
   }

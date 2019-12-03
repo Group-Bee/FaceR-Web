@@ -19,11 +19,11 @@ var lockSchema = new Schema({
         required: true
     },
     incart: {
-        type: String,
+        type: Boolean,
         required: true
     },
     bought: {
-      type: String,
+      type: Boolean,
       required: true
     }
 });

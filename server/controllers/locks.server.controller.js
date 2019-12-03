@@ -11,25 +11,37 @@ exports.list = function (req, res) {
   });
 };
 
-exports.update = function(req, res) {
-  var reqlock = req.locks;
 
-  /* Replace the listings's properties with the new properties found in req.body */
-  Locks.update(reqlock, req.body, function(err){
-    if(err){
-      console.log('error in updating listing occurred')
-      res.status(400).send(err);
-    }
+exports.read = function(req, res) {
+  console.log('reading')
+  res.json(req.locks);
+};
+
+
+exports.update = function(req, res) {
+  let lock = req.locks
+  //update lock to be in/not in cart
+  console.log('updating')
+  console.log(req.locks, "\nbody\n", req.body)
+  console.log('change cart status')
+  Locks.update(req.locks, req.body, function(err){
+    if(err)
+    res.status(400).send(err);
     lock = new Locks(req.body);
   })
+  console.log('lock updated')
+};
 
-  /* Save the listing */
-  lock.save(function(err) {
+//bind lock object (json in database) to request, pass to update middleware function
+exports.locksByID = function(req, res, next, id) {
+  console.log('logbyid')
+  Locks.findById(id).exec(function(err, lock) {
     if(err) {
-      console.log(err);
+      console.log('error in finding lock by id')
       res.status(400).send(err);
     } else {
-      res.json(lock);
+      req.locks = lock;
+      next();
     }
   });
 };
