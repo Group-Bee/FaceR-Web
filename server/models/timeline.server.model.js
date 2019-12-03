@@ -3,10 +3,6 @@ var mongoose = require('mongoose'),
 
 
 var timelineSchema = new Schema({
-    key: {
-        type: Number,
-        required: true
-    },
     dateText:{
         type: String,
         required: true

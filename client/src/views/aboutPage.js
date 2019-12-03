@@ -7,8 +7,23 @@ import Timeline from "../components/Timeline"
 import TimelineItem from "../components/TimelineItem"
 import FutureLocks from "../components/FutureLocks";
 import LearnMore from "../components/LearnMore";
+import data from '../data/testimonial.data';
+
 import "../App.css";
 import "../bootstrap.min.css";
+
+const axios = require('axios');
+
+axios.get('/About/Timeline')
+  .then(function (response) {
+    // handle success
+    console.log(response);
+    data = response;
+  })
+  .catch(function (error) {
+    // handle error
+    console.log(error);
+  });
 
 //changed
 class aboutPage extends React.Component {
@@ -30,11 +45,7 @@ class aboutPage extends React.Component {
           paddingBottom: "100px"
         }}
       >
-<<<<<<< HEAD
         {/* <AboutProduct /> */}
-=======
-        <AboutProduct />
->>>>>>> origin
         <div className="jumbotron">
           <Timeline>
             <TimelineItem
@@ -136,8 +147,6 @@ class aboutPage extends React.Component {
               </p>
             </TimelineItem>
           </Timeline>
-
-          <TestimonialsCarousel />
 
           <FutureLocks />
           
