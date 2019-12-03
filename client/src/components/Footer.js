@@ -28,9 +28,20 @@ export default class Footer extends Component {
             style={{ color: "white", tableLayout: "fixed", width: "100%" }}
           >
             <tr>
-              <td>
-                <h1 style={{ color: "white" }}>FaceR</h1>
-              </td>
+            <center>
+                <div class="row" style={{display: "inline-block", lineHeight: "10em"}}>
+                  <td class="col-md-6" style={{paddingLeft: "10%", width: "64", height: "64"}}>
+                  <a href="/">
+                        <img
+                          src="images/logo.svg"
+                          style={{}}
+                          alt="FaceRLogo"
+                          width= "150"
+                        />
+                      </a>
+                  </td>
+                </div>
+              </center>
               <td>
                 <a className="nav-link" href="/">
                   <h5
