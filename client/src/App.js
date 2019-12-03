@@ -18,13 +18,13 @@ class App extends React.Component {
       incart: []
     }
   }
-  
+
   componentDidMount(){
     console.log('app.js did mount')
     var self = this
     let cartelements = []
     let cartelementsfiltered = []
-    axios.get('/About/Locks').then(function(response){
+    axios.get('/Pay/Locks').then(function(response){
       cartelements = response.data.map(el => {if (el.incart == true){ return el}})
       cartelementsfiltered = cartelements.filter(function(el){
         return el != null
@@ -45,7 +45,7 @@ class App extends React.Component {
 
   addtoCart(element) {
     console.log('adding element')
-    let lockpath = '/About/Locks/'+element._id
+    let lockpath = '/Pay/Locks/'+element._id
     console.log('path to put is ', lockpath)
     //update lock in database to be incart (true) or not in cart (false)
     axios.put(lockpath, {id: element.id, description: element.description, image: element.image, name: element.name, price: element.price, incart: true, bought: element.bought}).then(function(response){
@@ -56,7 +56,7 @@ class App extends React.Component {
     });
     let cartelements = []
     let cartelementsfiltered = []
-    axios.get('About/Locks')
+    axios.get('Pay/Locks')
     .then(function(response){
       cartelements = response.data.map(el => {if (el.incart == true){ return el}})
       cartelementsfiltered = cartelements.filter(function(el){
@@ -78,7 +78,7 @@ class App extends React.Component {
 
   removefromCart(element){
     console.log('removing element')
-    let lockpath = '/About/Locks/'+element._id
+    let lockpath = '/Pay/Locks/'+element._id
     console.log('path to put is ', lockpath)
     //update lock in database to be incart (true) or not in cart (false)
     axios.put(lockpath, {id: element.id, description: element.description, image: element.image, name: element.name, price: element.price, incart: false, bought: element.bought}).then(function(response){

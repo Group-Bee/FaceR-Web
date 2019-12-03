@@ -1,18 +1,12 @@
 const path = require("path"),
-  express = require("express"),
-  mongoose = require("mongoose"),
-  morgan = require("morgan"),
-  bodyParser = require("body-parser"),
-  testimonialsRouter = require("../routes/testimonials.server.routes"),
-  timelineRouter = require("../routes/timeline.server.routes"),
-  nodemailer = require("nodemailer");
-
-
 express = require("express"),
 mongoose = require("mongoose"),
 morgan = require("morgan"),
 bodyParser = require("body-parser"),
 testimonialsRouter = require("../routes/testimonials.server.routes"),
+timelineRouter = require("../routes/timeline.server.routes"),
+lockRouter = require("../routes/locks.server.routes"),
+userpaymentRouter = require("../routes/UserPayment.server.routes")
 nodemailer = require("nodemailer");
 lockSchema = require('../models/locks.server.model')
 let fs = require('fs')
@@ -34,28 +28,29 @@ module.exports.init = () => {
     useNewUrlParser: true,
     useUnifiedTopology: true
   })
-  // .then(() => {
-  //   console.log("connection to db established");
-  //   //store local lock file to database (after connection is established)
-  //   fs.readFile(path.join(__dirname, '../../client/src/data/locks.data.json'), 'utf8', function (err, data) {
-  //     if (err)
-  //     throw err;
-  //     var store = JSON.parse(data);
-  //     console.log(store)
-  //     store.entries.forEach(function (element) {
-  //       console.log('element is ', element)
-  //       let model = new lockSchema({description: element.description, image: element.image, name: element.name, price: element.price, incart: element.incart, bought: element.bought}).save(function (err) {
-  //         if(err){
-  //           console.log('error storing local locks json in mongodb')
-  //         }
-  //       })
-  //     });
-  //   });
-  // })
-  // .catch(err => {
-  //   console.log("db error ${err.message}");
-  //   process.exit(-1);
-  // });
+  .then(() => {
+    console.log("connection to db established");
+    //store local lock file to database (after connection is established)
+    fs.readFile(path.join(__dirname, '../../client/src/data/locks.data.json'), 'utf8', function (err, data) {
+      if (err)
+      throw err;
+      var store = JSON.parse(data);
+      console.log(store)
+      store.entries.forEach(function (element) {
+        console.log('element is ', element)
+        let model = new lockSchema({description: element.description, image: element.image, name: element.name, price: element.price, incart: element.incart, bought: element.bought}).save(function (err) {
+          if(err){
+            console.log('error storing local locks json in mongodb')
+          }
+        })
+      });
+    });
+  })
+  .catch(err => {
+    console.log("db error ${err.message}");
+    process.exit(-1);
+  });
+
   mongoose.set("useCreateIndex", true);
   mongoose.set("useFindAndModify", false);
 
@@ -106,6 +101,12 @@ module.exports.init = () => {
 
   //Router to display timeline when on About Page
   app.use("/About", timelineRouter);
+
+  //Router to display locks when on Payment Page
+  app.use("/Pay", lockRouter);
+
+  //Router used to update user payment info in database (from confirm payment page)
+  app.use("/ConfirmPayment", userpaymentRouter);
 
   if (process.env.NODE_ENV === "production") {
     // Serve any static files

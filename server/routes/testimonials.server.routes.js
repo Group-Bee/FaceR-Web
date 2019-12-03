@@ -17,15 +17,6 @@ router.route('/Testimonials/:testimonialId')
 
 router.param('testimonialId', testimonials.testimonialByID);
 
-//get lock information whenever a get request is sent to /About/Locks
-router.route('/Locks')
-  .get(locks.list)
 
-//update lock info on the following request
-router.route('/Locks/:lockid')
-  .get(locks.read)
-  .put(locks.update)
-
-router.param('lockid', locks.locksByID)
 
 module.exports = router;

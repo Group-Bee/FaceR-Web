@@ -5,14 +5,14 @@ export class Header extends Component {
   render() {
     var currentLocation = window.location.pathname;
     return (
-      <div style={{ position: "fixed", top: "0", width: "100%", zIndex: "0" }}>
+      <div style={{ position: "fixed", top: "0", width: "100%", zIndex: "10" }}>
         <nav className="navbar navbar-expand-lg navbar-dark bg-primary">
         <a href="/"><img
             src="images/logo.svg"
             className="d-block"
             width="150"
             /></a>
-          <a><img 
+          <a><img
             className="d-block"
             width="50"
             /></a>
