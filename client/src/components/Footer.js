@@ -62,21 +62,32 @@ export default class Footer extends Component {
                 </a>
               </td>
 
-              <td style={{ paddingLeft: "10%" }}>
-                <a href="https://www.facebook.com">
-                  <FacebookIcon size={32} round={true} />
-                </a>
-                <a href="https://www.kickstarter.com">
-                  <img
-                    src={require("../assets/iconfinder_kickstarter_3069717.png")}
-                    style={{ float: "left" }}
-                    alt="KickstarterLogo"
-                  />
-                </a>
-                <a href="https://www.twitter.com">
-                  <TwitterIcon size={32} round={true} />
-                </a>
-              </td>
+              <center>
+                <div class="row" style={{display: "inline-block", lineHeight: "10em"}}>
+                  <td class="col-md-6" style={{paddingLeft: "10%", width: "64", height: "64"}}>
+                    <a href="https://www.facebook.com">
+                        <FacebookIcon size={64} round={true} />
+                      </a>
+                  </td>
+
+                  <td class="col-md-6" style={{paddingLeft: "10%", width: "64", height: "64"}}>
+                      <a href="https://www.twitter.com">
+                        <TwitterIcon size={64} round={true} />
+                      </a>
+                  </td>
+
+                  <td class="col-md-6" style={{paddingLeft: "10%", width: "64", height: "64"}}>
+                  <a href="https://www.kickstarter.com">
+                        <img
+                          src={require("../assets/kickstarter_icon.svg")}
+                          style={{}}
+                          alt="KickstarterLogo"
+                          width= "64"
+                        />
+                      </a>
+                  </td>
+                </div>
+              </center>
             </tr>
           </table>
         </div>
