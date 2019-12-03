@@ -57,6 +57,8 @@ class TestimonialModal extends React.Component {
                 "\nConsumer Name: " + response.data.name)
             })
             .catch(function (error) {
+                alert("Oops! It looks like an error occured.\n" +
+                "Make sure you have filled in the following necessary fields: testimonial, data");
                 // handle error
                 console.log(error);
         });
@@ -75,6 +77,8 @@ class TestimonialModal extends React.Component {
                 alert(response.data.message)
             })
             .catch(function (error) {
+                alert("Oops! It looks like an error occured.\n" +
+                "Make sure you have filled in the following necessary field: id");
                 // handle error
                 console.log(error);
         });
@@ -98,6 +102,8 @@ class TestimonialModal extends React.Component {
                 "\nUpdated Consumer Name: " + response.data.name)
             })
             .catch(function (error) {
+                alert("Oops! It looks like an error occured.\n" +
+                "Make sure you have filled in the following necessary fields: id");
                 // handle error
                 console.log(error);
         });
