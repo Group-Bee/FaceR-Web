@@ -1,4 +1,5 @@
 const path = require("path"),
+
 express = require("express"),
 mongoose = require("mongoose"),
 morgan = require("morgan"),
@@ -8,10 +9,12 @@ nodemailer = require("nodemailer");
 lockSchema = require('../models/locks.server.model')
 let fs = require('fs')
 
+
 // const GMAIL_USER = (process.env.GMAIL_USER || require("./config").gmail.GMAIL_USER);
 // const GMAIL_PASS = (process.env.GMAIL_PASS || require("./config").gmail.GMAIL_PASS);
 
 module.exports.init = () => {
+
 
   /*
   connect to database
@@ -52,6 +55,7 @@ module.exports.init = () => {
 
   // initialize app
   const app = express();
+
 
   // body parsing middleware
   app.use(bodyParser.json());
@@ -97,7 +101,7 @@ module.exports.init = () => {
     app.use(express.static(path.join(__dirname, "../../client/build")));
 
     // Handle React routing, return all requests to React app
-    app.get("*", function(req, res) {
+    app.get("*", function (req, res) {
       res.sendFile(path.join(__dirname, "../../client/build", "index.html"));
     });
   }

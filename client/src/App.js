@@ -7,10 +7,13 @@ import FeaturePage from "./views/featurePage"
 import Payment from "./views/Payment"
 import ConfirmPayment from "./views/ConfirmPayment"
 
+
 class App extends React.Component {
   constructor(props) {
+
     console.log('App.js constructor')
     super(props)
+    console.log(props)
     this.state = {
       incart: []
     }

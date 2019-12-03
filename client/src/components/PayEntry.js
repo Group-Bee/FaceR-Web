@@ -27,12 +27,14 @@ let axios = require('axios')
 //   console.log(error);
 // });
 
+
 class PayEntry extends React.Component {
 
   constructor(){
     super()
     this.state = {
       mongolocks: []
+
     }
   }
 
