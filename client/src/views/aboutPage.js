@@ -6,7 +6,6 @@ import Footer from "../components/Footer";
 import FutureLocks from "../components/FutureLocks";
 import LearnMore from "../components/LearnMore";
 import CompleteTimeline from "../components/CompleteTimeline"
-import data from "../data/timelineData";
 
 import "../App.css";
 import "../bootstrap.min.css";
@@ -39,7 +38,7 @@ class aboutPage extends React.Component {
           
         </div >
         <FutureLocks />
-        
+
         <TestimonialsCarousel />
 
         <LearnMore />

@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import Timeline from "./Timeline"
 import TimelineItem from "./TimelineItem"
-import data from "../data/timelineData";
 import Axios from "axios";
 import "../App.css";
 
@@ -24,7 +23,6 @@ class CompleteTimeline extends Component {
     });
   }
   render(){
-    console.log('rendering pay entries', data)
     console.log('getting timeline', this.state.mongotimeline)
 
     const entries= this.state.mongotimeline.map(element => {
