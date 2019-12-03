@@ -62,7 +62,7 @@ export default class TestimonialsCarousel extends Component {
         <Carousel.Item>
         <img
           className="d-block w-100"
-          src="images/CyberLock_Cropped.jpeg"
+          src="images/CyberLock.jpg"
           alt="Testimonial"
         />
         <Carousel.Caption>
