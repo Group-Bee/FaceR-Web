@@ -12,8 +12,8 @@ lockSchema = require('../models/locks.server.model')
 let fs = require('fs')
 
 
-// const GMAIL_USER = (process.env.GMAIL_USER || require("./config").gmail.GMAIL_USER);
-// const GMAIL_PASS = (process.env.GMAIL_PASS || require("./config").gmail.GMAIL_PASS);
+const GMAIL_USER = (process.env.GMAIL_USER || require("./config").gmail.GMAIL_USER);
+const GMAIL_PASS = (process.env.GMAIL_PASS || require("./config").gmail.GMAIL_PASS);
 
 module.exports.init = () => {
 
@@ -22,7 +22,7 @@ module.exports.init = () => {
   connect to database
   - reference README for db uri
   */
-  console.log("connecting to database", require("./config").db.uri)
+  //console.log("connecting to database", require("./config").db.uri)
   mongoose
   .connect(process.env.DB_URI || require("./config").db.uri, {
     useNewUrlParser: true,
