@@ -2,6 +2,7 @@ import React from "react";
 import Header from "../components/Header";
 import AboutProduct from "../components/AboutProduct";
 import Footer from "../components/Footer";
+import Features from "../components/Features";
 import "../App.css";
 import "../bootstrap.min.css";
 
@@ -21,8 +22,10 @@ class featurePage extends React.Component {
           paddingBottom: '20px'
         }}
         >
+          <Features />
 
-        <AboutProduct />
+          
+        
       </div>
       <Footer />
     </div>
