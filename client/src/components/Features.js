@@ -1,7 +1,8 @@
 import React, { Component } from "react";
 import Jumbotron from 'react-bootstrap/Jumbotron';
-import Card from 'react-bootstrap/Card';
 import Container from 'react-bootstrap/Container';
+import LearnMore from "../components/LearnMore";
+import { Card, Button, CardTitle, CardText, Row, Col } from 'reactstrap';
 export class Features extends Component {
     render() {
       return (
@@ -11,33 +12,69 @@ export class Features extends Component {
 
         <Jumbotron fluid>
         <Container>
-            <h1>FaceR Lock</h1>
+            <h1>FaceR Lock Pro</h1>
             <p>
             The future of security, convenience, and locks. 
             </p>
 
             <img
                     src="images/August-Smart-Lock-Pro-Profile.jpg"
-                    style={{ float: "center" }}
+                    style={{ float: "left" }}
                     alt="Lock Features"
-                    height="400"
-                    width="400"
+                    height="375"
+                    width="375"
                   />
+
+                  <br></br>
+                  <br></br>
             <h1>Convience</h1>
             <p>
             Getting in and out of your home has never been more convenient, more secure, and smart. 
             </p>
 
             <br></br>
+
+            <Row>
+            <Col sm="4">
+                <Card body>
+                <CardTitle>Special Title Treatment</CardTitle>
+                <CardText>With supporting text below as a natural lead-in to additional content.</CardText>
+                <br></br>
+                <br></br>
+                <br></br>
+                </Card>
+            </Col>
+            <Col sm="4">
+                <Card body>
+                <CardTitle>Special Title Treatment</CardTitle>
+                <CardText>With supporting text below as a natural lead-in to additional content.</CardText>
+                <br></br>
+                <br></br>
+                <br></br>
+                </Card>
+            </Col>
+            <Col sm="4">
+                <Card body>
+                <CardTitle>Special Title Treatment</CardTitle>
+                <CardText>With supporting text below as a natural lead-in to additional content.</CardText>
+                <br></br>
+                <br></br>
+                <br></br>
+                </Card>
+            </Col>
+            </Row>
+
             <br></br>
             <br></br>
             <br></br>
-            <br></br>
+            <LearnMore />
+
+           
 
         </Container>
-        </Jumbotron>
 
-        
+        </Jumbotron>
+       
 
         ) 
     }
