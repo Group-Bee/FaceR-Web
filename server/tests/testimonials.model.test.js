@@ -6,19 +6,17 @@
 
 var should = require('should'), 
     mongoose = require('mongoose'), 
-    Timeline = require('../models/timeline.server.model'), 
+    Testimonials = require('../models/testimonials.server.model'), 
     config = require('../config/config');
 
-var timeline, id;
+var testimonials, id;
 
-timeline =  {
-  date: "2019", 
-  title: "FaceR",
-  subtitle: "subtitle", 
-  description: "Example Text"
+testimonials =  {
+    testimonial: "Hello World!",
+    name: "John"
 }
 
-describe('Timeline Schema Unit Tests', function() {
+describe('Testimonial Schema Unit Tests', function() {
 
   before(function(done) {
     mongoose.connect(config.db.uri, { useNewUrlParser: true });
@@ -34,48 +32,48 @@ describe('Timeline Schema Unit Tests', function() {
      */
     this.timeout(10000);
 
-    it('saves properly when code and name provided', function(done){
-      new Timeline({
-        date: timeline.date, 
-        title: timeline.title
-      }).save(function(err, timeline){
+    it('saves properly when testimonial and name provided', function(done){
+      new Testimonials({
+        testimonial: testimonials.testimonial, 
+        name: testimonials.name
+      }).save(function(err, testimonials){
         should.not.exist(err);
-        id = timeline._id;
+        id = testimonials._id;
         done();
       });
     });
 
-    it('saves properly when all 4 properties provided', function(done){
-      new Timeline(timeline).save(function(err, timeline){
+    it('saves properly when all two properties provided', function(done){
+      new Testimonials(testimonials).save(function(err, testimonials){
         should.not.exist(err);
-        id = timeline._id;
+        id = testimonials._id;
         done();
       });
     });
 
-    it('throws an error when title not provided', function(done){
-      new Timeline({
-        date: timeline.date
+    it('throws an error when name not provided', function(done){
+      new Testimonials({
+        testimonial: testimonials.testimonial
       }).save(function(err){
         should.exist(err);
         done();
       })
     });
 
-    it('throws an error when date not provided', function(done){
-      new Timeline({
-        title: timeline.title
-      }).save(function(err){
-        should.exist(err);
-        done();
-      })
+    it('throws an error when testimonial not provided', function(done){
+        new Testimonials({
+          name: testimonials.name
+        }).save(function(err){
+          should.exist(err);
+          done();
+        })
     });
 
   });
 
   afterEach(function(done) {
     if(id) {
-      Timeline.deleteOne({ _id: id }).exec(function() {
+      Testimonials.deleteOne({ _id: id }).exec(function() {
         id = null;
         done();
       });
