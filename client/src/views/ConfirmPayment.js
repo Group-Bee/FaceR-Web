@@ -16,8 +16,10 @@ export default class ConfirmPayment extends Component {
     console.log(name.value, address.value, email.value, gender.value, total, lockid)
     if(name.value == undefined || address.value == undefined || gender.value == undefined || total == undefined || lockid == undefined|| name.value == '' || address.value == '' || gender.value == '' || total == '' || lockid == ''){
       console.log('cannot proceed')
+      alert("Please fill out the required information or reload the page")
     }else{
       axios.post("/ConfirmPayment/Pay", {name: name.value, address: address.value, email: email.value, gender: gender.value, total: total, lockid: lockid})
+      alert("Your information has been successfully recorded!")
     }
   }
 

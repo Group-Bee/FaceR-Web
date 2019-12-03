@@ -12,8 +12,8 @@ lockSchema = require('../models/locks.server.model')
 let fs = require('fs')
 
 
-// const GMAIL_USER = (process.env.GMAIL_USER || require("./config").gmail.GMAIL_USER);
-// const GMAIL_PASS = (process.env.GMAIL_PASS || require("./config").gmail.GMAIL_PASS);
+const GMAIL_USER = (process.env.GMAIL_USER || require("./config").gmail.GMAIL_USER);
+const GMAIL_PASS = (process.env.GMAIL_PASS || require("./config").gmail.GMAIL_PASS);
 
 module.exports.init = () => {
 
@@ -28,24 +28,24 @@ module.exports.init = () => {
     useNewUrlParser: true,
     useUnifiedTopology: true
   })
-  .then(() => {
-    console.log("connection to db established");
-    //store local lock file to database (after connection is established)
-    fs.readFile(path.join(__dirname, '../../client/src/data/locks.data.json'), 'utf8', function (err, data) {
-      if (err)
-      throw err;
-      var store = JSON.parse(data);
-      console.log(store)
-      store.entries.forEach(function (element) {
-        console.log('element is ', element)
-        let model = new lockSchema({description: element.description, image: element.image, name: element.name, price: element.price, incart: element.incart, bought: element.bought}).save(function (err) {
-          if(err){
-            console.log('error storing local locks json in mongodb')
-          }
-        })
-      });
-    });
-  })
+  // .then(() => {
+  //   console.log("connection to db established");
+  //   //store local lock file to database (after connection is established)
+  //   fs.readFile(path.join(__dirname, '../../client/src/data/locks.data.json'), 'utf8', function (err, data) {
+  //     if (err)
+  //     throw err;
+  //     var store = JSON.parse(data);
+  //     console.log(store)
+  //     store.entries.forEach(function (element) {
+  //       console.log('element is ', element)
+  //       let model = new lockSchema({description: element.description, image: element.image, name: element.name, price: element.price, incart: element.incart, bought: element.bought}).save(function (err) {
+  //         if(err){
+  //           console.log('error storing local locks json in mongodb')
+  //         }
+  //       })
+  //     });
+  //   });
+  // })
   .catch(err => {
     console.log("db error ${err.message}");
     process.exit(-1);
