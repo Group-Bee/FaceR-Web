@@ -21,4 +21,7 @@ router.param('testimonialId', testimonials.testimonialByID);
 router.route('/Locks')
   .get(locks.list)
 
+router.route('/Locks/:lockid')
+  .put(locks.update)
+
 module.exports = router;

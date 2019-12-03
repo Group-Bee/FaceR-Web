@@ -32,7 +32,7 @@ class Payment extends Component {
                 <div>
                     <PayEntry incart={this.props.incart} add={this.props.add.bind(this)}></PayEntry>
                 </div>
-                
+
             </div>
             <Footer />
             </div>

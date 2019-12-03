@@ -9,6 +9,7 @@ import ConfirmPayment from "./views/ConfirmPayment"
 
 class App extends React.Component {
   constructor(props) {
+    console.log('App.js constructor')
     super(props)
     this.state = {
       incart: []
@@ -19,16 +20,20 @@ class App extends React.Component {
     this.setState({
       incart: this.state.incart.concat(element)
     })
+    console.log('added to cart', this.state.incart)
   }
 
   removefromCart(element){
+    console.log('removing, element id is ', element.id)
+    console.log('ids of cart elements are ', this.state.incart.filter(elem => {return elem.id}))
     this.setState({
       incart: this.state.incart.filter(elem=>{ return (elem.id !== element.id)})
     })
+    console.log('removed from cart', this.state.incart)
   }
 
   render() {
-    console.log('re-rendering')
+    console.log('re-rendering', this.state.incart)
     return (
       <BrowserRouter>
         <Switch>

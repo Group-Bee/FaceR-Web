@@ -17,6 +17,14 @@ var lockSchema = new Schema({
     price: {
         type: String,
         required: true
+    },
+    incart: {
+        type: String,
+        required: true
+    },
+    bought: {
+      type: String,
+      required: true
     }
 });
 
