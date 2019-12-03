@@ -30,7 +30,6 @@ class aboutPage extends React.Component {
           paddingBottom: "100px"
         }}
       >
-        <AboutProduct />
         <div className="jumbotron">
           <Timeline>
             <TimelineItem
@@ -114,10 +113,10 @@ class aboutPage extends React.Component {
             </TimelineItem>
           </Timeline>
 
-          <TestimonialsCarousel />
-
           <FutureLocks />
           
+          <TestimonialsCarousel />
+
           <LearnMore />
         </div >
       </div>

@@ -2,7 +2,9 @@ import React, { Component } from "react";
 import Carousel from 'react-bootstrap/Carousel';
 import data from '../data/testimonial.data';
 
+import TestimonialModal from './TestimonialModal'
 const axios = require('axios');
+
 
 //Bootstrap documentation on how to create carousel form scratch: https://getbootstrap.com/docs/4.0/components/carousel/
 //Bootstrap documentation on how to create carousel using pre-made bootstrap components: https://react-bootstrap.github.io/components/carousel/
@@ -54,7 +56,18 @@ axios.get('/About/Testimonials')
     console.log(error);
   });
 
-export default class TestimonialsCarousel extends Component {
+class TestimonialsCarousel extends Component {
+  state = {
+    modalOpen: false
+ }
+
+ handleModalOpen = () => {
+    this.setState((prevState) => {
+       return{
+          modalOpen: !prevState.modalOpen
+       }
+    })
+ }
   render() {
     //To change the number of testimonials being displayed, adjust the 2nd number in the 'slice()' function
     const testimonials = data.slice(0,3).map(element => {
@@ -73,8 +86,31 @@ export default class TestimonialsCarousel extends Component {
       )
     })
     return (
-    <Carousel>{testimonials}</Carousel>
+    <div class="card">
+        <Carousel>{testimonials}</Carousel>
+        <div class="row">
+        <div class="col-md-0">
+          <button
+                style={{
+                  width: "1%",
+                  borderRadius: 0,
+                  borderWidth: 0,
+                  marginTop: 0,
+                  backgroundColor: "black"
+                }}
+                onClick={this.handleModalOpen}
+              >
+          </button>
+        </div>
+        </div>
+        <TestimonialModal
+           modalOpen={this.state.modalOpen}
+           handleModalOpen={this.handleModalOpen}
+        />
+    </div>
     );
   }
 }
+
+export default TestimonialsCarousel;
 //*/
