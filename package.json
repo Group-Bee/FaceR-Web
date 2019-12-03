@@ -35,6 +35,7 @@
     "react-payment": "^0.1.8",
     "react-share": "^3.0.1",
     "react-stripe-checkout": "^2.6.3",
+    "reactstrap": "^8.1.1",
     "should": "^13.2.3",
     "supertest": "^4.0.2",
     "vertical-timeline-component-for-react": "^1.0.6"
