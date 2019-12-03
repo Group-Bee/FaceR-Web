@@ -46,17 +46,20 @@ class UserInfo extends Component {
     this.setState({
       name: this.refs.name.value,
       address: this.refs.address.value,
-      email: this.refs.email,
-      gender: this.refs.gender,
+      email: this.refs.email.value,
+      gender: this.refs.gender.value,
     });
   }
 
   submit = (total, lockid) => {
     console.log('mysubmit')
+    console.log(this.state.name, this.state.address)
     this.props.submit(this.state.name, this.state.address, this.state.email, this.state.gender, total, lockid)
       this.setState({
         name: '',
-        address: ''
+        address: '',
+        email: '',
+        gender: ''
       })
 
   }
@@ -95,8 +98,8 @@ class UserInfo extends Component {
             type="text"
             placeholder="Your name"
             ref="name"
-            onChange={this.update.bind(this)}
             value={this.state.name}
+            onChange={this.update.bind(this)}
             required
           />
         </div>
@@ -121,6 +124,7 @@ class UserInfo extends Component {
             type="text"
             placeholder="Your email"
             ref="email"
+            value={this.state.email}
             onChange={this.update.bind(this)}
             required
           />
@@ -133,6 +137,7 @@ class UserInfo extends Component {
             type="text"
             placeholder="Gender"
             ref="gender"
+            value={this.state.gender}
             onChange={this.update.bind(this)}
             required
           />

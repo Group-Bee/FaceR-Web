@@ -12,13 +12,13 @@ const axios = require('axios')
 export default class ConfirmPayment extends Component {
 
   submit = (name, address, email, gender, total, lockid) =>{
-    console.log("submitted", name.value)
-    console.log(name.value, address.value, email.value, gender.value, total, lockid)
-    if(name.value == undefined || address.value == undefined || gender.value == undefined || total == undefined || lockid == undefined|| name.value == '' || address.value == '' || gender.value == '' || total == '' || lockid == ''){
+    console.log("submitted", name)
+    console.log(name, address, email, gender, total, lockid)
+    if(name == undefined || address == undefined || gender == undefined || total == undefined || lockid == undefined|| name == '' || address == '' || gender == '' || total == '' || lockid == ''){
       console.log('cannot proceed')
       alert("Please fill out the required information or reload the page")
     }else{
-      axios.post("/ConfirmPayment/Pay", {name: name.value, address: address.value, email: email.value, gender: gender.value, total: total, lockid: lockid})
+      axios.post("/ConfirmPayment/Pay", {name: name, address: address, email: email, gender: gender, total: total, lockid: lockid})
       alert("Your information has been successfully recorded!")
     }
   }
