@@ -10,7 +10,8 @@ class TestimonialModal extends React.Component {
         this.state = {
             testimonial: '',
             name: '',
-            id: ''
+            id: '',
+            pswd: ''
         }
     }
 
@@ -32,7 +33,17 @@ class TestimonialModal extends React.Component {
         })
     }
 
+    pswdUpdate = (event) => {
+        this.setState({
+            pswd: event.target.value
+        })
+    }
+
     addTestimonial = () => {
+        if (this.state.pswd !== '12345'){
+            alert("You have not entered the correct password.");
+            return;
+        }
         // Make a request to add testimonial data
         axios.post('/About/Testimonials', {
             testimonial: this.state.testimonial,
@@ -52,6 +63,10 @@ class TestimonialModal extends React.Component {
     }
 
     deleteTestimonial = () => {
+        if (this.state.pswd !== '12345'){
+            alert("You have not entered the correct password.");
+            return;
+        }
         // Make a request to add testimonial data
         //var api = '/About/Testimonials/' + this.state.id
         axios.delete('/About/Testimonials/' + this.state.id)
@@ -66,6 +81,10 @@ class TestimonialModal extends React.Component {
     }
 
     updateTestimonial = () => {
+        if (this.state.pswd !== '12345'){
+            alert("You have not entered the correct password.");
+            return;
+        }
         // Make a request to add testimonial data
         axios.put('/About/Testimonials/' + this.state.id, {
             testimonial: this.state.testimonial,
@@ -90,7 +109,7 @@ render() {
             <Modal size="lg" show={this.props.modalOpen} onHide={this.props.handleModalOpen} centered>
             <Modal.Header closeButton>
                 <Modal.Title id="contained-modal-title-vcenter">
-                    <h2>Add/Delete a Testimonial</h2>
+                    <h2>Add/Delete/Update a Testimonial</h2>
                 </Modal.Title>
             </Modal.Header>
             <Modal.Body>
@@ -120,8 +139,18 @@ render() {
                         class="form-control"
                         type = "text"
                         value = {this.state.id}
-                        placeholder = "Name"
+                        placeholder = "Id"
                         onChange = {this.idUpdate.bind(this)}
+                    />
+                </form>
+                <h4>Password (needed to make changes)</h4>
+                <form>
+                    <input
+                        class="form-control"
+                        type = "text"
+                        value = {this.state.pswd}
+                        placeholder = "Password"
+                        onChange = {this.pswdUpdate.bind(this)}
                     />
                 </form>
             </Modal.Body>

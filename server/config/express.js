@@ -22,7 +22,7 @@ module.exports.init = () => {
   connect to database
   - reference README for db uri
   */
-  console.log("connecting to database", require("./config").db.uri)
+  //console.log("connecting to database", require("./config").db.uri)
   mongoose
   .connect(process.env.DB_URI || require("./config").db.uri, {
     useNewUrlParser: true,

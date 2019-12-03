@@ -44,7 +44,6 @@ Backend implementation of testimonials carousel.
 Data for testimonials is stored at mongoDB Atlas database (Cluster0, DB = FaceR, Collection = testimonials). If you want to adjust the data being displayed, change the documents in that database.
 */
 ///*
-// Make a request for testimonial data
 axios.get('/About/Testimonials')
   .then(function (response) {
     // handle success
@@ -89,14 +88,15 @@ class TestimonialsCarousel extends Component {
     <div class="card">
         <Carousel>{testimonials}</Carousel>
         <div class="row">
-        <div class="col-md-0">
+        <div class="col-md-12">
           <button
                 style={{
                   width: "1%",
                   borderRadius: 0,
                   borderWidth: 0,
                   marginTop: 0,
-                  backgroundColor: "black"
+                  //backgroundColor: "black",
+                  backgroundColor: "transparent"
                 }}
                 onClick={this.handleModalOpen}
               >
