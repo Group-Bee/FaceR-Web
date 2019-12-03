@@ -27,9 +27,9 @@ class aboutPage extends React.Component {
       <div
         className="Body"
         style={{
-          paddingTop: "100px",
+          paddingTop: "80px",
           backgroundColor: "black",
-          paddingBottom: "100px"
+          paddingBottom: "80px"
         }}
       >
 <<<<<<< HEAD

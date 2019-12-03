@@ -7,10 +7,10 @@ export class Header extends Component {
     return (
       <div style={{ position: "fixed", top: "0", width: "100%", zIndex: "0" }}>
         <nav className="navbar navbar-expand-lg navbar-dark bg-primary">
-        <a href="/"><img src="logo.png"
+        <a href="/"><img
+            src="images/logo.svg"
             className="d-block"
             width="150"
-            src="images/logo.png"
             /></a>
           <a><img 
             className="d-block"
