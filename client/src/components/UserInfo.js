@@ -7,9 +7,9 @@ const axios = require('axios')
 
 
 class UserInfo extends Component {
-  constructor(props){
+  constructor(props) {
     super(props)
-    this.state={
+    this.state = {
       name: '',
       address: '',
       email: '',
@@ -18,39 +18,48 @@ class UserInfo extends Component {
     }
   }
 
-  componentDidMount(){
+  componentDidMount() {
     console.log('confirm payment did mount')
     var self = this
     let cartelements = []
     let cartelementsfiltered = []
-    axios.get('/Pay/Locks').then(function(response){
-      cartelements = response.data.map(el => {if (el.incart == true){ return el}})
-      cartelementsfiltered = cartelements.filter(function(el){
+    axios.get('/Pay/Locks').then(function (response) {
+      cartelements = response.data.map(el => { if (el.incart == true) { return el } })
+      cartelementsfiltered = cartelements.filter(function (el) {
         return el != null
       })
     })
-    .then(() =>{
-      console.log('cartelements are (confirm payment did mount)', cartelementsfiltered)
-      this.setState({
-        toBuy: cartelementsfiltered
+      .then(() => {
+        console.log('cartelements are (confirm payment did mount)', cartelementsfiltered)
+        this.setState({
+          toBuy: cartelementsfiltered
+        })
       })
-    })
-    .catch(function (error) {
-      console.log("error occurred when getting from /About/Locks")
-      console.log(error);
-    });
+      .catch(function (error) {
+        console.log("error occurred when getting from /About/Locks")
+        console.log(error);
+      });
   }
 
   update() {
     console.log('update ')
     this.setState({
-      name: this.refs.name,
-      address: this.refs.address,
+      name: this.refs.name.value,
+      address: this.refs.address.value,
       email: this.refs.email,
       gender: this.refs.gender,
     });
   }
 
+  submit = (total, lockid) => {
+    console.log('mysubmit')
+    this.props.submit(this.state.name, this.state.address, this.state.email, this.state.gender, total, lockid)
+      this.setState({
+        name: '',
+        address: ''
+      })
+
+  }
 
   render() {
     let total = 0;
@@ -59,8 +68,8 @@ class UserInfo extends Component {
       total += element.price
       lockid += element._id
       return (
-        <div style={{backgroundColor: "#1a1a1a"}}>
-          <h5 style={{color: 'white', marginLeft: '12.5rem'}}>$ {element.price}&emsp;&emsp;{element.name}</h5>
+        <div style={{ backgroundColor: "#1a1a1a" }}>
+          <h5 style={{ color: 'white', marginLeft: '12.5rem' }}>$ {element.price}&emsp;&emsp;{element.name}</h5>
         </div>
       )
     })
@@ -68,17 +77,17 @@ class UserInfo extends Component {
     console.log('lockid is ', lockid)
     return (
       <div style={{ backgroundColor: "#1a1a1a" }}>
-        <div style={{marginLeft: '5rem'}}>
+        <div style={{ marginLeft: '5rem' }}>
           <br></br>
           <br></br>
-          <h3 style={{color: 'white'}}>Order Details</h3>
+          <h3 style={{ color: 'white' }}>Order Details</h3>
           <br></br>
           <p><span >{tobuy}</span></p>
-          <h3 style={{color: 'white'}}><span >Your Total: $ {total}</span></h3>
+          <h3 style={{ color: 'white' }}><span >Your Total: $ {total}</span></h3>
           <br></br>
           <br></br>
         </div>
-        <div className = "form-group myinput">
+        <div className="form-group myinput">
           <input
             id="name"
             name="name"
@@ -87,8 +96,9 @@ class UserInfo extends Component {
             placeholder="Your name"
             ref="name"
             onChange={this.update.bind(this)}
+            value={this.state.name}
             required
-            />
+          />
         </div>
         <div className="form-group myinput" s>
           <input
@@ -98,9 +108,10 @@ class UserInfo extends Component {
             type="text"
             placeholder="Your address"
             ref="address"
+            value={this.state.address}
             onChange={this.update.bind(this, total, lockid)}
             required
-            />
+          />
         </div>
         <div className="form-group myinput">
           <input
@@ -112,7 +123,7 @@ class UserInfo extends Component {
             ref="email"
             onChange={this.update.bind(this)}
             required
-            />
+          />
         </div>
         <div className="form-group myinput">
           <input
@@ -124,9 +135,9 @@ class UserInfo extends Component {
             ref="gender"
             onChange={this.update.bind(this)}
             required
-            />
+          />
         </div>
-        <button onClick = {this.props.submit.bind(this, this.state.name, this.state.address, this.state.email, this.state.gender, total, lockid)} className="btn btn-primary" style={{backgroundColor: 'grey', marginLeft: '5rem'}} type="submit">Pre-Order</button>
+        <button onClick={this.submit.bind(this, total, lockid)} className="btn btn-primary" style={{ backgroundColor: 'grey', marginLeft: '5rem' }} type="submit">Pre-Order</button>
       </div>
     );
   }
