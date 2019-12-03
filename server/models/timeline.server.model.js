@@ -3,7 +3,7 @@ var mongoose = require('mongoose'),
 
 
 var timelineSchema = new Schema({
-    dateText:{
+    date:{
         type: String,
         required: true
     }, 
@@ -29,6 +29,6 @@ timelineSchema.pre('save', function(next) {
         }
         next();
     });
-var TimelineData = mongoose.model('TimelineData', timelineSchema);
+var TimelineData = mongoose.model('timeline', timelineSchema);
 
 module.exports = TimelineData;

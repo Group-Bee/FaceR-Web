@@ -7,25 +7,12 @@ import Timeline from "../components/Timeline"
 import TimelineItem from "../components/TimelineItem"
 import FutureLocks from "../components/FutureLocks";
 import LearnMore from "../components/LearnMore";
-import data from '../data/testimonial.data';
+import data from "../data/timelineData";
 
 import "../App.css";
 import "../bootstrap.min.css";
 
-const axios = require('axios');
 
-axios.get('/About/Timeline')
-  .then(function (response) {
-    // handle success
-    console.log(response);
-    data = response;
-  })
-  .catch(function (error) {
-    // handle error
-    console.log(error);
-  });
-
-//changed
 class aboutPage extends React.Component {
   render(){
   return (
@@ -50,84 +37,7 @@ class aboutPage extends React.Component {
           <Timeline>
             <TimelineItem
               key="001"
-              dateText="11/6/2019"
-              style={{ color: '#e86971' }}
-              bodyContainerStyle={{
-                background: '#ddd',
-                padding: '20px',
-                borderRadius: '8px',
-                boxShadow: '0.5rem 0.5rem 2rem 0 rgba(0, 0, 0, 0.2)',
-              }} >
-              <h3>Title, Company</h3>
-              <h4>Subtitle</h4>
-              <p>Est incididunt sint eu minim dolore mollit velit velit commodo ex nulla
-                exercitation. Veniam velit adipisicing anim excepteur nostrud magna
-                nostrud aliqua dolor. Sunt aute est duis ut nulla officia irure
-                reprehenderit laborum fugiat dolore in elit. Adipisicing do qui duis Lorem
-                est.
-              </p>
-              <p>Est incididunt sint eu minim dolore mollit velit velit commodo ex nulla
-                exercitation. Veniam velit adipisicing anim excepteur nostrud magna
-                nostrud aliqua dolor. Sunt aute est duis ut nulla officia irure
-                reprehenderit laborum fugiat dolore in elit. Adipisicing do qui duis Lorem
-                est.
-              </p>
-            </TimelineItem>
-            <TimelineItem
-              key="002"
-              dateText="11/6/19"
-              style={{ color: '#e86971' }}
-              bodyContainerStyle={{
-                background: '#ddd',
-                padding: '20px',
-                borderRadius: '8px',
-                boxShadow: '0.5rem 0.5rem 2rem 0 rgba(0, 0, 0, 0.2)',
-              }} >
-              <h3>Title, Company</h3>
-              <h4>Subtitle</h4>
-              <p>Est incididunt sint eu minim dolore mollit velit velit commodo ex nulla
-                exercitation. Veniam velit adipisicing anim excepteur nostrud magna
-                nostrud aliqua dolor. Sunt aute est duis ut nulla officia irure
-                reprehenderit laborum fugiat dolore in elit. Adipisicing do qui duis Lorem
-                est.
-              </p>
-            </TimelineItem>
-            <TimelineItem
-              key="003"
-              dateText="11/6/19"
-              style={{ color: '#e86971' }}
-              // dateComponent={(
-              //   <div
-              //     style={{
-              //       display: 'block',
-              //       float: 'left',
-              //       padding: '10px',
-              //       background: 'rgb(150, 150, 150)',
-              //       color: '#fff',
-              //     }}
-              //   >
-              //     11/2008 – 04/2009
-              //   </div>
-              // )}
-              bodyContainerStyle={{
-                background: '#ddd',
-                padding: '20px',
-                borderRadius: '8px',
-                boxShadow: '0.5rem 0.5rem 2rem 0 rgba(0, 0, 0, 0.2)',
-              }} >
-              <h3>Title, Company</h3>
-              <h4>Subtitle</h4>
-              <p>
-                Est incididunt sint eu minim dolore mollit velit velit commodo ex nulla
-                exercitation. Veniam velit adipisicing anim excepteur nostrud magna
-                nostrud aliqua dolor. Sunt aute est duis ut nulla officia irure
-                reprehenderit laborum fugiat dolore in elit. Adipisicing do qui duis Lorem
-                est.
-              </p>
-            </TimelineItem>
-            <TimelineItem
-              key="004"
-              dateText="08/2008 – 11/2008"
+              dateText={data[0].date}
               style={{ color: '#e86971' }}
               // dateInnerStyle={{ background: '#76bb7f' }}
               bodyContainerStyle={{
@@ -136,14 +46,78 @@ class aboutPage extends React.Component {
                 borderRadius: '8px',
                 boxShadow: '0.5rem 0.5rem 2rem 0 rgba(0, 0, 0, 0.2)',
               }} >
-              <h3>Title, Company</h3>
-              <h4>Subtitle</h4>
+              <h3>{data[0].title}</h3>
+              <h4>{data[0].subtitle}</h4>
               <p>
-                Est incididunt sint eu minim dolore mollit velit velit commodo ex nulla
-                exercitation. Veniam velit adipisicing anim excepteur nostrud magna
-                nostrud aliqua dolor. Sunt aute est duis ut nulla officia irure
-                reprehenderit laborum fugiat dolore in elit. Adipisicing do qui duis Lorem
-                est.
+                {data[0].description}
+              </p>
+            </TimelineItem>
+            <TimelineItem
+              key="002"
+              dateText={data[1].date}
+              style={{ color: '#e86971' }}
+              // dateInnerStyle={{ background: '#76bb7f' }}
+              bodyContainerStyle={{
+                background: '#ddd',
+                padding: '20px',
+                borderRadius: '8px',
+                boxShadow: '0.5rem 0.5rem 2rem 0 rgba(0, 0, 0, 0.2)',
+              }} >
+              <h3>{data[1].title}</h3>
+              <h4>{data[1].subtitle}</h4>
+              <p>
+                {data[1].description}
+              </p>
+            </TimelineItem>
+            <TimelineItem
+              key="003"
+              dateText={data[2].date}
+              style={{ color: '#e86971' }}
+              // dateInnerStyle={{ background: '#76bb7f' }}
+              bodyContainerStyle={{
+                background: '#ddd',
+                padding: '20px',
+                borderRadius: '8px',
+                boxShadow: '0.5rem 0.5rem 2rem 0 rgba(0, 0, 0, 0.2)',
+              }} >
+              <h3>{data[2].title}</h3>
+              <h4>{data[2].subtitle}</h4>
+              <p>
+                {data[2].description}
+              </p>
+            </TimelineItem>
+            <TimelineItem
+              key="004"
+              dateText={data[3].date}
+              style={{ color: '#e86971' }}
+              // dateInnerStyle={{ background: '#76bb7f' }}
+              bodyContainerStyle={{
+                background: '#ddd',
+                padding: '20px',
+                borderRadius: '8px',
+                boxShadow: '0.5rem 0.5rem 2rem 0 rgba(0, 0, 0, 0.2)',
+              }} >
+              <h3>{data[3].title}</h3>
+              <h4>{data[3].subtitle}</h4>
+              <p>
+                {data[3].description}
+              </p>
+            </TimelineItem>
+            <TimelineItem
+              key="005"
+              dateText={data[4].date}
+              style={{ color: '#e86971' }}
+              // dateInnerStyle={{ background: '#76bb7f' }}
+              bodyContainerStyle={{
+                background: '#ddd',
+                padding: '20px',
+                borderRadius: '8px',
+                boxShadow: '0.5rem 0.5rem 2rem 0 rgba(0, 0, 0, 0.2)',
+              }} >
+              <h3>{data[4].title}</h3>
+              <h4>{data[4].subtitle}</h4>
+              <p>
+                {data[4].description}
               </p>
             </TimelineItem>
           </Timeline>

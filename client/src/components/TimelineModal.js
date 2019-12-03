@@ -8,16 +8,16 @@ class TimelineModal extends React.Component {
         super(props)
 
         this.state = {
-            dateText: '', 
+            date: '', 
             title: '',
             subtitle: '',
             description: ''
         }
     }
 
-    dateTextUpdate = (event) => {
+    dateUpdate = (event) => {
         this.setState({
-            dateText: event.target.value
+            date: event.target.value
         })
     }
 
@@ -41,11 +41,14 @@ class TimelineModal extends React.Component {
 
     addTimelineData = () => {
         // Make a request to add testimonial data
-        axios.post('/About/Timeline', {
-            dateText: this.state.dateText, 
-            title: this.state.title,
-            subtitle: this.state.subtitle,
-            description: this.state.description
+        axios.post('/About/Timeline', function(req, res) {
+            const timelineItem = req.body
+            timelineItem.push({
+                date: timelineItem.state.date, 
+                title: timelineItem.state.title,
+                subtitle: timelineItem.state.subtitle,
+                description: timelineItem.state.description
+            })
         })
             .then(function (response) {
                 // handle success
@@ -105,9 +108,9 @@ render() {
                     <input
                         class="form-control"
                         type = "text"
-                        value = {this.state.dateText}
+                        value = {this.state.date}
                         placeholder = "year"
-                        onChange = {this.dateTextUpdate.bind(this)}
+                        onChange = {this.dateUpdate.bind(this)}
                     />
                 </form>
                 <h4>Title</h4>
