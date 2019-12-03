@@ -1,4 +1,12 @@
 const path = require("path"),
+  express = require("express"),
+  mongoose = require("mongoose"),
+  morgan = require("morgan"),
+  bodyParser = require("body-parser"),
+  testimonialsRouter = require("../routes/testimonials.server.routes"),
+  timelineRouter = require("../routes/timeline.server.routes"),
+  nodemailer = require("nodemailer");
+
 
 express = require("express"),
 mongoose = require("mongoose"),
@@ -95,6 +103,9 @@ module.exports.init = () => {
 
   //Router to display testimonials when on About page
   app.use("/About", testimonialsRouter);
+
+  //Router to display timeline when on About Page
+  app.use("/About", timelineRouter);
 
   if (process.env.NODE_ENV === "production") {
     // Serve any static files
