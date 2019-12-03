@@ -4,7 +4,7 @@ export class FutureLocks extends Component {
   render() {
 
     return (
-      <div class="card">
+      <div class="card" style={{paddingTop: "25px", paddingBottom: "50px"}}>
       <div class="card-body">
 
           <h1>The Future of Locks</h1>

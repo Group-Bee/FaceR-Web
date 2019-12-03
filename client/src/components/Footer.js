@@ -9,7 +9,7 @@ export default class Footer extends Component {
       <div>
         <div
           className="jumbotron"
-          style={{ backgroundColor: "#1a1a1a", marginBottom: "-100px" }}
+          style={{ backgroundColor: "#1a1a1a", marginBottom: "-400px" }}
         >
           <h1 style={{ color: "white" }}>Contact us!</h1>
           <br></br>
