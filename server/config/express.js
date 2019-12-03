@@ -3,20 +3,13 @@ const path = require("path"),
   mongoose = require("mongoose"),
   morgan = require("morgan"),
   bodyParser = require("body-parser"),
-  exampleRouter = require("../routes/examples.server.routes"),
   testimonialsRouter = require("../routes/testimonials.server.routes"),
   nodemailer = require("nodemailer");
 
-// const GMAIL_USER = config.gmail.GMAIL_USER;
-// const GMAIL_PASS = config.gmail.GMAIL_PASS;
+const GMAIL_USER = (process.env.GMAIL_USER || require("./config").gmail.GMAIL_USER);
+const GMAIL_PASS = (process.env.GMAIL_PASS || require("./config").gmail.GMAIL_PASS);
 
 module.exports.init = () => {
-  /*
-//connect to testimonials database
-  mongoose.connect(config.testimonialsDB.uri, { useNewUrlParser: true });
-  mongoose.set('useCreateIndex', true);
-  mongoose.set('useFindAndModify', false);
-  */
 
   /* 
          connect to database
@@ -50,8 +43,8 @@ module.exports.init = () => {
     var transporter = nodemailer.createTransport({
       service: "gmail",
       auth: {
-        user: "testUserForMail123456",
-        pass: "Qwart5432"
+        user: GMAIL_USER,
+        pass: GMAIL_PASS
       }
     });
     const mailOptions = {
@@ -79,8 +72,6 @@ module.exports.init = () => {
   //Router to display testimonials when on About page
   app.use("/About", testimonialsRouter);
 
-  // add a router
-  app.use("/api/example", exampleRouter);
   if (process.env.NODE_ENV === "production") {
     // Serve any static files
     app.use(express.static(path.join(__dirname, "../../client/build")));
