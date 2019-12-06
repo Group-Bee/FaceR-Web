@@ -31,7 +31,7 @@ class PayEntry extends React.Component {
       return (
         <div className="test" style={{ textAlign: 'left', height: '400px' }} key={element.id}>
           <p>Store item to buy here</p>
-          <img src={element.image} width={300} height={300}></img>
+          <img src={element.image} width={300} height={300} alt=''></img>
           <h3 style={{ color: 'white', float: 'left', zIndex: '100' }}>$ {element.price}</h3><p align="center" style={{ transform: 'translateY(-400%)' }}>{element.description}</p>
           <button type="button" className="btn btn-primary" style={{ float: 'right', transform: 'translateY(-500%)' }} onClick={this.props.add.bind(this, element)}>
             Add to Cart
@@ -45,7 +45,7 @@ class PayEntry extends React.Component {
       return (
         <div className="test" style={{ textAlign: 'left', height: '400px', zIndex: '-1' }} key={element.id}>
           <p>Store item to buy here</p>
-          <img src={element.image} width={300} height={300}></img>
+          <img src={element.image} width={300} height={300} alt=''></img>
           <h3 style={{ color: 'white', float: 'left', zIndex: '-1' }}>{element.price}</h3><p align="center" style={{ transform: 'translateY(-400%)' }}>{element.description}</p>
           <button type="button" className="btn btn-primary" style={{ float: 'right', transform: 'translateY(-500%)', zIndex: '-10' }} onClick={this.props.add.bind(this, element)}>
             Add to Cart

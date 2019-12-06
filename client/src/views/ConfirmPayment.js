@@ -1,8 +1,5 @@
 import React, { Component } from "react";
 import Header from "../components/Header";
-import Card from "../components/Card";
-import AboutProduct from "../components/AboutProduct";
-import Footer from "../components/Footer";
 import "../App.css";
 import "../bootstrap.min.css";
 import UserInfo from "../components/UserInfo"
@@ -14,7 +11,7 @@ export default class ConfirmPayment extends Component {
   submit = (name, address, email, gender, total, lockid) =>{
     console.log("submitted", name)
     console.log(name, address, email, gender, total, lockid)
-    if(name == undefined || address == undefined || gender == undefined || total == undefined || lockid == undefined|| name == '' || address == '' || gender == '' || total == '' || lockid == ''){
+    if(name === undefined || address === undefined || gender === undefined || total === undefined || lockid === undefined|| name === '' || address === '' || gender === '' || total === '' || lockid === ''){
       console.log('cannot proceed')
       alert("Please fill out the required information or reload the page")
     }else{

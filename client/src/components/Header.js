@@ -11,8 +11,10 @@ export class Header extends Component {
             src="images/logo.svg"
             className="d-block"
             width="150"
+            alt=''
             /></a>
           <a><img
+            alt=''
             className="d-block"
             width="50"
             /></a>

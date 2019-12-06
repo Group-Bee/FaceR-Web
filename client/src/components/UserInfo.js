@@ -1,8 +1,5 @@
 import React, { Component } from "react";
 import Stripe from "react-stripe-checkout";
-import Form from 'react-bootstrap/Form'
-import FormControl from 'react-bootstrap/FormControl'
-import FormCheck from 'react-bootstrap/FormCheck'
 const axios = require('axios')
 
 
@@ -20,11 +17,10 @@ class UserInfo extends Component {
 
   componentDidMount() {
     console.log('confirm payment did mount')
-    var self = this
     let cartelements = []
     let cartelementsfiltered = []
     axios.get('/Pay/Locks').then(function (response) {
-      cartelements = response.data.map(el => { if (el.incart == true) { return el } })
+      cartelements = response.data.map(el => { if (el.incart === true) { return el } })
       cartelementsfiltered = cartelements.filter(function (el) {
         return el != null
       })

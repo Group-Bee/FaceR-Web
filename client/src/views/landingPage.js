@@ -1,6 +1,5 @@
 import React from "react";
 import Header from "../components/Header";
-import AboutProduct from "../components/AboutProduct";
 import Footer from "../components/Footer";
 import "../App.css";
 import "../bootstrap.min.css";
@@ -70,7 +69,8 @@ class landingPage extends React.Component {
               title="productVid"
               width="100%"
               height="100%"
-              src="https://www.youtube.com/embed/1XZZpf6yReg?&rel=0&loop=1&controls=0&autoplay=1"
+              //src="https://www.youtube.com/embed/1XZZpf6yReg?&rel=0&loop=1&controls=0&autoplay=1" //Animated loop video
+              src="https://www.youtube.com/embed/xp30DZNphGE?autoplay=1&showinfo=0&controls=0&loop=1" //August Smart Lock Pro video
               frameborder="0"
               allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
               allowfullscreen

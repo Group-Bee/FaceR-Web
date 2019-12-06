@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import Jumbotron from 'react-bootstrap/Jumbotron';
 import Container from 'react-bootstrap/Container';
 import LearnMore from "../components/LearnMore";
-import { Card, Button, CardTitle, CardText, Row, Col, Table } from 'reactstrap';
+import { Card, CardTitle, CardText, Row, Col, Table } from 'reactstrap';
 
 export class Features extends Component {
     render() {
