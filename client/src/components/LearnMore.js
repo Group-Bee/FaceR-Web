@@ -6,7 +6,7 @@ export class LearnMore extends Component {
       <div class="card">
         <div class="card-body">
           <h1>Interested in Learning More?</h1>
-
+          <br></br>
           <center>
             <div class="row">
               <td class="col-md-6">
@@ -49,6 +49,8 @@ export class LearnMore extends Component {
                 </a>
               </td>
             </div>
+            <br></br>
+            <br></br>
             <br></br>
             <br></br>
             <br></br>
