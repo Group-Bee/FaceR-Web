@@ -16,7 +16,7 @@ Component stylization: Bootstrap-react API and react strap
 * Cart
 	* 
 * Complete Timeline
-	* 
+	* Combine the backend data to the front end component of the timeline. Each entry into the timeline database represents a timeline item.
 * Contact
 	* 
 * Contact Form
@@ -38,9 +38,9 @@ Component stylization: Bootstrap-react API and react strap
 * Testimonial Carousel
 	* Grabs testimonials data from the backend and presents it as a carousel component.
 * Timeline
-	* 
+	* Contains the information that builds the timeline and unites its children (TimelineItem) into one timeline.
 * Timeline Item
-	* 
+	* Incorporates TimelineItem.css to create a timeline item that holds a title, subtitle, date, and body.
 * User Info
 	* 
 
