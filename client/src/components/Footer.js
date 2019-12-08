@@ -88,7 +88,7 @@ export default class Footer extends Component {
                   </td>
 
                   <td class="col-md-6" style={{paddingLeft: "10%", width: "64", height: "64"}}>
-                  <a href="https://www.kickstarter.com">
+                  <a href="https://www.kickstarter.com" target="_blank">
                         <img
                           src={require("../assets/kickstarter_icon.svg")}
                           style={{}}

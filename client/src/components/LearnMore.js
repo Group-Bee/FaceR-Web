@@ -30,7 +30,7 @@ export class LearnMore extends Component {
               </td>
 
               <td class="col-md-6">
-                <a href="https://www.kickstarter.com">
+                <a href="https://www.kickstarter.com" target="_blank">
                   <button
                     style={{
                       width: "60%",
