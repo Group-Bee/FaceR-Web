@@ -86,3 +86,6 @@ In general, commit messages should adhere to the following format:
 E.g.
  About Page: Testimonial Carousel: Styling: Slimmed down background image of each carousel item
 
+
+## Heroku Deployment
+Link: https://facerlock.herokuapp.com
