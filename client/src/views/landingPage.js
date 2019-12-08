@@ -4,11 +4,12 @@ import Footer from "../components/Footer";
 import "../App.css";
 import "../bootstrap.min.css";
 
-//changed
 class landingPage extends React.Component {
   state = {
+    //boolean to notify if at top of page
     atTop: true
   };
+  //event listender components for scrolling
   componentDidMount() {
     window.addEventListener("scroll", this.onScroll);
   }
@@ -16,7 +17,8 @@ class landingPage extends React.Component {
   componentWillUnmount() {
     window.removeEventListener("scroll", this.onScroll);
   }
-
+  //on scroll function - checks to see if the window y pos is <60 and if it is set top variable to true
+  //if not set to false
   onScroll = () => {
     console.log(window.pageYOffset);
     if (window.pageYOffset <= 60) {
@@ -30,6 +32,7 @@ class landingPage extends React.Component {
       <div className="App">
         <header
           style={
+            //if at top set opacity to 0 if not opacity 1
             this.state.atTop
               ? {
                   opacity: "0",
@@ -65,6 +68,7 @@ class landingPage extends React.Component {
               marginBottom: "-60px"
             }}
           >
+            {/*Video frame*/}
             <iframe
               title="productVid"
               width="100%"
@@ -101,7 +105,10 @@ class landingPage extends React.Component {
             </div>
           </div>
         </div>
-        <div><Footer/></div>
+        <div>
+          {/*insert footer*/}
+          <Footer />
+        </div>
       </div>
     );
   }

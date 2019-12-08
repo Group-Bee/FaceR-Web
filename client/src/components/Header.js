@@ -3,21 +3,17 @@ import Cart from "./Cart";
 
 export class Header extends Component {
   render() {
+    //variable of current url in browser
     var currentLocation = window.location.pathname;
     return (
       <div style={{ position: "fixed", top: "0", width: "100%", zIndex: "10" }}>
         <nav className="navbar navbar-expand-lg navbar-dark bg-primary">
-        <a href="/"><img
-            src="images/logo.svg"
-            className="d-block"
-            width="150"
-            alt=''
-            /></a>
-          <a><img
-            alt=''
-            className="d-block"
-            width="50"
-            /></a>
+          <a href="/">
+            <img src="images/logo.svg" className="d-block" width="150" alt="" />
+          </a>
+          <a>
+            <img alt="" className="d-block" width="50" />
+          </a>
           <button
             className="navbar-toggler"
             type="button"
@@ -29,7 +25,8 @@ export class Header extends Component {
           >
             <span className="navbar-toggler-icon"></span>
           </button>
-
+          {/*each link checks to see if it is current location
+           /*if it is the link is highlighted*/}
           <div className="collapse navbar-collapse" id="navbarColor01">
             <ul className="navbar-nav mr-auto">
               <li

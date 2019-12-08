@@ -1,18 +1,21 @@
 import React, { Component } from "react";
 import ContactForm from "../components/ContactForm";
-
+//social media icons from react share
 import { FacebookIcon, TwitterIcon } from "react-share";
 
+// footer class
 export default class Footer extends Component {
   render() {
     return (
       <div>
+        {/*jumbotron of the footer*/}
         <div
           className="jumbotron"
           style={{ backgroundColor: "#1a1a1a", marginBottom: "-400px" }}
         >
           <h1 style={{ color: "white" }}>Contact us!</h1>
           <br></br>
+          {/*link to contact form component*/}
           <ContactForm />
           <hr
             style={{
@@ -24,21 +27,28 @@ export default class Footer extends Component {
               padding: "0"
             }}
           ></hr>
+          {/*footer table for facer logo, page links and socials*/}
           <table
             style={{ color: "white", tableLayout: "fixed", width: "100%" }}
           >
             <tr>
-            <center>
-                <div class="row" style={{display: "inline-block", lineHeight: "10em"}}>
-                  <td class="col-md-6" style={{paddingLeft: "10%", width: "64", height: "64"}}>
-                  <a href="/">
-                        <img
-                          src="images/logo.svg"
-                          style={{}}
-                          alt="FaceRLogo"
-                          width= "150"
-                        />
-                      </a>
+              <center>
+                <div
+                  class="row"
+                  style={{ display: "inline-block", lineHeight: "10em" }}
+                >
+                  <td
+                    class="col-md-6"
+                    style={{ paddingLeft: "10%", width: "64", height: "64" }}
+                  >
+                    <a href="/">
+                      <img
+                        src="images/logo.svg"
+                        style={{}}
+                        alt="FaceRLogo"
+                        width="150"
+                      />
+                    </a>
                   </td>
                 </div>
               </center>
@@ -74,28 +84,40 @@ export default class Footer extends Component {
               </td>
 
               <center>
-                <div class="row" style={{display: "inline-block", lineHeight: "10em"}}>
-                  <td class="col-md-6" style={{paddingLeft: "10%", width: "64", height: "64"}}>
+                <div
+                  class="row"
+                  style={{ display: "inline-block", lineHeight: "10em" }}
+                >
+                  <td
+                    class="col-md-6"
+                    style={{ paddingLeft: "10%", width: "64", height: "64" }}
+                  >
                     <a href="https://www.facebook.com">
-                        <FacebookIcon size={64} round={true} />
-                      </a>
+                      <FacebookIcon size={64} round={true} />
+                    </a>
                   </td>
 
-                  <td class="col-md-6" style={{paddingLeft: "10%", width: "64", height: "64"}}>
-                      <a href="https://www.twitter.com">
-                        <TwitterIcon size={64} round={true} />
-                      </a>
+                  <td
+                    class="col-md-6"
+                    style={{ paddingLeft: "10%", width: "64", height: "64" }}
+                  >
+                    <a href="https://www.twitter.com">
+                      <TwitterIcon size={64} round={true} />
+                    </a>
                   </td>
 
-                  <td class="col-md-6" style={{paddingLeft: "10%", width: "64", height: "64"}}>
-                  <a href="https://www.kickstarter.com" target="_blank">
-                        <img
-                          src={require("../assets/kickstarter_icon.svg")}
-                          style={{}}
-                          alt="KickstarterLogo"
-                          width= "64"
-                        />
-                      </a>
+                  <td
+                    class="col-md-6"
+                    style={{ paddingLeft: "10%", width: "64", height: "64" }}
+                  >
+                    <a href="https://www.kickstarter.com" target="_blank">
+                      <img
+                        src={require("../assets/kickstarter_icon.svg")}
+                        style={{}}
+                        alt="KickstarterLogo"
+                        width="64"
+                      />
+                    </a>
                   </td>
                 </div>
               </center>
