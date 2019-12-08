@@ -88,4 +88,4 @@ E.g.
 
 
 ## Heroku Deployment
-Link: https://facerlock.herokuapp.com
+https://facerlock.herokuapp.com
