@@ -73,6 +73,8 @@ class landingPage extends React.Component {
               title="productVid"
               width="100%"
               height="100%"
+              //Put the link to your Youtube video in the 'src' string
+              //Note: the settings at the end of the string determine extra functionality of the video, such as does it play automatically, does it loop, etc.
               //src="https://www.youtube.com/embed/1XZZpf6yReg?&rel=0&loop=1&controls=0&autoplay=1" //Animated loop video
               src="https://www.youtube.com/embed/xp30DZNphGE?autoplay=1&showinfo=0&controls=0&loop=1" //August Smart Lock Pro video
               frameborder="0"

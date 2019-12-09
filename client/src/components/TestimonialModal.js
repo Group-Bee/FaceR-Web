@@ -49,7 +49,9 @@ class TestimonialModal extends React.Component {
         })
     }
 
+    //Executes when the 'Add' button is clicked, adding the testimonial to the database and returning the information stored to the database
     addTestimonial = () => {
+        //1st check if the correct password was entered
         if (this.state.pswd !== '12345'){
             alert("You have not entered the correct password.");
             return;
@@ -74,7 +76,9 @@ class TestimonialModal extends React.Component {
         });
     }
 
+    //Executes when the 'Delete' button is clicked, deleting the testimonial from the database and returning a confirmation
     deleteTestimonial = () => {
+        //1st check if the correct password was entered
         if (this.state.pswd !== '12345'){
             alert("You have not entered the correct password.");
             return;
@@ -94,7 +98,9 @@ class TestimonialModal extends React.Component {
         });
     }
 
+    //Executes when the 'Update' button is clicked, updating the testimonial in the database and returning the information stored to the database
     updateTestimonial = () => {
+        //1st check if the correct password was entered
         if (this.state.pswd !== '12345'){
             alert("You have not entered the correct password.");
             return;
@@ -124,6 +130,7 @@ render() {
     let updateButton;
     let deleteButton;
 
+    //These if statements will determine if a button is being displayed to the modal or not, depending on if the correct information is entered
     if (this.state.testimonial !== '' && this.state.name !== ''){
         addButton = <Button variant="success" onClick={this.addTestimonial}>Add</Button>
     } else{
