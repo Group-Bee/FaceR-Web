@@ -12,6 +12,7 @@ class CompleteTimeline extends Component {
       mongotimeline: []
     }
   }
+  // Retrieve data from mongodb atlas
   componentDidMount(){
     console.log('Timeline did mount')
     var self = this
@@ -25,10 +26,11 @@ class CompleteTimeline extends Component {
   render(){
     console.log('getting timeline', this.state.mongotimeline)
 
+    /* All the data from the timeline collection on mongodb are recieved
+    and used to create a TimelineItem component for each. */
     const entries= this.state.mongotimeline.map(element => {
       return(
-        <div class="Timeline">
-        <Timeline>
+        <div>
             <TimelineItem
               key={element._id}
               dateText={element.date}
@@ -46,12 +48,13 @@ class CompleteTimeline extends Component {
                 {element.description}
               </p>
             </TimelineItem>
-        </Timeline>
         </div>
       )
     })
     return (
-      <div> {entries} </div>
+      /* The entries are in a Timeline component, so that the items are
+      not seperate. */
+      <Timeline> {entries} </Timeline>
     )
   }
 };
