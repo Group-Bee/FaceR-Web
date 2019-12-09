@@ -42,7 +42,7 @@ Component stylization: Bootstrap-react API and react strap
 * Timeline Item
 	* Incorporates TimelineItem.css to create a timeline item that holds a title, subtitle, date, and body.
 * User Info
-	* Contains a form where user is allowed to input their name/address/email/gender and the locks they intend to buy as a pre-order. 
+	* Contains a form where user is allowed to input their name/address/email/gender and the locks they intend to buy as a pre-order. Information input here is used to create a schema and stored in a database in the ConfirmPayment.js.
 
 Five main pages were created: home, features, about, buy, and confirm payment. The confirm payment page is available when checking out the items in your cart, not in the header.
 
