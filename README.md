@@ -22,11 +22,11 @@ Component stylization: Bootstrap-react API and react strap
 * Contact Form
 	* 
 * Features
-	* 
+	* This is the cards and table component that are on the feature page. To change the table headers you can see the live example and just change values or create new rows or columns if needed.
 * Footer
 	* 
 * Future Locks
-	* 
+	* Contains the future of locks component, any change here will effect that box.
 * Header
 	* 
 * Learn More
