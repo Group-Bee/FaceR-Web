@@ -14,7 +14,7 @@ Component stylization: Bootstrap-react API and react strap
 * About Product
 	* 
 * Cart
-	* 
+	* Displays the items when corresponding "Add to Cart" button is clicked on Buy page. Retrieves lock information from database and checks whether incart field of json is true or false.
 * Complete Timeline
 	* Combine the backend data to the front end component of the timeline. Each entry into the timeline database represents a timeline item.
 * Contact
@@ -32,7 +32,7 @@ Component stylization: Bootstrap-react API and react strap
 * Learn More
 	* Contains the Zoho newsletter/mailing list sign-up form, as well as a link to a Kickstarter page.
 * Pay Entry
-	* 
+	* Contains lock information that is displayed on Buy page. Information about the locks is retrieved from the database.
 * Testimonial Modal
 	* Modal that appears when secret button below *Testimonials Carousel* is clicked. Allows the user to add/update/delete testimonials in the database through the frontend. Communicates to the backend and makes these changes to the database.
 * Testimonial Carousel
@@ -42,7 +42,7 @@ Component stylization: Bootstrap-react API and react strap
 * Timeline Item
 	* Incorporates TimelineItem.css to create a timeline item that holds a title, subtitle, date, and body.
 * User Info
-	* 
+	* Contains a form where user is allowed to input their name/address/email/gender and the locks they intend to buy as a pre-order. 
 
 Five main pages were created: home, features, about, buy, and confirm payment. The confirm payment page is available when checking out the items in your cart, not in the header.
 
@@ -67,7 +67,7 @@ This page contains information about the type of locks you can buy, and allows y
 Always at the top of the page is the *header* component. The *pay entry* component makes up the most of this page. At the bottom of the page is the *contact* component.
 
 ### Confirm Payment Page
-This page allows the user to enter payment information and finalize their purchase of locks. **NOTE:** Payment functionality has not been implemented.
+This page allows the user to enter payment information and finalize their purchase of locks. **NOTE:** Payment functionality has not been implemented as the client does not currently have products, instead, a 'pre-order' option was deemed most appropriate.
 
 Always at the top of the page is the *header* component.  The *user info* component makes up the most of this page. At the bottom of the page is the *contact* component, but with the contact us form stripped out.
 
