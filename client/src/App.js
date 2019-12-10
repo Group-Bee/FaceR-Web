@@ -21,11 +21,10 @@ class App extends React.Component {
 
   componentDidMount(){
     console.log('app.js did mount')
-    var self = this
     let cartelements = []
     let cartelementsfiltered = []
     axios.get('/Pay/Locks').then(function(response){
-      cartelements = response.data.map(el => {if (el.incart == true){ return el}})
+      cartelements = response.data.map(el => {if (el.incart === true){ return el}})
       cartelementsfiltered = cartelements.filter(function(el){
         return el != null
       })
@@ -58,7 +57,7 @@ class App extends React.Component {
     let cartelementsfiltered = []
     axios.get('Pay/Locks')
     .then(function(response){
-      cartelements = response.data.map(el => {if (el.incart == true){ return el}})
+      cartelements = response.data.map(el => {if (el.incart === true){ return el}})
       cartelementsfiltered = cartelements.filter(function(el){
         return el != null
       })

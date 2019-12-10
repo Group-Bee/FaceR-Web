@@ -85,7 +85,7 @@ class Cart extends Component {
             </button>
           </div>
         </li>
-        {this.state.showCart && this.props.incart.length != 0 ? (
+        {this.state.showCart && this.props.incart.length !== 0 ? (
           <div
             className="mydrop"
             style={{

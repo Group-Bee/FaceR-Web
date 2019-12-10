@@ -9,7 +9,6 @@ export default class ContactForm extends Component {
           action="/"
           id="contact-form"
           method="post"
-          role="form"
           onSubmitCapture={() => alert("Message submitted!")}
         >
           <fieldset

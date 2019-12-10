@@ -22,7 +22,7 @@ export default class TestimonialsCarousel extends Component {
         <Carousel.Item>
         <img
           className="d-block w-100"
-          src="images/CyberLock_Cropped.jpeg"
+          src="images/GreyGradient-Background-Slim.jpg"
           alt="Testimonial"
         />
         <Carousel.Caption>
@@ -44,6 +44,8 @@ Backend implementation of testimonials carousel.
 Data for testimonials is stored at mongoDB Atlas database (Cluster0, DB = FaceR, Collection = testimonials). If you want to adjust the data being displayed, change the documents in that database.
 */
 ///*
+
+//This axios function is used to grab the testimonials data from the backend API
 axios.get('/About/Testimonials')
   .then(function (response) {
     // handle success
@@ -60,6 +62,7 @@ class TestimonialsCarousel extends Component {
     modalOpen: false
  }
 
+ //This function will display or hide the testimonials modal when the secret button is selected
  handleModalOpen = () => {
     this.setState((prevState) => {
        return{
@@ -72,12 +75,15 @@ class TestimonialsCarousel extends Component {
     const testimonials = data.slice(0,3).map(element => {
       return(
         <Carousel.Item>
+        {/* This is the background image of each carousel element. To adjust the image, change 'src' */}
         <img
           className="d-block w-100"
-          src="images/CyberLock.jpg"
+          src="images/GreyGradient-Background-Slim.jpg"
           alt="Testimonial"
         />
         <Carousel.Caption>
+          {/* These two lines determine how the testimonial and customer name are being displayed.
+          You can adjust the 'class' attribute to change how the text is set up*/}
           <h3 class="row justify-content-start text-white">{element.testimonial}</h3>
           <p class="row justify-content-start">-{element.name}</p>
         </Carousel.Caption>
@@ -87,6 +93,8 @@ class TestimonialsCarousel extends Component {
     return (
     <div class="card">
         <Carousel>{testimonials}</Carousel>
+        {/* The next 2 div elements and what is encapsulated in them represent the testimonials modal button.
+        This is the secret button that allows you to add/update/delete testimonials from the website (without having to go to MongoDB) */}
         <div class="row">
         <div class="col-md-12">
           <button
@@ -95,6 +103,7 @@ class TestimonialsCarousel extends Component {
                   borderRadius: 0,
                   borderWidth: 0,
                   marginTop: 0,
+                  //If you are having trouble finding the button, you can change its background color to black
                   //backgroundColor: "black",
                   backgroundColor: "transparent"
                 }}

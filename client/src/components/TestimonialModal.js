@@ -15,6 +15,16 @@ class TestimonialModal extends React.Component {
         }
     }
 
+    onClose = () => {
+        this.props.handleModalOpen();
+        this.setState({
+            testimonial: '',
+            name: '',
+            id: '',
+            pswd: ''
+        })
+    }
+
     nameUpdate = (event) => {
         this.setState({
             name: event.target.value
@@ -39,7 +49,9 @@ class TestimonialModal extends React.Component {
         })
     }
 
+    //Executes when the 'Add' button is clicked, adding the testimonial to the database and returning the information stored to the database
     addTestimonial = () => {
+        //1st check if the correct password was entered
         if (this.state.pswd !== '12345'){
             alert("You have not entered the correct password.");
             return;
@@ -64,7 +76,9 @@ class TestimonialModal extends React.Component {
         });
     }
 
+    //Executes when the 'Delete' button is clicked, deleting the testimonial from the database and returning a confirmation
     deleteTestimonial = () => {
+        //1st check if the correct password was entered
         if (this.state.pswd !== '12345'){
             alert("You have not entered the correct password.");
             return;
@@ -84,7 +98,9 @@ class TestimonialModal extends React.Component {
         });
     }
 
+    //Executes when the 'Update' button is clicked, updating the testimonial in the database and returning the information stored to the database
     updateTestimonial = () => {
+        //1st check if the correct password was entered
         if (this.state.pswd !== '12345'){
             alert("You have not entered the correct password.");
             return;
@@ -110,9 +126,32 @@ class TestimonialModal extends React.Component {
     }
 
 render() {
+    let addButton;
+    let updateButton;
+    let deleteButton;
+
+    //These if statements will determine if a button is being displayed to the modal or not, depending on if the correct information is entered
+    if (this.state.testimonial !== '' && this.state.name !== ''){
+        addButton = <Button variant="success" onClick={this.addTestimonial}>Add</Button>
+    } else{
+        addButton = ''
+    }
+
+    if (this.state.testimonial !== '' && this.state.name !== '' && this.state.id !== ''){
+        updateButton = <Button variant="warning" onClick={this.updateTestimonial}>Update</Button>
+    } else{
+        updateButton = ''
+    }
+
+    if (this.state.id !== ''){
+        deleteButton = <Button variant="primary" onClick={() => { if (window.confirm('Are you sure you wish to delete this item?')) this.deleteTestimonial() } }>Delete</Button>
+    } else{
+        deleteButton = ''
+    }
+
     return (
         <>
-            <Modal size="lg" show={this.props.modalOpen} onHide={this.props.handleModalOpen} centered>
+            <Modal size="lg" show={this.props.modalOpen} onHide={this.onClose} centered>
             <Modal.Header closeButton>
                 <Modal.Title id="contained-modal-title-vcenter">
                     <h2>Add/Delete/Update a Testimonial</h2>
@@ -161,16 +200,10 @@ render() {
                 </form>
             </Modal.Body>
               <Modal.Footer>
-                <Button variant="success" onClick={this.addTestimonial}>
-                    Add
-                 </Button>
-                 <Button variant="warning" onClick={this.updateTestimonial}>
-                    Update
-                 </Button>
-                 <Button variant="primary" onClick={this.deleteTestimonial}>
-                    Delete
-                 </Button>
-                 <Button variant="danger" onClick={this.props.handleModalOpen}>
+                {addButton}
+                {updateButton}
+                {deleteButton}
+                 <Button variant="danger" onClick={this.onClose}>
                     Cancel
                  </Button>
               </Modal.Footer>
