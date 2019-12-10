@@ -5,10 +5,11 @@ import FormControl from 'react-bootstrap/FormControl'
 import FormCheck from 'react-bootstrap/FormCheck'
 const axios = require('axios')
 
-
+//This component will return a form and connect its input to functions that will initialize/add to a collection in mongodb
 class UserInfo extends Component {
   constructor(props) {
     super(props)
+    //state will include input fields and array detailing which locks the user intends to buy
     this.state = {
       name: '',
       address: '',
@@ -19,6 +20,7 @@ class UserInfo extends Component {
   }
 
   componentDidMount() {
+    //DEBUG
     console.log('confirm payment did mount')
     var self = this
     let cartelements = []

@@ -1,17 +1,21 @@
 import React, { Component } from "react";
 
+//This component renders cart icon and its dropdown
 class Cart extends Component {
   constructor() {
     super();
+    //add state variable that determines whether cart dropdwon will appear or not
     this.state = {
       showCart: false
     };
   }
 
+  //showCart and hideCart will be called onClick of downward carrot icon
   showCart = () => {
     this.setState({
       showCart: true
     });
+    //hide cart on next click
     document.addEventListener("click", this.hideCart);
   };
 
@@ -19,15 +23,19 @@ class Cart extends Component {
     this.setState({
       showCart: false
     });
+    //show cart on next cart
     document.removeEventListener("click", this.hideCart);
   };
 
   render() {
+    //DEBUG
     function handleToken(token, addresses) {
       console.log({ token, addresses });
     }
     console.log("incart cart.js", this.props.incart.length);
 
+    //dropdown will hold dropdown items
+    //this.props passed down from App.js (determined by incart field in json in database)
     let dropdown = this.props.incart.map(element => {
       return (
         <li className="item" style={{ whiteSpace: "nowrap" }}>
@@ -58,6 +66,7 @@ class Cart extends Component {
         </li>
       );
     });
+    //return cart, downward carrot icons, dropdown menu and connect to above functions (show/hideCart)
     return (
       <div>
         <li className="nav-right" style={{ zIndex: "2" }}>
