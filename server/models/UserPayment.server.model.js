@@ -1,7 +1,7 @@
 var mongoose = require('mongoose'),
     Schema = mongoose.Schema;
 
-
+//userPayment schema ('lockid' will hold a string of object ids that can be parsed to get a set of unique lock entries)
 var userPayment = new Schema({
     name: {
       type: String,
@@ -24,8 +24,8 @@ var userPayment = new Schema({
     }
 });
 
+//function called when userPayment entry saved
 userPayment.pre('save', function(next) {
-    /* your code here */
         var current = new Date();
         this.updated_at = current;
         if (!this.created_at) {
@@ -33,6 +33,7 @@ userPayment.pre('save', function(next) {
         }
         next();
     });
+//initialize model
 var UserPayment = mongoose.model('UserPaymentInfo', userPayment);
 
 module.exports = UserPayment;

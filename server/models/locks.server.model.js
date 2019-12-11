@@ -1,7 +1,7 @@
 var mongoose = require('mongoose'),
     Schema = mongoose.Schema;
 
-
+//lock schema ('image' corresponds to path to image in project folder)
 var lockSchema = new Schema({
     description:{
         type: String
@@ -27,9 +27,8 @@ var lockSchema = new Schema({
       required: true
     }
 });
-
+//function called when entry is saved
 lockSchema.pre('save', function(next) {
-    /* your code here */
         var current = new Date();
         this.updated_at = current;
         if (!this.created_at) {
@@ -37,6 +36,8 @@ lockSchema.pre('save', function(next) {
         }
         next();
     });
+
+//initialize model
 var Locks = mongoose.model('Locks', lockSchema);
 
 module.exports = Locks;

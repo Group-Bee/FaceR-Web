@@ -1,16 +1,16 @@
 import React, { Component } from "react";
 
-//This component renders cart icon and its dropdown
+//This component renders the cart icon and its dropdown
 class Cart extends Component {
   constructor() {
     super();
-    //add state variable that determines whether cart dropdwon will appear or not
+    //add state variable that determines whether cart dropdown will appear or not
     this.state = {
       showCart: false
     };
   }
 
-  //showCart and hideCart will be called onClick of downward carrot icon
+  //showCart and hideCart will be called onClick of upside-down carrot icon
   showCart = () => {
     this.setState({
       showCart: true
@@ -66,7 +66,7 @@ class Cart extends Component {
         </li>
       );
     });
-    //return cart, downward carrot icons, dropdown menu and connect to above functions (show/hideCart)
+    //return cart, upside-down carrot icons, dropdown menu and connect to above functions (show/hideCart)
     return (
       <div>
         <li className="nav-right" style={{ zIndex: "2" }}>

@@ -1,14 +1,12 @@
 import React, { Component } from 'react'
-import data from '../data/locks.data'
-import data2 from '../data/locks.data'
 let axios = require('axios')
 
-//This component will return a set of components that contain information about available locks
+//This component will return a set of div elements that contain information about available locks
 class PayEntry extends React.Component {
 
   constructor(){
     super()
-    //locks will be state array that will be filled out when compoenent mounts
+    //locks will be state array that will be filled out when component mounts
     this.state = {
       mongolocks: []
 
@@ -16,21 +14,21 @@ class PayEntry extends React.Component {
   }
 
   componentDidMount(){
+    //DEBUG
     console.log('payentry did mount')
     var self = this
-    //use axios to send get request that will ultimately end with a response containing a data field that is equal to our array of PayEntrys
+    //use axios to send a get request that will ultimately end with a response containing a data field that is equal to our array of mongolocks
     axios.get('/Pay/Locks').then(function(response){
       //set state equal to json holding info about locks that was returned by controller
       self.setState({mongolocks: response.data });
     }).catch(function (error) {
-      //DEBUG error handling
+      //DEBUG/error handling
       console.log("error occurred when getting from /About/Locks")
       console.log(error);
     });
   }
   render() {
     //DEBUG
-    console.log('rendering pay entries', data)
     console.log('getting locks', this.state.mongolocks)
 
     //entries2 will be lock items in format they are going to be rendered in

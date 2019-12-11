@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import Stripe from "react-stripe-checkout";
 const axios = require('axios')
 
 //This component will return a form and connect its input to functions that will initialize/add to a collection in mongodb
@@ -21,6 +20,7 @@ class UserInfo extends Component {
     console.log('confirm payment did mount')
     let cartelements = []
     let cartelementsfiltered = []
+    //use axios to send a get request that will ultimately end with a response containing a data field that will be equal to our toBuy array
     axios.get('/Pay/Locks').then(function (response) {
       cartelements = response.data.map(el => { if (el.incart === true) { return el } })
       cartelementsfiltered = cartelements.filter(function (el) {
@@ -28,19 +28,25 @@ class UserInfo extends Component {
       })
     })
       .then(() => {
+        //DEBUG
         console.log('cartelements are (confirm payment did mount)', cartelementsfiltered)
+        //set state equal to filtered response from controller/database
         this.setState({
           toBuy: cartelementsfiltered
         })
       })
       .catch(function (error) {
+        //DEBUG/error handling
         console.log("error occurred when getting from /About/Locks")
         console.log(error);
       });
   }
 
+  //this function is called anytime an input field is changed
   update() {
+    //DEBUG
     console.log('update ')
+    //set the state variables so that they correspond the values currently in the corresponding input fields
     this.setState({
       name: this.refs.name.value,
       address: this.refs.address.value,
@@ -49,9 +55,12 @@ class UserInfo extends Component {
     });
   }
 
+  //send state variables as input to the function that was passed down to this component as a prop on click of 'Pre-order' button
   submit = (total, lockid) => {
+    //DEBUG
     console.log('mysubmit')
     console.log(this.state.name, this.state.address)
+    //call function which exist in parent component (ConfirmPayment.js)
     this.props.submit(this.state.name, this.state.address, this.state.email, this.state.gender, total, lockid)
       this.setState({
         name: '',
@@ -63,6 +72,7 @@ class UserInfo extends Component {
   }
 
   render() {
+    //get locks the user intends to buy in the appropriate format, the corresponding total, and the lockids for that set of locks
     let total = 0;
     let lockid = "";
     const tobuy = this.state.toBuy.map(element => {
@@ -74,8 +84,11 @@ class UserInfo extends Component {
         </div>
       )
     })
+    //DEBUG
     console.log('total is ', total)
     console.log('lockid is ', lockid)
+    //return will be form connected to above function which manipulate the state and call the appropriate functions as a response to changes/submission
+    //notice the value of the fields is dependent on the state (reset after submission)
     return (
       <div style={{ backgroundColor: "#1a1a1a" }}>
         <div style={{ marginLeft: '5rem' }}>

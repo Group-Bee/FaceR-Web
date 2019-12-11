@@ -22,12 +22,13 @@ module.exports.init = () => {
   connect to database
   - reference README for db uri
   */
-  //console.log("connecting to database", require("./config").db.uri)
   mongoose
   .connect(process.env.DB_URI || require("./config").db.uri, {
     useNewUrlParser: true,
     useUnifiedTopology: true
   })
+  //this code initializes the mongodb collection for locks using the json stored within this project
+  //only uncomment if lock collection has not been initialized
   // .then(() => {
   //   console.log("connection to db established");
   //   //store local lock file to database (after connection is established)
